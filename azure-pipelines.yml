@@ -75,23 +75,21 @@ jobs:
     displayName: 'GENERATION: entities'
   - bash: $(JHI_SCRIPTS)/12-generate-project.sh
     displayName: 'GENERATION: project'
-  # - bash: $(JHI_SCRIPTS)/13-replace-version-generated-project.sh
-  #   displayName: 'GENERATION: replace version in generated project'
-  # need to be uncommented, as soon as JHipster Core 3.4.0+ is released
-  # See https://github.com/jhipster/generator-jhipster/issues/8572
-  # - bash: $(JHI_SCRIPTS)/14-jhipster-info.sh
-  #   displayName: 'GENERATION: jhipster info'
+  - bash: $(JHI_SCRIPTS)/13-replace-version-generated-project.sh
+    displayName: 'GENERATION: replace version in generated project'
+  - bash: $(JHI_SCRIPTS)/14-jhipster-info.sh
+    displayName: 'GENERATION: jhipster info'
 
   #----------------------------------------------------------------------
   # Launch tests
   #----------------------------------------------------------------------
-  # - bash: $(JHI_SCRIPTS)/20-docker-compose.sh
-  #   displayName: 'TESTS: Start docker-compose containers'
-  # - bash: $(JHI_SCRIPTS)/21-tests-backend.sh
-  #   displayName: 'TESTS: backend'
-  # - bash: $(JHI_SCRIPTS)/22-tests-frontend.sh
-  #   displayName: 'TESTS: frontend'
-  # - bash: $(JHI_SCRIPTS)/23-package.sh
-  #   displayName: 'TESTS: packaging'
-  # - bash: $(JHI_SCRIPTS)/24-tests-e2e.sh
-  #   displayName: 'TESTS: End-to-End'
+  - bash: $(JHI_SCRIPTS)/20-docker-compose.sh
+    displayName: 'TESTS: Start docker-compose containers'
+  - bash: $(JHI_SCRIPTS)/21-tests-backend.sh
+    displayName: 'TESTS: backend'
+  - bash: $(JHI_SCRIPTS)/22-tests-frontend.sh
+    displayName: 'TESTS: frontend'
+  - bash: $(JHI_SCRIPTS)/23-package.sh
+    displayName: 'TESTS: packaging'
+  - bash: $(JHI_SCRIPTS)/24-tests-e2e.sh
+    displayName: 'TESTS: End-to-End'
