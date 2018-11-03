@@ -61,9 +61,9 @@ jobs:
     displayName: 'TOOLS: install google-chrome-stable'
   - script: sudo npm install -g npm
     displayName: 'TOOLS: update NPM'
-  - bash: $(JHI_SCRIPTS)/01-display-configuration.sh
+  - bash: test-integration/scripts/01-display-configuration.sh
     displayName: 'TOOLS: display configuration'
-  - bash: $(JHI_SCRIPTS)/03-system.sh
+  - bash: test-integration/scripts/03-system.sh
     displayName: 'TOOLS: configure tools installed by the system'
 
   #----------------------------------------------------------------------
