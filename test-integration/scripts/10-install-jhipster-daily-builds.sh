@@ -73,3 +73,10 @@ else
     npm ci
     npm install -g "$HOME"/generator-jhipster
 fi
+
+#-------------------------------------------------------------------------------
+# Override config
+#-------------------------------------------------------------------------------
+
+# replace 00-init-env.sh
+cp "$JHI_REPO"/test-integration/scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
