@@ -36,7 +36,7 @@ jobs:
     SPRING_JPA_SHOW_SQL: false
     JHI_DISABLE_WEBPACK_LOGS: true
     JHI_E2E_HEADLESS: true
-    JHI_SCRIPTS: $BUILD_REPOSITORY_LOCALPATH/test-integration/scripts
+    JHI_SCRIPTS: $HOME/generator-jhipster/test-integration/scripts
 
   strategy:
     matrix:
@@ -71,12 +71,10 @@ jobs:
   #----------------------------------------------------------------------
   - bash: test-integration/scripts/10-install-jhipster-daily-builds.sh
     displayName: 'GENERATION: install JHipster'
-  # - bash: $(JHI_SCRIPTS)/10-install-jhipster.sh
-  #   displayName: 'GENERATION: install JHipster'
-  # - bash: $(JHI_SCRIPTS)/11-generate-entities.sh
-  #   displayName: 'GENERATION: entities'
-  # - bash: $(JHI_SCRIPTS)/12-generate-project.sh
-  #   displayName: 'GENERATION: project'
+  - bash: $(JHI_SCRIPTS)/11-generate-entities.sh
+    displayName: 'GENERATION: entities'
+  - bash: $(JHI_SCRIPTS)/12-generate-project.sh
+    displayName: 'GENERATION: project'
   # - bash: $(JHI_SCRIPTS)/13-replace-version-generated-project.sh
   #   displayName: 'GENERATION: replace version in generated project'
   # need to be uncommented, as soon as JHipster Core 3.4.0+ is released
