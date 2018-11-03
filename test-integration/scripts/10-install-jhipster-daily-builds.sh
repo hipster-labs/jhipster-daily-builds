@@ -79,4 +79,4 @@ fi
 #-------------------------------------------------------------------------------
 
 # replace 00-init-env.sh
-cp "$JHI_REPO"/test-integration/scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
+cp "$JHI_CLONED"/test-integration/scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
