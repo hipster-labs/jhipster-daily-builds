@@ -44,42 +44,6 @@ jobs:
         JHI_APP: ngx-psql-es-noi18n
         JHI_PROFILE: prod
         JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-02:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-03:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-04:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-05:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-06:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-07:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-08:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-09:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
-      ngx-psql-es-noi18n-10:
-        JHI_APP: ngx-psql-es-noi18n
-        JHI_PROFILE: prod
-        JHI_PROTRACTOR: 1
 
   steps:
   #----------------------------------------------------------------------
