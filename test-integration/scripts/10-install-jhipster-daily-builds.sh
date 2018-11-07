@@ -80,3 +80,6 @@ fi
 
 # replace 00-init-env.sh
 cp "$JHI_CLONED"/test-integration/scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
+
+# copy all samples
+cp -R "$JHI_CLONED"/test-integration/samples/* "$JHI_HOME"/test-integration/samples/
