@@ -25,6 +25,7 @@ jobs:
     JHI_PROFILE: dev
     JHI_RUN_APP: 1
     JHI_PROTRACTOR: 0
+    JHI_ENTITY: sql
     # if JHI_LIB_BRANCH value is release, use the release from Maven
     JHI_LIB_REPO: https://github.com/jhipster/jhipster.git
     JHI_LIB_BRANCH: release
@@ -65,6 +66,8 @@ jobs:
     displayName: 'TOOLS: display configuration'
   - bash: test-integration/scripts/03-system.sh
     displayName: 'TOOLS: configure tools installed by the system'
+  - bash: test-integration/scripts/04-git-config.sh
+    displayName: 'TOOLS: configure git'
 
   #----------------------------------------------------------------------
   # Install JHipster and generate project+entities
