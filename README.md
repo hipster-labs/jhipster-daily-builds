@@ -13,8 +13,6 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | Microservices.OAuth2 | [![Build Status][img-ms-oauth2]][azure-url]           |
 | Elasticsearch        | [![Build Status][img-elasticsearch]][azure-url]       |
 
-[![Build Status](https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/official)](https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build/latest?definitionId=5)
-
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build/latest?definitionId=5
 [img-official]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/official
 [img-angular-maven]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Angular.Maven
