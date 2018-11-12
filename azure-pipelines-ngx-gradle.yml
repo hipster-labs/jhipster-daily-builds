@@ -43,8 +43,6 @@ jobs:
     matrix:
       gradle-ngx-mysql:
         JHI_APP: gradle-ngx-mysql
-      gradle-ngx-psql-es-noi18n:
-        JHI_APP: gradle-ngx-psql-es-noi18n
       gradle-ngx-sass-noi18n:
         JHI_APP: gradle-ngx-sass-noi18n
       gradle-ngx-websocket:
