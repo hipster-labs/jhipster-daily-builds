@@ -55,6 +55,20 @@ jobs:
         JHI_APP: ms-micro-consul
         JHI_PROTRACTOR: 0
         JHI_ENTITY: micro
+      gradle-ms-ngx-gateway-eureka:
+        JHI_APP: gradle-ms-ngx-gateway-eureka
+        JHI_PROFILE: prod
+      gradle-ms-micro-eureka:
+        JHI_APP: gradle-ms-micro-eureka
+        JHI_PROTRACTOR: 0
+        JHI_ENTITY: micro
+      gradle-ms-ngx-gateway-consul:
+        JHI_APP: gradle-ms-ngx-gateway-consul
+        JHI_PROFILE: prod
+      gradle-ms-micro-consul:
+        JHI_APP: gradle-ms-micro-consul
+        JHI_PROTRACTOR: 0
+        JHI_ENTITY: micro
 
   steps:
   #----------------------------------------------------------------------
