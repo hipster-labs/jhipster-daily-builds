@@ -29,5 +29,5 @@ jobs:
     displayName: 'TOOLS: display Docker version'
   - bash: docker pull jhipster/jhipster:master
     displayName: 'INSTALL: pull jhipster/jhipster image'
-  - bash: test-integration/script/26-tests-docker.sh
+  - bash: test-integration/scripts/26-tests-docker.sh
     displayName: 'TESTS: test jhipster/jhipster image'
