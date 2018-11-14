@@ -54,6 +54,19 @@ jobs:
         JHI_APP: ms-micro-consul-oauth2
         JHI_PROTRACTOR: 0
         JHI_ENTITY: micro
+      gradle-ms-ngx-gateway-eureka-oauth2:
+        JHI_APP: gradle-ms-ngx-gateway-eureka-oauth2
+      gradle-ms-micro-eureka-oauth2:
+        JHI_APP: gradle-ms-micro-eureka-oauth2
+        JHI_PROTRACTOR: 0
+        JHI_ENTITY: micro
+      gradle-ms-ngx-gateway-consul-oauth2:
+        JHI_APP: gradle-ms-ngx-gateway-consul-oauth2
+        JHI_PROFILE: prod
+      gradle-ms-micro-consul-oauth2:
+        JHI_APP: gradle-ms-micro-consul-oauth2
+        JHI_PROTRACTOR: 0
+        JHI_ENTITY: micro
 
   steps:
   - template: azure-template.yml
