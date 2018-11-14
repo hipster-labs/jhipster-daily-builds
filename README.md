@@ -6,6 +6,7 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 
 | Type                 | Status                                                 |
 |:---------------------|:-------------------------------------------------------|
+| Docker               | [![Build Status][img-docker]][azure-url]               |
 | Official             | [![Build Status][img-official]][azure-url]             |
 | Angular.Maven        | [![Build Status][img-angular-maven]][azure-url]        |
 | Angular.Maven.NoSQL  | [![Build Status][img-angular-maven-nosql]][azure-url]  |
@@ -15,7 +16,8 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | Microservices.OAuth2 | [![Build Status][img-ms-oauth2]][azure-url]            |
 | Elasticsearch        | [![Build Status][img-elasticsearch]][azure-url]        |
 
-[azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build/latest?definitionId=5
+[azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
+[img-docker]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Docker.Image
 [img-official]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/official
 [img-angular-maven]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Angular.Maven
 [img-angular-maven-nosql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Angular.Maven.NoSQL
