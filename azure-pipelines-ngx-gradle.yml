@@ -52,21 +52,12 @@ jobs:
         JHI_APP: gradle-ngx-hazelcast-cucumber
       gradle-ngx-mariadb-kafka-nol2:
         JHI_APP: gradle-ngx-mariadb-kafka-nol2
-      gradle-ngx-cassandra:
-        JHI_APP: gradle-ngx-cassandra
-        JHI_ENTITY: cassandra
-      gradle-ngx-mongodb:
-        JHI_APP: gradle-ngx-mongodb
-        JHI_ENTITY: mongodb
       gradle-ngx-oauth2:
         JHI_APP: gradle-ngx-oauth2
       gradle-ngx-session:
         JHI_APP: gradle-ngx-session
       gradle-ngx-infinispan:
         JHI_APP: gradle-ngx-infinispan
-      gradle-ngx-couchbase:
-        JHI_APP: gradle-ngx-couchbase
-        JHI_ENTITY: couchbase
 
   steps:
   - template: azure-template.yml

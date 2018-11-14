@@ -41,24 +41,15 @@ jobs:
 
   strategy:
     matrix:
-      ngx-mysql:
-        JHI_APP: ngx-mysql
-        JHI_ENTITY: sqlfull
-      ngx-oauth2:
-        JHI_APP: ngx-oauth2
-      ngx-sass-noi18n:
-        JHI_APP: ngx-sass-noi18n
-      ngx-websocket:
-        JHI_APP: ngx-websocket
-        JHI_PROTRACTOR: 0
-      ngx-hazelcast-cucumber:
-        JHI_APP: ngx-hazelcast-cucumber
-      ngx-mariadb-kafka-nol2:
-        JHI_APP: ngx-mariadb-kafka-nol2
-      ngx-session:
-        JHI_APP: ngx-session
-      ngx-infinispan:
-        JHI_APP: ngx-infinispan
+      gradle-ngx-mongodb:
+        JHI_APP: gradle-ngx-mongodb
+        JHI_ENTITY: mongodb
+      gradle-ngx-cassandra:
+        JHI_APP: gradle-ngx-cassandra
+        JHI_ENTITY: cassandra
+      gradle-ngx-couchbase:
+        JHI_APP: gradle-ngx-couchbase
+        JHI_ENTITY: couchbase
 
   steps:
   - template: azure-template.yml
