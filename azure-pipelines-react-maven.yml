@@ -44,8 +44,6 @@ jobs:
       react-mysql:
         JHI_APP: react-mysql
         JHI_ENTITY: sqlfull
-      react-mysql:
-        JHI_APP: react-psql-es-noi18n
       react-oauth2:
         JHI_APP: react-oauth2
       react-sass-noi18n:
