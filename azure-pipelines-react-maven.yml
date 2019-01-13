@@ -43,8 +43,6 @@ jobs:
     matrix:
       react-mysql:
         JHI_APP: react-mysql
-      react-oauth2:
-        JHI_APP: react-oauth2
       react-sass-noi18n:
         JHI_APP: react-sass-noi18n
       react-websocket:

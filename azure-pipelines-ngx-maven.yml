@@ -44,8 +44,6 @@ jobs:
       ngx-mysql:
         JHI_APP: ngx-mysql
         JHI_ENTITY: sqlfull
-      ngx-oauth2:
-        JHI_APP: ngx-oauth2
       ngx-sass-noi18n:
         JHI_APP: ngx-sass-noi18n
       ngx-websocket:

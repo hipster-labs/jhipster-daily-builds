@@ -52,8 +52,6 @@ jobs:
         JHI_APP: gradle-react-hazelcast-cucumber
       gradle-react-mariadb-kafka-nol2:
         JHI_APP: gradle-react-mariadb-kafka-nol2
-      gradle-react-oauth2:
-        JHI_APP: gradle-react-oauth2
       gradle-react-session:
         JHI_APP: gradle-react-session
       gradle-react-infinispan:

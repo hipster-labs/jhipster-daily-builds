@@ -41,21 +41,13 @@ jobs:
 
   strategy:
     matrix:
-      gradle-ngx-mysql:
-        JHI_APP: gradle-ngx-mysql
-      gradle-ngx-sass-noi18n:
-        JHI_APP: gradle-ngx-sass-noi18n
-      gradle-ngx-websocket:
-        JHI_APP: gradle-ngx-websocket
-        JHI_PROTRACTOR: 0
-      gradle-ngx-hazelcast-cucumber:
-        JHI_APP: gradle-ngx-hazelcast-cucumber
-      gradle-ngx-mariadb-kafka-nol2:
-        JHI_APP: gradle-ngx-mariadb-kafka-nol2
-      gradle-ngx-session:
-        JHI_APP: gradle-ngx-session
-      gradle-ngx-infinispan:
-        JHI_APP: gradle-ngx-infinispan
-
+      ngx-oauth2:
+        JHI_APP: ngx-oauth2
+      react-oauth2:
+        JHI_APP: react-oauth2
+      gradle-ngx-oauth2:
+        JHI_APP: gradle-ngx-oauth2
+      gradle-react-oauth2:
+        JHI_APP: gradle-react-oauth2
   steps:
   - template: azure-template.yml
