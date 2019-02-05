@@ -15,6 +15,7 @@ docker container exec -i jhipster jhipster info --no-insight
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
 docker container exec -i jhipster ls -al
 docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
+docker container exec -i jhipster ls -al /home/jhipster/app/
 docker container exec -i jhipster ./mvnw test
 docker container exec -i jhipster npm test
 docker container exec -i jhipster ./mvnw package -Pprod
