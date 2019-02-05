@@ -51,6 +51,7 @@ jobs:
       ms-ngx-gateway-consul-uaa:
         JHI_APP: ms-ngx-gateway-consul-uaa
         JHI_PROFILE: prod
+        JHI_PROTRACTOR: 0
       ms-micro-consul-uaa:
         JHI_APP: ms-micro-consul-uaa
         JHI_PROTRACTOR: 0
@@ -65,6 +66,7 @@ jobs:
       gradle-ms-ngx-gateway-consul-uaa:
         JHI_APP: gradle-ms-ngx-gateway-consul-uaa
         JHI_PROFILE: prod
+        JHI_PROTRACTOR: 0
       gradle-ms-micro-consul-uaa:
         JHI_APP: gradle-ms-micro-consul-uaa
         JHI_PROTRACTOR: 0
