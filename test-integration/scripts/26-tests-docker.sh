@@ -17,3 +17,4 @@ docker container exec -i jhipster ls -al
 docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
 docker container exec -i jhipster ./mvnw test
 docker container exec -i jhipster npm test
+docker container exec -i jhipster ./mvnw package -Pprod
