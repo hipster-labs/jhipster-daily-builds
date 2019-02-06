@@ -10,6 +10,8 @@ docker container ps
 docker container exec -i jhipster npm --version
 docker container exec -i jhipster yarn --version
 docker container exec -i jhipster yo --version
+docker container exec -i git config --global user.name "JHipster Bot"
+docker container exec -i git config --global user.email "jhipster-bot@jhipster.tech"
 docker container exec -i jhipster jhipster --help --no-insight
 docker container exec -i jhipster jhipster info --no-insight
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
