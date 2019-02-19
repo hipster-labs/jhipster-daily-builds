@@ -108,3 +108,10 @@ before_cache:
   - rm -rf $HOME/.m2/repository/io/github/jhipster/jhipster-framework/
   - rm -rf $HOME/.m2/repository/io/github/jhipster/jhipster-dependencies/
   - rm -rf $HOME/.m2/repository/io/github/jhipster/jhipster-parent/
+
+#----------------------------------------------------------------------
+# Notifications
+#----------------------------------------------------------------------
+notifications:
+  slack:
+    secure: GiPHcfSjEVpCcCrbtXpLNC6DmSE2rwWiZEyeQUYBJIMwezu3yn2F4+LbFstnMR/oVv/z7oJ7ALRc2qOIG1RinGnQ/bYDEB6r1uY5UCmTILkY+UCe5pJBkzKFnVWWXXIwVU6guTe/nVrEcTc7WOTwLBgs8rmEJyhEp0XWP8VHmKF85tTHcx5bHC9O+P0vZoiHh1tmShOCzkfureLS0M0nLO6AThTW+UWxtBy3T3G7g2+kRl5Yktm8OdPUIVqR8mZrFiLwk9W6y1mZi4eTwFoth9zLamNqUm2uJUg2y1FJBPeNnR7jYoMi+Muwrpwg/oiiM58C2AhrG0QBmeomn+EiiUmkmCgVkrvzWx67xHBT3sD0733FhDlh3PiV47H2yiLUB96sQ47NUk7jk1eKwN1YJIBzRQ6aY13IAqYJCFVlQ/kICFyMqpuWUBGEwjgmc86r3qRErVb8C+apqoHvhpnEVu9GUUxeWvmOjZOTMHemOk5RehBylzkUdH0PyFC1twoPQIO9t522iTH/jNSVVwsKR81/8EIXtaTUYJZkwKJC02CU+BpZTSz4VLlwZG3upjJ2XtFu1d+Fy5wC1i8rNkhTq3XAYbpVB7VPQtiW2IFFOUV7CTXPiNPa3YadgztCjaqma3pppS+BMLfKaAXNm5pD0aZ1lFt1d19EzQMLdc5U5DU=
