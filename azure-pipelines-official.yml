@@ -26,6 +26,7 @@ jobs:
     JHI_RUN_APP: 1
     JHI_PROTRACTOR: 0
     JHI_ENTITY: sql
+    JHI_JDK: '11'
     # if JHI_LIB_BRANCH value is release, use the release from Maven
     JHI_LIB_REPO: https://github.com/jhipster/jhipster.git
     JHI_LIB_BRANCH: master
