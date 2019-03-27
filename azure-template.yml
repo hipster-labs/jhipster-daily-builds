@@ -46,6 +46,8 @@ steps:
   displayName: 'TOOLS: update NPM'
 - script: sudo chown -R vsts:docker /home/vsts/.npm/
   displayName: 'BUGS-FIX: change /home/vsts/.npm/ permission'
+- script: sudo npm install -g yarn
+  displayName: 'TOOLS: install Yarn'
 - bash: test-integration/scripts/01-display-configuration.sh
   displayName: 'TOOLS: display configuration'
 - bash: test-integration/scripts/03-system.sh

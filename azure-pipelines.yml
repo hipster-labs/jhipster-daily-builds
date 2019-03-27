@@ -26,18 +26,21 @@ jobs:
   steps:
   - bash: echo 'Hello World!'
     displayName: 'Hello World!'
-  - bash: java -version
-    displayName: 'Display java version'
-  - script: |
-      if [[ $JHI_JDK = '11' ]]; then
-        echo '*** Using OpenJDK 11'
-        sudo add-apt-repository ppa:openjdk-r/ppa
-        sudo apt-get update
-        sudo apt-get install -y openjdk-11-jdk
-        sudo update-java-alternatives -s java-1.11.0-openjdk-amd64
-      else
-        echo '*** Using OpenJDK 8 by default'
-      fi
-    displayName: 'TOOLS: configuring OpenJDK'
-  - bash: java -version
-    displayName: 'Display java version'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.15.3'
+    displayName: 'TOOLS: install Node.js'
+  - bash: npm -v
+    displayName: 'TOOLS: display npm version'
+  - script: npm install -g npm
+    displayName: 'TOOLS: update NPM'
+  - script: ls -al /home/vsts/.npm/
+    displayName: 'display folder'
+  # - script: sudo chown -R vsts:docker /home/vsts/.npm/
+  #   displayName: 'BUGS-FIX: change /home/vsts/.npm/ permission'
+  - bash: yarn -v
+    displayName: 'Display yarn version'
+  - bash: npm install -g yarn
+    displayName: 'Update Yarn'
+  - bash: yarn -v
+    displayName: 'Display yarn version'
