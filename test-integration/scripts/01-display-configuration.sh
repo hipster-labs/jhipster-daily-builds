@@ -4,9 +4,11 @@ source $(dirname $0)/00-init-env.sh
 
 echo "----- parameters -----"
 echo JHI_APP="$JHI_APP"
+echo JHI_ENTITY="$JHI_ENTITY"
 echo JHI_PROFILE="$JHI_PROFILE"
 echo JHI_RUN_APP="$JHI_RUN_APP"
 echo JHI_PROTRACTOR="$JHI_PROTRACTOR"
+echo JHI_JDK="$JHI_JDK"
 echo JHI_LIB_REPO="$JHI_LIB_REPO"
 echo JHI_LIB_BRANCH="$JHI_LIB_BRANCH"
 echo JHI_GEN_REPO="$JHI_GEN_REPO"
