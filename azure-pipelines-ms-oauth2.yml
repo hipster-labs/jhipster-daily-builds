@@ -47,6 +47,7 @@ jobs:
       ms-micro-eureka-oauth2:
         JHI_APP: ms-micro-eureka-oauth2
         JHI_PROTRACTOR: 0
+        JHI_RUN_APP: 0
         JHI_ENTITY: micro
       ms-ngx-gateway-consul-oauth2:
         JHI_APP: ms-ngx-gateway-consul-oauth2
@@ -54,12 +55,14 @@ jobs:
       ms-micro-consul-oauth2:
         JHI_APP: ms-micro-consul-oauth2
         JHI_PROTRACTOR: 0
+        JHI_RUN_APP: 0
         JHI_ENTITY: micro
       gradle-ms-ngx-gateway-eureka-oauth2:
         JHI_APP: gradle-ms-ngx-gateway-eureka-oauth2
       gradle-ms-micro-eureka-oauth2:
         JHI_APP: gradle-ms-micro-eureka-oauth2
         JHI_PROTRACTOR: 0
+        JHI_RUN_APP: 0
         JHI_ENTITY: micro
       gradle-ms-ngx-gateway-consul-oauth2:
         JHI_APP: gradle-ms-ngx-gateway-consul-oauth2
@@ -67,6 +70,7 @@ jobs:
       gradle-ms-micro-consul-oauth2:
         JHI_APP: gradle-ms-micro-consul-oauth2
         JHI_PROTRACTOR: 0
+        JHI_RUN_APP: 0
         JHI_ENTITY: micro
 
   steps:
