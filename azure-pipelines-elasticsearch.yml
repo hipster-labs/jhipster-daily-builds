@@ -42,8 +42,8 @@ jobs:
 
   strategy:
     matrix:
-      ngx-psql-es-noi18n:
-        JHI_APP: ngx-psql-es-noi18n
+      ngx-psql-es-noi18n-mapsid:
+        JHI_APP: ngx-psql-es-noi18n-mapsid
         JHI_ENTITY: sqllight
       gradle-ngx-psql-es-noi18n:
         JHI_APP: gradle-ngx-psql-es-noi18n
