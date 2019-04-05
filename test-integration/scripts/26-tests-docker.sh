@@ -24,6 +24,6 @@ docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipste
 docker container exec -i jhipster ls -al
 docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
 docker container exec -i jhipster ls -al /home/jhipster/app/
-docker container exec -i jhipster ./mvnw test
+docker container exec -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw test
 docker container exec -i jhipster npm test
-docker container exec -i jhipster ./mvnw package -Pprod
+docker container exec -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw package -Pprod
