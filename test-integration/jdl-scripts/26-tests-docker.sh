@@ -17,13 +17,13 @@ docker container exec -i jhipster jhipster info --no-insight
 
 # install JHipster dependencies
 docker container exec -i jhipster git clone https://github.com/jhipster/jhipster /home/jhipster/jhipster
-docker container exec -w /home/jhipster/jhipster -i jhipster ./mvnw clean install -Dgpg.skip=true
+docker container exec -w /home/jhipster/jhipster -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw clean install -Dgpg.skip=true
 
 # generate sample
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
 docker container exec -i jhipster ls -al
 docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
 docker container exec -i jhipster ls -al /home/jhipster/app/
-docker container exec -i jhipster ./mvnw verify
+docker container exec -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw test
 docker container exec -i jhipster npm test
-docker container exec -i jhipster ./mvnw verify -Pprod -DskipTests
+docker container exec -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw package -Pprod

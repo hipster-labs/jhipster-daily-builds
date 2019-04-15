@@ -23,6 +23,7 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | Monolith.OAuth2      | [![Build Status][img-monolith-oauth2]][azure-url]      |
 | Official OpenJDK 8   | [![Build Status][img-official-openjdk8]][azure-url]    |
 | Yarn                 | [![Build Status][img-yarn]][azure-url]                 |
+| No Database          | [![Build Status][img-nodatabase]][azure-url]           |
 
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-docker]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Docker.Image
@@ -42,3 +43,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-monolith-oauth2]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Monolith.OAuth2
 [img-official-openjdk8]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Official.OpenJDK8
 [img-yarn]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Yarn
+[img-nodatabase]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/NoDatabase
