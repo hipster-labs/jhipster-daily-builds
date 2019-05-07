@@ -9,7 +9,7 @@
       "packageName": "com.mycompany.myapp",
       "packageFolder": "com/mycompany/myapp",
       "serverPort": "8080",
-      "authenticationType": "jwt",
+      "authenticationType": "oauth2",
       "cacheProvider": "ehcache",
       "enableHibernateCache": false,
       "websocket": false,
