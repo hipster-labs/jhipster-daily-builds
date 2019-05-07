@@ -25,7 +25,7 @@ jobs:
     JHI_PROFILE: prod
     JHI_RUN_APP: 1
     JHI_PROTRACTOR: 1
-    JHI_ENTITY: sql
+    JHI_ENTITY: none
     JHI_JDK: '8'
     # if JHI_LIB_BRANCH value is release, use the release from Maven
     JHI_LIB_REPO: https://github.com/jhipster/jhipster.git
