@@ -33,3 +33,8 @@ JHI_FOLDER_APP="$HOME"/app
 
 # folder for uaa app
 JHI_FOLDER_UAA="$HOME"/uaa
+
+# set correct OpenJDK version
+if [[ "$JHI_JDK" == "11" ]]; then
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+fi
