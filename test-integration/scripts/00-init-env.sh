@@ -36,5 +36,5 @@ JHI_FOLDER_UAA="$HOME"/uaa
 
 # set correct OpenJDK version
 if [[ "$JHI_JDK" == "11" ]]; then
-    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 fi
