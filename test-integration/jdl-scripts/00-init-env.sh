@@ -23,18 +23,12 @@ JHI_HOME="$HOME"/generator-jhipster
 JHI_INTEG="$JHI_HOME"/test-integration
 
 # folder for samples
-JHI_SAMPLES="$JHI_INTEG"/samples
+JHI_SAMPLES="$HOME"/work/1/s/test-integration/jdl-samples
 
 # folder for scripts
-JHI_SCRIPTS="$JHI_INTEG"/scripts
-
+JHI_SCRIPTS="$JHI_INTEG"/jdl-scripts
 # folder for app
 JHI_FOLDER_APP="$HOME"/app
 
 # folder for uaa app
-JHI_FOLDER_UAA="$HOME"/uaa
-
-# set correct OpenJDK version
-if [[ "$JHI_JDK" == "11" ]]; then
-    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-fi
+JHI_FOLDER_UAA="$HOME"/app/uaa

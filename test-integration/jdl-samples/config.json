@@ -1,0 +1,8 @@
+{
+    "serviceDiscoveryType": ["eureka", "consul"],
+    "authenticationType": ["jwt", "session", "oauth2"],
+    "prodDatabaseType": ["mysql", "mariadb"],
+    "cacheProvider": ["hazelcast", "ehcache", "infinispan", "memcached", "no"],
+    "searchEngine": "elasticsearch",
+    "messageBroker": "useKakfa: = true"
+}

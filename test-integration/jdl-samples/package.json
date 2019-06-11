@@ -1,0 +1,15 @@
+{
+  "name": "samples-generator",
+  "version": "1.0.0",
+  "description": "generates jdl samples for daily builds",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "clean": "rm -rdf *-*-*-*"
+  },
+  "author": "Jérôme PHAM",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ejs": "^2.6.1"
+  }
+}

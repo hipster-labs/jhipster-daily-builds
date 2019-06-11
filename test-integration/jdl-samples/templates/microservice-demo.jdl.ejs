@@ -1,0 +1,157 @@
+<% if(authType === 'uaa') { %>
+application {
+ config {
+   baseName uaa,
+   packageName com.jhipster.demo.uaa,
+   serviceDiscoveryType <%= sdType %>,
+   authenticationType uaa,
+   uaaBaseName "uaa",
+   prodDatabaseType <%= proddbType %>,
+   cacheProvider <%= cacheType %>,
+   buildTool maven,
+   serverPort 9999,
+   testFrameworks [gatling, cucumber]
+ }
+}
+<% } %>
+
+application {
+ config {
+   baseName store,
+   applicationType gateway,
+   packageName com.jhipster.demo.store,
+   serviceDiscoveryType <%= sdType %>,
+   authenticationType <%= authType %>,<% if(authType === 'uaa') { %>
+   uaaBaseName "uaa",<% } %>
+   prodDatabaseType <%= proddbType %>,
+   cacheProvider <%= cacheType %>,
+   buildTool maven,
+   clientFramework angularX,
+   enableSwaggerCodegen true,
+   testFrameworks [protractor]
+ }
+ entities *
+}
+
+application {
+ config {
+   baseName crm,
+   applicationType microservice,
+   packageName com.jhipster.demo.crm,
+   serviceDiscoveryType <%= sdType %>,
+   authenticationType <%= authType %>,
+   <% if(authType === 'uaa') { %>
+   uaaBaseName "uaa",
+   <% } %>
+   prodDatabaseType postgresql,
+   buildTool maven,
+   searchEngine elasticsearch,
+   serverPort 8081,
+   skipUserManagement true
+ }
+ entities * except Invoice, Shipment
+}
+
+
+entity Product {
+   name String required
+   description String
+   price BigDecimal required min(0)
+   size Size required
+   image ImageBlob
+}
+enum Size {
+   S, M, L, XL, XXL
+}
+entity Customer {
+   firstName String required
+   lastName String required
+   gender Gender required
+   email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+   phone String required
+   addressLine1 String required
+   addressLine2 String
+   city String required
+   country String required
+}
+enum Gender {
+   MALE, FEMALE, OTHER
+}
+entity ProductOrder {
+   placedDate Instant required
+   status OrderStatus required
+   code String required
+   invoiceId String
+}
+enum OrderStatus {
+   COMPLETED, PENDING, CANCELLED
+}
+entity OrderItem {
+   quantity Integer required min(0)
+   totalPrice BigDecimal required min(0)
+   status OrderItemStatus required
+}
+enum OrderItemStatus {
+   AVAILABLE, OUT_OF_STOCK, BACK_ORDER
+}
+relationship ManyToOne {
+OrderItem{product(name) required} to Product
+}
+relationship OneToMany {
+  Customer{order} to ProductOrder{customer(email) required},
+  ProductOrder{orderItem} to OrderItem{order(code) required}
+}
+
+service Product, Customer, ProductOrder, OrderItem with serviceClass
+paginate Product, Customer, ProductOrder, OrderItem with pagination
+
+/* Entities for Invoice microservice */
+entity Invoice {
+   code String required
+   date Instant required
+   details String
+   status InvoiceStatus required
+   paymentMethod PaymentMethod required
+   paymentDate Instant required
+   paymentAmount BigDecimal required
+}
+enum InvoiceStatus {
+   PAID, ISSUED, CANCELLED
+}
+entity Shipment {
+   trackingCode String
+   date Instant required
+   details String
+}
+enum PaymentMethod {
+   CREDIT_CARD, CASH_ON_DELIVERY, PAYPAL
+}
+relationship OneToMany {
+   Invoice{shipment} to Shipment{invoice(code) required}
+}
+service Invoice, Shipment with serviceClass
+paginate Invoice, Shipment with pagination
+microservice Invoice, Shipment with accountancy
+microservice Customer, Product, ProductOrder, OrderItem with crm
+
+// will be created under 'docker-compose' folder
+deployment {
+   deploymentType docker-compose,
+   appsFolders [store, crm],
+   dockerRepositoryName "jeromepham"
+   monitoring no,
+   serviceDiscoveryType <%= sdType %>
+}
+
+// will be created under 'kubernetes' folder
+deployment {
+   deploymentType kubernetes,
+   appsFolders [store, crm]
+   dockerRepositoryName "jeromepham",
+   gatewayType zuul,
+   monitoring no,
+   serviceDiscoveryType <%= sdType %>
+   kubernetesNamespace jhipster,
+   kubernetesServiceType LoadBalancer,
+   istio false
+}

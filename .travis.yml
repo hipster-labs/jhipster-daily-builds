@@ -25,7 +25,7 @@ language: node_js
 node_js:
   - "10.15.3"
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 addons:
   apt:
     sources:
@@ -81,21 +81,19 @@ before_install:
 install:
   - $TRAVIS_BUILD_DIR/test-integration/scripts/10-install-jhipster-daily-builds.sh
   # copy samples
-  # - cp -R $TRAVIS_BUILD_DIR/test-integration/samples/* /home/travis/generator-jhipster/test-integration/samples/
-  # - ls -al /home/travis/generator-jhipster/test-integration/samples/
+  - ls -al $TRAVIS_BUILD_DIR/test-integration/jdl-samples/
   # copy init-env
   # - cp $TRAVIS_BUILD_DIR/test-integration/scripts/00-init-env.sh /home/travis/generator-jhipster/test-integration/scripts/
   # generate project and entities
   # - $JHI_SCRIPTS/11-generate-entities.sh
-  # - $TRAVIS_BUILD_DIR/test-integration/scripts/12-generate-project.sh
+  - $TRAVIS_BUILD_DIR/test-integration/scripts/12-generate-project.sh
   # - $JHI_SCRIPTS/13-replace-version-generated-project.sh
 
 #----------------------------------------------------------------------
 # Launch tests
 #----------------------------------------------------------------------
 script:
-  - echo "test script"
-  # - $JHI_SCRIPTS/20-docker-compose.sh
+  - echo "/!\ WIP /!\ Launching test scripts"
   # - $JHI_SCRIPTS/21-tests-backend.sh
   # - $JHI_SCRIPTS/22-tests-frontend.sh
   # - $JHI_SCRIPTS/23-package.sh
