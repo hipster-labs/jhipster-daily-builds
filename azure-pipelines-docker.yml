@@ -22,7 +22,7 @@ jobs:
   pool:
     vmImage: 'Ubuntu 16.04'
   schedules:
-  - cron: "0 17 * * *"
+  - cron: "08 17 * * *"
     displayName: Test scheduled build
     branches:
       include:
