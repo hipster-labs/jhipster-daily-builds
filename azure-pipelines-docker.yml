@@ -17,16 +17,16 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "10 17 * * *"
+  displayName: Test scheduled build
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:
     vmImage: 'Ubuntu 16.04'
-  schedules:
-  - cron: "8 17 * * *"
-    displayName: Test scheduled build
-    branches:
-      include:
-      - master
   steps:
   - bash: |
       docker version
