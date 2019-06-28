@@ -4,26 +4,26 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 
 ## Azure builds
 
-| Type                 | Status                                                 |
-|:---------------------|:-------------------------------------------------------|
-| Docker               | [![Build Status][img-docker]][azure-url]               |
-| Official             | [![Build Status][img-official]][azure-url]             |
-| Angular.Maven        | [![Build Status][img-angular-maven]][azure-url]        |
-| Angular.Maven.NoSQL  | [![Build Status][img-angular-maven-nosql]][azure-url]  |
-| Angular.Gradle       | [![Build Status][img-angular-gradle]][azure-url]       |
-| Angular.Gradle.NoSQL | [![Build Status][img-angular-gradle-nosql]][azure-url] |
-| React.Maven          | [![Build Status][img-react-maven]][azure-url]          |
-| React.Maven.NoSQL    | [![Build Status][img-react-maven-nosql]][azure-url]    |
-| React.Gradle         | [![Build Status][img-react-gradle]][azure-url]         |
-| React.Gradle.NoSQL   | [![Build Status][img-react-gradle-nosql]][azure-url]   |
-| Elasticsearch        | [![Build Status][img-elasticsearch]][azure-url]        |
-| Microservices.JWT    | [![Build Status][img-ms-jwt]][azure-url]               |
-| Microservices.OAuth2 | [![Build Status][img-ms-oauth2]][azure-url]            |
-| Microservices.UAA    | [![Build Status][img-ms-uaa]][azure-url]               |
-| Monolith.OAuth2      | [![Build Status][img-monolith-oauth2]][azure-url]      |
-| Official OpenJDK 8   | [![Build Status][img-official-openjdk8]][azure-url]    |
-| Yarn                 | [![Build Status][img-yarn]][azure-url]                 |
-| No Database          | [![Build Status][img-nodatabase]][azure-url]           |
+| Type                 | Status                                                 | At          |
+|:---------------------|:-------------------------------------------------------|:------------|
+| Official             | [![Build Status][img-official]][azure-url]             | 00:00 (UTC) |
+| Official OpenJDK 8   | [![Build Status][img-official-openjdk8]][azure-url]    | 00:30 (UTC) |
+| Angular.Maven        | [![Build Status][img-angular-maven]][azure-url]        | 01:00 (UTC) |
+| Angular.Maven.NoSQL  | [![Build Status][img-angular-maven-nosql]][azure-url]  | 01:30 (UTC) |
+| Angular.Gradle       | [![Build Status][img-angular-gradle]][azure-url]       | 02:00 (UTC) |
+| Angular.Gradle.NoSQL | [![Build Status][img-angular-gradle-nosql]][azure-url] | 02:30 (UTC) |
+| React.Maven          | [![Build Status][img-react-maven]][azure-url]          | 03:00 (UTC) |
+| React.Maven.NoSQL    | [![Build Status][img-react-maven-nosql]][azure-url]    | 03:30 (UTC) |
+| React.Gradle         | [![Build Status][img-react-gradle]][azure-url]         | 04:00 (UTC) |
+| React.Gradle.NoSQL   | [![Build Status][img-react-gradle-nosql]][azure-url]   | 04:30 (UTC) |
+| Elasticsearch        | [![Build Status][img-elasticsearch]][azure-url]        | 05:00 (UTC) |
+| Microservices.JWT    | [![Build Status][img-ms-jwt]][azure-url]               | 05:30 (UTC) |
+| Microservices.OAuth2 | [![Build Status][img-ms-oauth2]][azure-url]            | 06:00 (UTC) |
+| Microservices.UAA    | [![Build Status][img-ms-uaa]][azure-url]               | 06:30 (UTC) |
+| Monolith.OAuth2      | [![Build Status][img-monolith-oauth2]][azure-url]      | 07:00 (UTC) |
+| Yarn                 | [![Build Status][img-yarn]][azure-url]                 | 07:30 (UTC) |
+| No Database          | [![Build Status][img-nodatabase]][azure-url]           | 08:00 (UTC) |
+| Docker               | [![Build Status][img-docker]][azure-url]               | 08:30 (UTC) |
 
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-docker]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Docker.Image
