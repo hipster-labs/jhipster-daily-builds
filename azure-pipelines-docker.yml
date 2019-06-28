@@ -21,7 +21,12 @@ jobs:
 - job: Test
   pool:
     vmImage: 'Ubuntu 16.04'
-
+  schedules:
+  - cron: "0 17 * * *"
+    displayName: Test scheduled build
+    branches:
+      include:
+      - master
   steps:
   - bash: |
       docker version
