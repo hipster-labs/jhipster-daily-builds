@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "30 4 * * *"
+  displayName: React.Gradle.NoSQL
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:

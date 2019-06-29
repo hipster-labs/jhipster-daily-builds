@@ -18,8 +18,8 @@
 #
 
 schedules:
-- cron: "10 17 * * *"
-  displayName: Test scheduled build
+- cron: "30 8 * * *"
+  displayName: Docker.Image
   branches:
     include:
     - master

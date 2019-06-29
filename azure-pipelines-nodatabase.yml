@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "0 8 * * *"
+  displayName: No.Database
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:

@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "0 0 * * *"
+  displayName: Official
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:

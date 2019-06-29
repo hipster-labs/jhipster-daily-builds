@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "30 3 * * *"
+  displayName: React.Maven.NoSQL
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:

@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "30 6 * * *"
+  displayName: Microservices.OAuth2
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:

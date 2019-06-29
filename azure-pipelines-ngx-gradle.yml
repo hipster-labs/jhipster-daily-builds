@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+schedules:
+- cron: "0 2 * * *"
+  displayName: Angular.Gradle
+  branches:
+    include:
+    - master
 jobs:
 - job: Test
   pool:
