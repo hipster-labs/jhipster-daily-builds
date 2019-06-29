@@ -18,7 +18,7 @@
 #
 
 schedules:
-- cron: "30 8 * * *"
+- cron: "59 22 * * *"
   displayName: Docker.Image
   branches:
     include:
