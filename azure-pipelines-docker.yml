@@ -17,13 +17,13 @@
 # limitations under the License.
 #
 
-trigger: none
 schedules:
-- cron: "45 23 * * *"
+- cron: "58 23 * * *"
   displayName: Docker.Image
   branches:
     include:
     - master
+  always: true
 jobs:
 - job: Test
   pool:
