@@ -16,7 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+schedules:
+- cron: "30 10 * * *"
+  displayName: JDLApps.Hazelcast.MySQL
+  branches:
+    include:
+    - master
+  always: true
 jobs:
 - job: Test
   pool:

@@ -16,7 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+schedules:
+- cron: "30 13 * * *"
+  displayName: JDLApps.no.MySQL
+  branches:
+    include:
+    - master
+  always: true
 jobs:
 - job: Test
   pool:
@@ -44,38 +50,20 @@ jobs:
       eureka-jwt-mysql-no:
         JHI_APP: eureka-jwt-mysql-no
         JHI_ENTITY: jdl
-      eureka-jwt-mariadb-no:
-        JHI_APP: eureka-jwt-mariadb-no
-        JHI_ENTITY: jdl
       eureka-session-mysql-no:
         JHI_APP: eureka-session-mysql-no
-        JHI_ENTITY: jdl
-      eureka-session-mariadb-no:
-        JHI_APP: eureka-session-mariadb-no
         JHI_ENTITY: jdl
       eureka-oauth2-mysql-no:
         JHI_APP: eureka-oauth2-mysql-no
         JHI_ENTITY: jdl
-      eureka-oauth2-mariadb-no:
-        JHI_APP: eureka-oauth2-mariadb-no
-        JHI_ENTITY: jdl
       consul-jwt-mysql-no:
         JHI_APP: consul-jwt-mysql-no
-        JHI_ENTITY: jdl
-      consul-jwt-mariadb-no:
-        JHI_APP: consul-jwt-mariadb-no
         JHI_ENTITY: jdl
       consul-session-mysql-no:
         JHI_APP: consul-session-mysql-no
         JHI_ENTITY: jdl
-      consul-session-mariadb-no:
-        JHI_APP: consul-session-mariadb-no
-        JHI_ENTITY: jdl
       consul-oauth2-mysql-no:
         JHI_APP: consul-oauth2-mysql-no
-        JHI_ENTITY: jdl
-      consul-oauth2-mariadb-no:
-        JHI_APP: consul-oauth2-mariadb-no
         JHI_ENTITY: jdl
   steps:
   - template: azure-template-plus.yml
