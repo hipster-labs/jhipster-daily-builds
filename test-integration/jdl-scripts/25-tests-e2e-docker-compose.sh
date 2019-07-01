@@ -38,6 +38,7 @@ launchCurlOrProtractor() {
         return 1
     fi
 
+    echo "*** JHI_PROTRACTOR value is equal to $JHI_PROTRACTOR..."
     if [ "$JHI_PROTRACTOR" != 1 ]; then
         return 0
     fi

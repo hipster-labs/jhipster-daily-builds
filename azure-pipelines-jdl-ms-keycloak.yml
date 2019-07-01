@@ -24,6 +24,7 @@ jobs:
   variables:
     JHI_PROFILE: prod
     JHI_RUN_APP: 1
+    JHI_PROTRACTOR: 1
     JHI_ENTITY: jdl
     JHI_JDK: '11'
     # if JHI_LIB_BRANCH value is release, use the release from Maven
@@ -38,7 +39,6 @@ jobs:
     JHI_DISABLE_WEBPACK_LOGS: true
     JHI_E2E_HEADLESS: true
     JHI_LOCAL_SCRIPTS: $(Build.SourcesDirectory)/test-integration/jdl-scripts
-    JHI_PROTRACTOR: 1
 
   strategy:
     matrix:
