@@ -59,10 +59,10 @@ launchCurlOrProtractor() {
             echo "*** e2e tests failed... retryCount =" $retryCount "/" $maxRetry
             sleep 15
         done
-        protractorResult=protractorResult + $result
+        protractorResult=$((protractorResult + $result))
     done
 
-    if [ "$protractorResult" -ne 0]; then
+    if [ "$protractorResult" -ne 0 ]; then
         return 1
     fi
     
