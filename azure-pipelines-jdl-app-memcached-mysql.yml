@@ -18,7 +18,7 @@
 
 schedules:
 - cron: "30 11 * * *"
-  displayName: JDLApps.Memcached.MySQL
+  displayName: JDLMs.Memcached.MySQL
   branches:
     include:
     - master

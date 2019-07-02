@@ -18,7 +18,7 @@
 
 schedules:
 - cron: "0 13 * * *"
-  displayName: JDLApps.no.MariaDB
+  displayName: JDLMs.no.MariaDB
   branches:
     include:
     - master

@@ -18,7 +18,7 @@
 
 schedules:
 - cron: "0 10 * * *"
-  displayName: JDLApps.Ehcache.MariaDB
+  displayName: JDLMs.Ehcache.MariaDB
   branches:
     include:
     - master
