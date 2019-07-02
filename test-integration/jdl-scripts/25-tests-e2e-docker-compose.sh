@@ -41,22 +41,32 @@ launchCurlOrProtractor() {
     if [ "$JHI_PROTRACTOR" != 1 ]; then
         return 0
     fi
-
-    retryCount=0
-    maxRetry=1
-    until [ "$retryCount" -ge "$maxRetry" ]
-    do
-        result=0
-        if [[ -f "tsconfig.json" ]]; then
-            npm run e2e
-        fi
-        result=$?
-        [ $result -eq 0 ] && break
-        retryCount=$((retryCount+1))
-        echo "*** e2e tests failed... retryCount =" $retryCount "/" $maxRetry
-        sleep 15
+    
+    protractorResult=0
+    for local_folder in $(ls "$JHI_FOLDER_APP"); do
+        cd "$JHI_FOLDER_APP"/"$local_folder"
+        retryCount=0
+        maxRetry=1
+        until [ "$retryCount" -ge "$maxRetry" ]
+        do
+            result=0
+            if [[ -f "tsconfig.json" ]]; then
+                npm run e2e
+            fi
+            result=$?
+            [ $result -eq 0 ] && break
+            retryCount=$((retryCount+1))
+            echo "*** e2e tests failed... retryCount =" $retryCount "/" $maxRetry
+            sleep 15
+        done
+        protractorResult=$((protractorResult + $result))
     done
-    return $result
+
+    if [ "$protractorResult" -ne 0 ]; then
+        return 1
+    fi
+    
+    return 0
 }
 
 #-------------------------------------------------------------------------------
