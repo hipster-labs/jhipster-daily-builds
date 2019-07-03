@@ -4,36 +4,36 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 
 ## Azure builds
 
-| Type                     | Status                                                 | At          |
-|:-------------------------|:-------------------------------------------------------|:------------|
-| Official                 | [![Build Status][img-official]][azure-url]             | 00:00 (UTC) |
-| Official OpenJDK 8       | [![Build Status][img-official-openjdk8]][azure-url]    | 00:30 (UTC) |
-| Angular.Maven            | [![Build Status][img-angular-maven]][azure-url]        | 01:00 (UTC) |
-| Angular.Maven.NoSQL      | [![Build Status][img-angular-maven-nosql]][azure-url]  | 01:30 (UTC) |
-| Angular.Gradle           | [![Build Status][img-angular-gradle]][azure-url]       | 02:00 (UTC) |
-| Angular.Gradle.NoSQL     | [![Build Status][img-angular-gradle-nosql]][azure-url] | 02:30 (UTC) |
-| React.Maven              | [![Build Status][img-react-maven]][azure-url]          | 03:00 (UTC) |
-| React.Maven.NoSQL        | [![Build Status][img-react-maven-nosql]][azure-url]    | 03:30 (UTC) |
-| React.Gradle             | [![Build Status][img-react-gradle]][azure-url]         | 04:00 (UTC) |
-| React.Gradle.NoSQL       | [![Build Status][img-react-gradle-nosql]][azure-url]   | 04:30 (UTC) |
-| Elasticsearch            | [![Build Status][img-elasticsearch]][azure-url]        | 05:00 (UTC) |
-| Monolith.OAuth2          | [![Build Status][img-monolith-oauth2]][azure-url]      | 05:30 (UTC) |
-| Microservices.JWT        | [![Build Status][img-ms-jwt]][azure-url]               | 06:00 (UTC) |
-| Microservices.OAuth2     | [![Build Status][img-ms-oauth2]][azure-url]            | 06:30 (UTC) |
-| Microservices.UAA        | [![Build Status][img-ms-uaa]][azure-url]               | 07:00 (UTC) |
-| Yarn                     | [![Build Status][img-yarn]][azure-url]                 | 07:30 (UTC) |
-| No Database              | [![Build Status][img-nodatabase]][azure-url]           | 08:00 (UTC) |
-| Docker                   | [![Build Status][img-docker]][azure-url]               | 08:30 (UTC) |
-| JDLMs.Hazelcast.MariaDB  | SOON                                                   | 09:00 (UTC) |
-| JDLMs.Hazelcast.MySQL    | SOON                                                   | 09:30 (UTC) |
-| JDLMs.Ehcache.MariaDB    | SOON                                                   | 10:00 (UTC) |
-| JDLMs.Ehcache.MySQL      | SOON                                                   | 10:30 (UTC) |
-| JDLMs.Memcached.MariaDB  | SOON                                                   | 11:00 (UTC) |
-| JDLMs.Memcached.MySQL    | SOON                                                   | 11:30 (UTC) |
-| JDLMs.Infinispan.MariaDB | SOON                                                   | 12:00 (UTC) |
-| JDLMs.Infinispan.MySQL   | SOON                                                   | 12:30 (UTC) |
-| JDLMs.Nocache.MariaDB    | SOON                                                   | 13:00 (UTC) |
-| JDLMS.Nocache.MySQL      | SOON                                                   | 13:30 (UTC) |
+| Type                     | Status                                                     | At          |
+|:-------------------------|:-----------------------------------------------------------|:------------|
+| Official                 | [![Build Status][img-official]][azure-url]                 | 00:00 (UTC) |
+| Official OpenJDK 8       | [![Build Status][img-official-openjdk8]][azure-url]        | 00:30 (UTC) |
+| Angular.Maven            | [![Build Status][img-angular-maven]][azure-url]            | 01:00 (UTC) |
+| Angular.Maven.NoSQL      | [![Build Status][img-angular-maven-nosql]][azure-url]      | 01:30 (UTC) |
+| Angular.Gradle           | [![Build Status][img-angular-gradle]][azure-url]           | 02:00 (UTC) |
+| Angular.Gradle.NoSQL     | [![Build Status][img-angular-gradle-nosql]][azure-url]     | 02:30 (UTC) |
+| React.Maven              | [![Build Status][img-react-maven]][azure-url]              | 03:00 (UTC) |
+| React.Maven.NoSQL        | [![Build Status][img-react-maven-nosql]][azure-url]        | 03:30 (UTC) |
+| React.Gradle             | [![Build Status][img-react-gradle]][azure-url]             | 04:00 (UTC) |
+| React.Gradle.NoSQL       | [![Build Status][img-react-gradle-nosql]][azure-url]       | 04:30 (UTC) |
+| Elasticsearch            | [![Build Status][img-elasticsearch]][azure-url]            | 05:00 (UTC) |
+| Monolith.OAuth2          | [![Build Status][img-monolith-oauth2]][azure-url]          | 05:30 (UTC) |
+| Microservices.JWT        | [![Build Status][img-ms-jwt]][azure-url]                   | 06:00 (UTC) |
+| Microservices.OAuth2     | [![Build Status][img-ms-oauth2]][azure-url]                | 06:30 (UTC) |
+| Microservices.UAA        | [![Build Status][img-ms-uaa]][azure-url]                   | 07:00 (UTC) |
+| Yarn                     | [![Build Status][img-yarn]][azure-url]                     | 07:30 (UTC) |
+| No Database              | [![Build Status][img-nodatabase]][azure-url]               | 08:00 (UTC) |
+| Docker                   | [![Build Status][img-docker]][azure-url]                   | 08:30 (UTC) |
+| JDLMs.Hazelcast.MariaDB  | [![Build Status][img-jdlms-hazelcast-mariadb]][azure-url]  | 09:00 (UTC) |
+| JDLMs.Hazelcast.MySQL    | SOON                                                       | 09:30 (UTC) |
+| JDLMs.Ehcache.MariaDB    | SOON                                                       | 10:00 (UTC) |
+| JDLMs.Ehcache.MySQL      | SOON                                                       | 10:30 (UTC) |
+| JDLMs.Memcached.MariaDB  | SOON                                                       | 11:00 (UTC) |
+| JDLMs.Memcached.MySQL    | SOON                                                       | 11:30 (UTC) |
+| JDLMs.Infinispan.MariaDB | SOON                                                       | 12:00 (UTC) |
+| JDLMs.Infinispan.MySQL   | SOON                                                       | 12:30 (UTC) |
+| JDLMs.Nocache.MariaDB    | SOON                                                       | 13:00 (UTC) |
+| JDLMS.Nocache.MySQL      | SOON                                                       | 13:30 (UTC) |
 
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-official]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Official
@@ -54,3 +54,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-yarn]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Yarn
 [img-nodatabase]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/NoDatabase
 [img-docker]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Docker.Image
+[img-jdlms-hazelcast-mariadb]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Hazelcast.MariaDB
