@@ -27,7 +27,7 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | JDLMs.Hazelcast.MariaDB  | [![Build Status][img-jdlms-hazelcast-mariadb]][azure-url]  | 09:00 (UTC) |
 | JDLMs.Hazelcast.MySQL    | [![Build Status][img-jdlms-hazelcast-mysql]][azure-url]    | 09:30 (UTC) |
 | JDLMs.Ehcache.MariaDB    | [![Build Status][img-jdlms-ehcache-mariadb]][azure-url]    | 10:00 (UTC) |
-| JDLMs.Ehcache.MySQL      | SOON                                                       | 10:30 (UTC) |
+| JDLMs.Ehcache.MySQL      | [![Build Status][img-jdlms-ehcache-mysql]][azure-url]      | 10:30 (UTC) |
 | JDLMs.Memcached.MariaDB  | SOON                                                       | 11:00 (UTC) |
 | JDLMs.Memcached.MySQL    | SOON                                                       | 11:30 (UTC) |
 | JDLMs.Infinispan.MariaDB | SOON                                                       | 12:00 (UTC) |
@@ -57,3 +57,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-jdlms-hazelcast-mariadb]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Hazelcast.MariaDB
 [img-jdlms-hazelcast-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Hazelcast.MySQL
 [img-jdlms-ehcache-mariadb]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Ehcache.MariaDB
+[img-jdlms-ehcache-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Ehcache.MySQL
