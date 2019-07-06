@@ -17,7 +17,7 @@
 # limitations under the License.
 
 schedules:
-- cron: "25 12 * * *"
+- cron: "30 13 * * *"
   displayName: JDLMs.no.MySQL
   branches:
     include:
