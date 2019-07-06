@@ -17,7 +17,7 @@
 # limitations under the License.
 
 schedules:
-- cron: "0 13 * * *"
+- cron: "34 12 * * *"
   displayName: JDLMs.no.MariaDB
   branches:
     include:
