@@ -15,3 +15,7 @@ if [ -d "$JHI_FOLDER_APP"/docker-compose ]; then
 fi
 
 docker ps -a
+
+echo "*** waiting 60sec"
+sleep 60
+docker ps -a

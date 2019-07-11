@@ -18,8 +18,8 @@
 #
 
 schedules:
-- cron: "30 6 * * *"
-  displayName: Microservices.OAuth2
+- cron: "30 10 * * *"
+  displayName: JDLMs.Hazelcast.MySQL
   branches:
     include:
     - master
@@ -31,8 +31,7 @@ jobs:
   variables:
     JHI_PROFILE: prod
     JHI_RUN_APP: 1
-    JHI_PROTRACTOR: 1
-    JHI_ENTITY: sql
+    JHI_ENTITY: jdl
     JHI_JDK: '11'
     # if JHI_LIB_BRANCH value is release, use the release from Maven
     JHI_LIB_REPO: https://github.com/jhipster/jhipster.git
@@ -45,40 +44,27 @@ jobs:
     SPRING_JPA_SHOW_SQL: false
     JHI_DISABLE_WEBPACK_LOGS: true
     JHI_E2E_HEADLESS: true
-    JHI_SCRIPTS: $HOME/generator-jhipster/test-integration/scripts
+    JHI_LOCAL_SCRIPTS: $(Build.SourcesDirectory)/test-integration/jdl-scripts
 
   strategy:
     matrix:
-      ms-ngx-gateway-eureka-oauth2:
-        JHI_APP: ms-ngx-gateway-eureka-oauth2
-      ms-micro-eureka-oauth2:
-        JHI_APP: ms-micro-eureka-oauth2
-        JHI_PROTRACTOR: 0
-        JHI_RUN_APP: 0
-        JHI_ENTITY: micro
-      ms-ngx-gateway-consul-oauth2:
-        JHI_APP: ms-ngx-gateway-consul-oauth2
-        JHI_PROFILE: prod
-      ms-micro-consul-oauth2:
-        JHI_APP: ms-micro-consul-oauth2
-        JHI_PROTRACTOR: 0
-        JHI_RUN_APP: 0
-        JHI_ENTITY: micro
-      gradle-ms-ngx-gateway-eureka-oauth2:
-        JHI_APP: gradle-ms-ngx-gateway-eureka-oauth2
-      gradle-ms-micro-eureka-oauth2:
-        JHI_APP: gradle-ms-micro-eureka-oauth2
-        JHI_PROTRACTOR: 0
-        JHI_RUN_APP: 0
-        JHI_ENTITY: micro
-      gradle-ms-ngx-gateway-consul-oauth2:
-        JHI_APP: gradle-ms-ngx-gateway-consul-oauth2
-        JHI_PROFILE: prod
-      gradle-ms-micro-consul-oauth2:
-        JHI_APP: gradle-ms-micro-consul-oauth2
-        JHI_PROTRACTOR: 0
-        JHI_RUN_APP: 0
-        JHI_ENTITY: micro
-
+      eureka-jwt-mysql-ehcache:
+        JHI_APP: eureka-jwt-mysql-ehcache
+        JHI_ENTITY: jdl
+      eureka-session-mysql-ehcache:
+        JHI_APP: eureka-session-mysql-ehcache
+        JHI_ENTITY: jdl
+      eureka-oauth2-mysql-ehcache:
+        JHI_APP: eureka-oauth2-mysql-ehcache
+        JHI_ENTITY: jdl
+      consul-jwt-mysql-ehcache:
+        JHI_APP: consul-jwt-mysql-ehcache
+        JHI_ENTITY: jdl
+      consul-session-mysql-ehcache:
+        JHI_APP: consul-session-mysql-ehcache
+        JHI_ENTITY: jdl
+      consul-oauth2-mysql-ehcache:
+        JHI_APP: consul-oauth2-mysql-ehcache
+        JHI_ENTITY: jdl
   steps:
-  - template: azure-template.yml
+  - template: azure-template-plus.yml

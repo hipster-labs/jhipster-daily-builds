@@ -15,8 +15,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-
+schedules:
+- cron: "30 13 * * *"
+  displayName: JDLMs.no.MySQL
+  branches:
+    include:
+    - master
+  always: true
 jobs:
 - job: Test
   pool:
@@ -41,41 +48,23 @@ jobs:
 
   strategy:
     matrix:
-      eureka-jwt-mysql-memcached:
-        JHI_APP: eureka-jwt-mysql-memcached
+      eureka-jwt-mysql-no:
+        JHI_APP: eureka-jwt-mysql-no
         JHI_ENTITY: jdl
-      eureka-jwt-mariadb-memcached:
-        JHI_APP: eureka-jwt-mariadb-memcached
+      eureka-session-mysql-no:
+        JHI_APP: eureka-session-mysql-no
         JHI_ENTITY: jdl
-      eureka-session-mysql-memcached:
-        JHI_APP: eureka-session-mysql-memcached
+      eureka-oauth2-mysql-no:
+        JHI_APP: eureka-oauth2-mysql-no
         JHI_ENTITY: jdl
-      eureka-session-mariadb-memcached:
-        JHI_APP: eureka-session-mariadb-memcached
+      consul-jwt-mysql-no:
+        JHI_APP: consul-jwt-mysql-no
         JHI_ENTITY: jdl
-      eureka-oauth2-mysql-memcached:
-        JHI_APP: eureka-oauth2-mysql-memcached
+      consul-session-mysql-no:
+        JHI_APP: consul-session-mysql-no
         JHI_ENTITY: jdl
-      eureka-oauth2-mariadb-memcached:
-        JHI_APP: eureka-oauth2-mariadb-memcached
-        JHI_ENTITY: jdl
-      consul-jwt-mysql-memcached:
-        JHI_APP: consul-jwt-mysql-memcached
-        JHI_ENTITY: jdl
-      consul-jwt-mariadb-memcached:
-        JHI_APP: consul-jwt-mariadb-memcached
-        JHI_ENTITY: jdl
-      consul-session-mysql-memcached:
-        JHI_APP: consul-session-mysql-memcached
-        JHI_ENTITY: jdl
-      consul-session-mariadb-memcached:
-        JHI_APP: consul-session-mariadb-memcached
-        JHI_ENTITY: jdl
-      consul-oauth2-mysql-memcached:
-        JHI_APP: consul-oauth2-mysql-memcached
-        JHI_ENTITY: jdl
-      consul-oauth2-mariadb-memcached:
-        JHI_APP: consul-oauth2-mariadb-memcached
+      consul-oauth2-mysql-no:
+        JHI_APP: consul-oauth2-mysql-no
         JHI_ENTITY: jdl
   steps:
   - template: azure-template-plus.yml

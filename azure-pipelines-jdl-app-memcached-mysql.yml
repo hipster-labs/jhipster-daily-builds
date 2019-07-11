@@ -15,8 +15,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-
+schedules:
+- cron: "30 11 * * *"
+  displayName: JDLMs.Memcached.MySQL
+  branches:
+    include:
+    - master
+  always: true
 jobs:
 - job: Test
   pool:
@@ -41,41 +48,23 @@ jobs:
 
   strategy:
     matrix:
-      eureka-jwt-mysql-hazelcast:
-        JHI_APP: eureka-jwt-mysql-hazelcast
+      eureka-jwt-mysql-memcached:
+        JHI_APP: eureka-jwt-mysql-memcached
         JHI_ENTITY: jdl
-      eureka-jwt-mariadb-hazelcast:
-        JHI_APP: eureka-jwt-mariadb-hazelcast
+      eureka-session-mysql-memcached:
+        JHI_APP: eureka-session-mysql-memcached
         JHI_ENTITY: jdl
-      eureka-session-mysql-hazelcast:
-        JHI_APP: eureka-session-mysql-hazelcast
+      eureka-oauth2-mysql-memcached:
+        JHI_APP: eureka-oauth2-mysql-memcached
         JHI_ENTITY: jdl
-      eureka-session-mariadb-hazelcast:
-        JHI_APP: eureka-session-mariadb-hazelcast
+      consul-jwt-mysql-memcached:
+        JHI_APP: consul-jwt-mysql-memcached
         JHI_ENTITY: jdl
-      eureka-oauth2-mysql-hazelcast:
-        JHI_APP: eureka-oauth2-mysql-hazelcast
+      consul-session-mysql-memcached:
+        JHI_APP: consul-session-mysql-memcached
         JHI_ENTITY: jdl
-      eureka-oauth2-mariadb-hazelcast:
-        JHI_APP: eureka-oauth2-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-jwt-mysql-hazelcast:
-        JHI_APP: consul-jwt-mysql-hazelcast
-        JHI_ENTITY: jdl
-      consul-jwt-mariadb-hazelcast:
-        JHI_APP: consul-jwt-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-session-mysql-hazelcast:
-        JHI_APP: consul-session-mysql-hazelcast
-        JHI_ENTITY: jdl
-      consul-session-mariadb-hazelcast:
-        JHI_APP: consul-session-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-oauth2-mysql-hazelcast:
-        JHI_APP: consul-oauth2-mysql-hazelcast
-        JHI_ENTITY: jdl
-      consul-oauth2-mariadb-hazelcast:
-        JHI_APP: consul-oauth2-mariadb-hazelcast
+      consul-oauth2-mysql-memcached:
+        JHI_APP: consul-oauth2-mysql-memcached
         JHI_ENTITY: jdl
   steps:
   - template: azure-template-plus.yml

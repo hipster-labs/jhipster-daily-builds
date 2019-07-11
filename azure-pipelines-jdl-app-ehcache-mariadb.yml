@@ -15,8 +15,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-
+schedules:
+- cron: "0 10 * * *"
+  displayName: JDLMs.Ehcache.MariaDB
+  branches:
+    include:
+    - master
+  always: true
 jobs:
 - job: Test
   pool:
@@ -41,38 +48,20 @@ jobs:
 
   strategy:
     matrix:
-      eureka-jwt-mysql-ehcache:
-        JHI_APP: eureka-jwt-mysql-ehcache
-        JHI_ENTITY: jdl
       eureka-jwt-mariadb-ehcache:
         JHI_APP: eureka-jwt-mariadb-ehcache
-        JHI_ENTITY: jdl
-      eureka-session-mysql-ehcache:
-        JHI_APP: eureka-session-mysql-ehcache
         JHI_ENTITY: jdl
       eureka-session-mariadb-ehcache:
         JHI_APP: eureka-session-mariadb-ehcache
         JHI_ENTITY: jdl
-      eureka-oauth2-mysql-ehcache:
-        JHI_APP: eureka-oauth2-mysql-ehcache
-        JHI_ENTITY: jdl
       eureka-oauth2-mariadb-ehcache:
         JHI_APP: eureka-oauth2-mariadb-ehcache
-        JHI_ENTITY: jdl
-      consul-jwt-mysql-ehcache:
-        JHI_APP: consul-jwt-mysql-ehcache
         JHI_ENTITY: jdl
       consul-jwt-mariadb-ehcache:
         JHI_APP: consul-jwt-mariadb-ehcache
         JHI_ENTITY: jdl
-      consul-session-mysql-ehcache:
-        JHI_APP: consul-session-mysql-ehcache
-        JHI_ENTITY: jdl
       consul-session-mariadb-ehcache:
         JHI_APP: consul-session-mariadb-ehcache
-        JHI_ENTITY: jdl
-      consul-oauth2-mysql-ehcache:
-        JHI_APP: consul-oauth2-mysql-ehcache
         JHI_ENTITY: jdl
       consul-oauth2-mariadb-ehcache:
         JHI_APP: consul-oauth2-mariadb-ehcache
