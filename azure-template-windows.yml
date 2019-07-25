@@ -42,8 +42,6 @@ steps:
   displayName: 'TOOLS: install Yarn'
 - bash: test-integration/scripts/01-display-configuration.sh
   displayName: 'TOOLS: display configuration'
-- bash: test-integration/scripts/03-system.sh
-  displayName: 'TOOLS: configure tools installed by the system'
 - bash: test-integration/scripts/04-git-config.sh
   displayName: 'TOOLS: configure git'
 
