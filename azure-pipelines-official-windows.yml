@@ -92,9 +92,6 @@ jobs:
       ms-micro-consul:
         JHI_APP: ms-micro-consul
         JHI_ENTITY: micro
-      ngx-session-cassandra-fr:
-        JHI_APP: ngx-session-cassandra-fr
-        JHI_ENTITY: cassandra
       ngx-couchbase:
         JHI_APP: ngx-couchbase
         JHI_PROFILE: prod
