@@ -8,7 +8,7 @@ source $(dirname $0)/00-init-env.sh
 #-------------------------------------------------------------------------------
 if [[ "$JHI_APP" == *"uaa"* ]]; then
     cd "$JHI_FOLDER_UAA"
-    ./mvnw verify -DskipTests -Pdev
+    ./mvnw -ntp verify -DskipTests -Pdev
     mv target/*.jar app.jar
 fi
 
@@ -33,7 +33,7 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         # Package the application
         #-------------------------------------------------------------------------------
         if [ -f "mvnw" ]; then
-            ./mvnw verify -DskipTests -P"$JHI_PROFILE"
+            ./mvnw -ntp verify -DskipTests -P"$JHI_PROFILE"
             mv target/*.jar app.jar
         elif [ -f "gradlew" ]; then
             ./gradlew bootJar -P"$JHI_PROFILE" -x test
@@ -53,7 +53,7 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         #-------------------------------------------------------------------------------
         if [ "$JHI_WAR" == 1 ]; then
             if [ -f "mvnw" ]; then
-                ./mvnw verify -DskipTests -P"$JHI_PROFILE",war
+                ./mvnw -ntp verify -DskipTests -P"$JHI_PROFILE",war
                 mv target/*.war app.war
             elif [ -f "gradlew" ]; then
                 ./gradlew bootWar -P"$JHI_PROFILE" -Pwar -x test
@@ -74,7 +74,7 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         #-------------------------------------------------------------------------------
         # if [ "$JHI_PKG_DOCKER" == 1 ]; then
             if [ -f "mvnw" ]; then
-                ./mvnw -Pprod verify jib:dockerBuild
+                ./mvnw -ntp -Pprod verify jib:dockerBuild
             elif [ -f "gradlew" ]; then
                 ./gradlew bootJar -Pprod jibDockerBuild
             else
