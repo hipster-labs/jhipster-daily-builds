@@ -34,6 +34,7 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | JDLMs.Infinispan.MySQL   | [![Build Status][img-jdlms-infinispan-mysql]][azure-url]   | 12:30 (UTC) |
 | JDLMs.Nocache.MariaDB    | [![Build Status][img-jdlms-nocache-mariadb]][azure-url]    | 13:00 (UTC) |
 | JDLMS.Nocache.MySQL      | [![Build Status][img-jdlms-nocache-mysql]][azure-url]      | 13:30 (UTC) |
+| JDLMS.Keycloak           | [![Build Status][img-jdlms-keycloak]][azure-url]           | 14:00 (UTC) |
 
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-official]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Official
@@ -64,3 +65,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-jdlms-infinispan-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Infinispan.MySQL
 [img-jdlms-nocache-mariadb]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Nocache.MariaDB
 [img-jdlms-nocache-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Nocache.MySQL
+[img-jdlms-keycloak]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Keycloak
