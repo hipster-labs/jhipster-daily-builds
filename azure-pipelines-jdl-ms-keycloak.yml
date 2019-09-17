@@ -22,7 +22,6 @@ schedules:
   branches:
     include:
     - master
-always: true
 jobs:
 - job: Test
   pool:
