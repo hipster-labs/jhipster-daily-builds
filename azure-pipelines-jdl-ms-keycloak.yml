@@ -137,12 +137,6 @@ jobs:
     displayName: 'GENERATION: jhipster info'
 
   #----------------------------------------------------------------------
-  # Bugs fix
-  #----------------------------------------------------------------------
-  # - bash: $(JHI_SCRIPTS)/20-no-memory-limit-elasticsearch.sh
-  #   displayName: 'BUGS-FIX: no memory limit for Elasticsearch'
-
-  #----------------------------------------------------------------------
   # Launch tests
   #----------------------------------------------------------------------
   - bash: $(JHI_LOCAL_SCRIPTS)/23-package.sh
@@ -151,15 +145,3 @@ jobs:
     displayName: 'TESTS: Deploying with docker-compose files'
   - bash: $(JHI_LOCAL_SCRIPTS)/25-tests-e2e-docker-compose.sh
     displayName: 'TESTS: End-to-End (Docker-Compose)'
-
-  #----------------------------------------------------------------------
-  # Install Minikube
-  #----------------------------------------------------------------------
-  # - bash: $(JHI_LOCAL_SCRIPTS)/26-install-minikube.sh
-  #   displayName: 'TOOLS: install minikube'
-  # - bash: $(JHI_LOCAL_SCRIPTS)/27-start-minikube-cluster.sh
-  #   displayName: 'TOOLS: start up minikube cluster'
-  # - bash: $(JHI_LOCAL_SCRIPTS)/28-deploy-with-kubernetes.sh
-  #   displayName: 'TESTS: Deploying with kubernetes cluster'
-  # - bash: $(JHI_LOCAL_SCRIPTS)/29-tests-e2e-kubernetes.sh
-  #   displayName: 'TESTS: End-to-End (Kubernetes)'
