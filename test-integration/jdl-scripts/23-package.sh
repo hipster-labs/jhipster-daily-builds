@@ -25,11 +25,11 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         #-------------------------------------------------------------------------------
         if [ "$JHI_PROTRACTOR" == 1 ] && [ -e "src/main/webapp/app/app.module.ts" ]; then
             echo 'starting sed operation'
-            sed -e 's/alertTimeout: 5000/alertTimeout: 1/1;' src/main/webapp/app/app.module.ts > src/main/webapp/app/app.module.ts.sed
+            sed -e 's/alertTimeout: 5000/alertTimeout: 1/1;' src/main/webapp/app/core/core.module.ts > src/main/webapp/app/core/core.module.ts.sed
             echo 'moving operation'
-            mv -f src/main/webapp/app/app.module.ts.sed src/main/webapp/app/app.module.ts
+            mv -f src/main/webapp/core/core.module.ts.sed src/main/webapp/app/core/core.module.ts
             echo 'the cat has been released'
-            cat src/main/webapp/app/app.module.ts | grep alertTimeout
+            cat src/main/webapp/core/core.module.ts | grep alertTimeout
         fi
 
         #-------------------------------------------------------------------------------
