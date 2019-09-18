@@ -101,8 +101,6 @@ jobs:
   - script: |
       sudo chmod o+w /etc/hosts
       sudo echo "127.0.0.1	keycloak" >> /etc/hosts
-      echo "Changing etc/hosts file for keycloak usage"
-      cat /etc/hosts
     displayName: 'TOOLS: configuring /etc/hosts for keycloak usage'
   - script: |
       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
