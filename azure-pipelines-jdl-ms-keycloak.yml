@@ -99,6 +99,7 @@ jobs:
       fi
     displayName: 'TOOLS: configuring OpenJDK'
   - script: |
+      sudo chmod o+w /etc/hosts
       sudo echo "127.0.0.1	keycloak" >> /etc/hosts
       echo "Changing etc/hosts file for keycloak usage"
       cat /etc/hosts
