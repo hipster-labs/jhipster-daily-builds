@@ -24,9 +24,9 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         # Decrease Angular timeout for Protractor tests
         #-------------------------------------------------------------------------------
         if [ "$JHI_PROTRACTOR" == 1 ] && [ -e "src/main/webapp/app/app.module.ts" ]; then
-            sed -e 's/alertTimeout: 5000/alertTimeout: 1/1;' src/main/webapp/app/app.module.ts > src/main/webapp/app/app.module.ts.sed
-            mv -f src/main/webapp/app/app.module.ts.sed src/main/webapp/app/app.module.ts
-            cat src/main/webapp/app/app.module.ts | grep alertTimeout
+            sed -e 's/alertTimeout: 5000/alertTimeout: 1/1;' src/main/webapp/app/core/core.module.ts > src/main/webapp/app/core/core.module.ts.sed
+            mv -f src/main/webapp/app/core/core.module.ts.sed src/main/webapp/app/core/core.module.ts
+            cat src/main/webapp/app/core/core.module.ts | grep alertTimeout
         fi
 
         #-------------------------------------------------------------------------------
