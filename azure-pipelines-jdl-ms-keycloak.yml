@@ -18,7 +18,7 @@
 
 schedules:
 - cron: "0 14 * * *"
-  displayName: JDLMs.no.MySQL
+  displayName: JDLMs.Keycloak
   branches:
     include:
     - master
