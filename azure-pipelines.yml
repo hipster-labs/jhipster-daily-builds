@@ -20,7 +20,7 @@
 jobs:
 - job: Test
   pool:
-    vmImage: 'Ubuntu 16.04'
+    vmImage: 'ubuntu-18.04'
   variables:
     JHI_JDK: 11
   steps:
@@ -44,4 +44,3 @@ jobs:
     displayName: 'Update Yarn'
   - bash: yarn -v
     displayName: 'Display yarn version'
-    
