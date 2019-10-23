@@ -47,12 +47,6 @@ steps:
     sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
     sudo apt update
     sudo apt install google-chrome-stable
-    CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
-    wget -q http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
-    unzip chromedriver_linux64.zip
-    sudo mv chromedriver /usr/bin/chromedriver
-    sudo chown root:root /usr/bin/chromedriver
-    sudo chmod +x /usr/bin/chromedriver
   displayName: 'TOOLS: install google-chrome-stable'
 - script: npm install -g npm
   displayName: 'TOOLS: update NPM'
