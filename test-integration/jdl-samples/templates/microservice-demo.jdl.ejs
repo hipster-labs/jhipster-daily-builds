@@ -49,9 +49,8 @@ application {
    serverPort 8081,
    skipUserManagement true
  }
- entities * except Invoice, Shipment
+ entities *
 }
-
 
 entity Product {
    name String required
@@ -131,8 +130,7 @@ relationship OneToMany {
 }
 service Invoice, Shipment with serviceClass
 paginate Invoice, Shipment with pagination
-microservice Invoice, Shipment with accountancy
-microservice Customer, Product, ProductOrder, OrderItem with crm
+microservice Customer, Product, ProductOrder, OrderItem, Invoice, Shipment with crm
 
 // will be created under 'docker-compose' folder
 deployment {
