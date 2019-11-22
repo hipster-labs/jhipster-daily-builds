@@ -51,6 +51,7 @@ jobs:
     matrix:
       react-mysql:
         JHI_APP: react-mysql
+        JHI_ENTITY: sqlfull
       react-sass-noi18n:
         JHI_APP: react-sass-noi18n
       react-websocket:
