@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 schedules:
-- cron: "0 */6 * * *"
+- cron: "30 16 * * *"
   displayName: Windows.GitBash.Official
   branches:
     include:
@@ -32,6 +32,7 @@ jobs:
     JHI_RUN_APP: 1
     JHI_PROTRACTOR: 0
     JHI_ENTITY: sql
+    JHI_WINDOWS: true
     # if JHI_LIB_BRANCH value is release, use the release from Maven
     JHI_LIB_REPO: https://github.com/jhipster/jhipster.git
     JHI_LIB_BRANCH: master
@@ -100,7 +101,7 @@ jobs:
         JHI_ENTITY: micro
       webflux-mongodb:
         JHI_APP: webflux-mongodb
-        JHI_ENTITY: mongodb
+        JHI_ENTITY: none
 
   steps:
   - template: azure-template-windows.yml
