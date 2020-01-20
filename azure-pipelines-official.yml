@@ -110,6 +110,5 @@ jobs:
       webflux-mongodb:
         JHI_APP: webflux-mongodb
         JHI_ENTITY: none
-
   steps:
   - template: azure-template.yml

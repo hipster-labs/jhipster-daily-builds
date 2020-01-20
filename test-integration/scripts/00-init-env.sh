@@ -35,4 +35,6 @@ JHI_FOLDER_APP="$HOME"/app
 JHI_FOLDER_UAA="$HOME"/uaa
 
 # set correct OpenJDK version
-JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+if [[ -z "$JHI_WINDOWS" ]]; then
+    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+fi

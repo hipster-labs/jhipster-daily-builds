@@ -39,7 +39,7 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 | JDLMs.Redis.MySQL        | [![Build Status][img-jdlms-redis-mysql]][azure-url]        | 15:00 (UTC) |
 | JDLMs.Caffeine.MariaDB   | [![Build Status][img-jdlms-caffeine-mariadb]][azure-url]   | 15:30 (UTC) |
 | JDLMs.Caffeine.MySQL     | [![Build Status][img-jdlms-caffeine-mysql]][azure-url]     | 16:00 (UTC) |
-
+| Windows.GitBash.Official | [![Build Status][img-windows]][azure-url]                  | 16:30 (UTC) |
 
 [azure-url]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-official]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Official
@@ -75,3 +75,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-jdlms-caffeine-mariadb]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Caffeine.MariaDB
 [img-jdlms-caffeine-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Caffeine.MySQL
 [img-jdlms-keycloak]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Keycloak
+[img-windows]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Windows.GitBash.Official
