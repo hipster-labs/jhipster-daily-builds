@@ -90,4 +90,3 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         # fi
     fi
 done
-docker images
