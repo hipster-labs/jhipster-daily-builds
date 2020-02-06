@@ -51,7 +51,7 @@ jobs:
     matrix:
       ms-ngx-gateway-eureka-dev-uaa:
         JHI_APP: ms-ngx-gateway-eureka-uaa
-        JHI_PROFILE: dev
+        JHI_PROFILE: dev,webpack
       ms-ngx-gateway-eureka-uaa:
         JHI_APP: ms-ngx-gateway-eureka-uaa
         JHI_PROFILE: prod

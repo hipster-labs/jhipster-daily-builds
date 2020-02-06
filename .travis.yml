@@ -42,7 +42,7 @@ script:
   - echo "test script"
 env:
   global:
-    - JHI_PROFILE=dev
+    - JHI_PROFILE=dev,webpack
     - JHI_RUN_APP=1
     - JHI_PROTRACTOR=0
     # if JHI_LIB_BRANCH value is release, use the release from Maven
