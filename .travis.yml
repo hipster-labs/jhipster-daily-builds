@@ -23,7 +23,7 @@ services:
   - docker
 language: node_js
 node_js:
-  - "12.14.0"
+  - "12.16.0"
 jdk:
   - oraclejdk11
 addons:
