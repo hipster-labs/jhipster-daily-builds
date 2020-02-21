@@ -58,6 +58,9 @@ jobs:
       gradle-ngx-couchbase:
         JHI_APP: gradle-ngx-couchbase
         JHI_ENTITY: couchbase
+      gradle-ngx-neo4j:
+        JHI_APP: gradle-ngx-neo4j
+        JHI_ENTITY: neo4j
 
   steps:
   - template: azure-template.yml
