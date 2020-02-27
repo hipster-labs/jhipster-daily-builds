@@ -108,7 +108,7 @@ jobs:
                     profile: prod
                     war: 0
                     protractor: 1
-                    - app-type: eureka-oauth2-mysql-no
+                  - app-type: eureka-oauth2-mysql-no
                     entity: jdl
                     profile: prod
                     war: 0
