@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mysql-hazelcast
-                  - eureka-session-mysql-hazelcast
                   - eureka-oauth2-mysql-hazelcast
                   - consul-jwt-mysql-hazelcast
-                  - consul-session-mysql-hazelcast
                   - consul-oauth2-mysql-hazelcast
                 include:
                   - app-type: eureka-jwt-mysql-hazelcast
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mysql-hazelcast
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mysql-hazelcast
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mysql-hazelcast
                     entity: jdl
                     profile: prod
                     war: 0

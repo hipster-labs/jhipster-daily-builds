@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mysql-caffeine
-                  - eureka-session-mysql-caffeine
                   - eureka-oauth2-mysql-caffeine
                   - consul-jwt-mysql-caffeine
-                  - consul-session-mysql-caffeine
                   - consul-oauth2-mysql-caffeine
                 include:
                   - app-type: eureka-jwt-mysql-caffeine
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mysql-caffeine
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mysql-caffeine
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mysql-caffeine
                     entity: jdl
                     profile: prod
                     war: 0

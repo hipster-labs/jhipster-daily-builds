@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mariadb-memcached
-                  - eureka-session-mariadb-memcached
                   - eureka-oauth2-mariadb-memcached
                   - consul-jwt-mariadb-memcached
-                  - consul-session-mariadb-memcached
                   - consul-oauth2-mariadb-memcached
                 include:
                   - app-type: eureka-jwt-mariadb-memcached
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mariadb-memcached
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mariadb-memcached
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mariadb-memcached
                     entity: jdl
                     profile: prod
                     war: 0

@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mariadb-hazelcast
-                  - eureka-session-mariadb-hazelcast
                   - eureka-oauth2-mariadb-hazelcast
                   - consul-jwt-mariadb-hazelcast
-                  - consul-session-mariadb-hazelcast
                   - consul-oauth2-mariadb-hazelcast
                 include:
                   - app-type: eureka-jwt-mariadb-hazelcast
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mariadb-hazelcast
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mariadb-hazelcast
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mariadb-hazelcast
                     entity: jdl
                     profile: prod
                     war: 0

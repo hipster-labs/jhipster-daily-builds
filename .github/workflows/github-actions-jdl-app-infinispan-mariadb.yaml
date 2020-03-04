@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mariadb-infinispan
-                  - eureka-session-mariadb-infinispan
                   - eureka-oauth2-mariadb-infinispan
                   - consul-jwt-mariadb-infinispan
-                  - consul-session-mariadb-infinispan
                   - consul-oauth2-mariadb-infinispan
                 include:
                   - app-type: eureka-jwt-mariadb-infinispan
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mariadb-infinispan
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mariadb-infinispan
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mariadb-infinispan
                     entity: jdl
                     profile: prod
                     war: 0

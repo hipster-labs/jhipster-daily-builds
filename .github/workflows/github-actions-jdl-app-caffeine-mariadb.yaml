@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mariadb-caffeine
-                  - eureka-session-mariadb-caffeine
                   - eureka-oauth2-mariadb-caffeine
                   - consul-jwt-mariadb-caffeine
-                  - consul-session-mariadb-caffeine
                   - consul-oauth2-mariadb-caffeine
                 include:
                   - app-type: eureka-jwt-mariadb-caffeine
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mariadb-caffeine
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mariadb-caffeine
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mariadb-caffeine
                     entity: jdl
                     profile: prod
                     war: 0

@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mysql-memcached
-                  - eureka-session-mysql-memcached
                   - eureka-oauth2-mysql-memcached
                   - consul-jwt-mysql-memcached
-                  - consul-session-mysql-memcached
                   - consul-oauth2-mysql-memcached
                 include:
                   - app-type: eureka-jwt-mysql-memcached
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mysql-memcached
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mysql-memcached
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mysql-memcached
                     entity: jdl
                     profile: prod
                     war: 0

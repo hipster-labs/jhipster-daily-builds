@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mariadb-no
-                  - eureka-session-mariadb-no
                   - eureka-oauth2-mariadb-no
                   - consul-jwt-mariadb-no
-                  - consul-session-mariadb-no
                   - consul-oauth2-mariadb-no
                 include:
                   - app-type: eureka-jwt-mariadb-no
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mariadb-no
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mariadb-no
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mariadb-no
                     entity: jdl
                     profile: prod
                     war: 0

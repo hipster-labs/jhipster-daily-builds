@@ -48,18 +48,11 @@ jobs:
                 os: [ubuntu-latest]
                 app-type:
                   - eureka-jwt-mysql-redis
-                  - eureka-session-mysql-redis
                   - eureka-oauth2-mysql-redis
                   - consul-jwt-mysql-redis
-                  - consul-session-mysql-redis
                   - consul-oauth2-mysql-redis
                 include:
                   - app-type: eureka-jwt-mysql-redis
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: eureka-session-mysql-redis
                     entity: jdl
                     profile: prod
                     war: 0
@@ -70,11 +63,6 @@ jobs:
                     war: 0
                     protractor: 1
                   - app-type: consul-jwt-mysql-redis
-                    entity: jdl
-                    profile: prod
-                    war: 0
-                    protractor: 1
-                  - app-type: consul-session-mysql-redis
                     entity: jdl
                     profile: prod
                     war: 0
