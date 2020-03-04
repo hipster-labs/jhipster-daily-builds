@@ -50,7 +50,7 @@ jobs:
                   - eureka-oauth2-mysql-hazelcast
                   - eureka-oauth2-mariadb-hazelcast
                   - consul-oauth2-mysql-hazelcast
-                  - consul-oauth2-mariadb-hazecast
+                  - consul-oauth2-mariadb-hazelcast
                   - eureka-oauth2-mysql-ehcache
                   - eureka-oauth2-mariadb-ehcache
                   - consul-oauth2-mysql-ehcache
