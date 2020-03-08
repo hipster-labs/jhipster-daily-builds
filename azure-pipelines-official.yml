@@ -29,7 +29,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-18.04'
   variables:
-    JHI_PROFILE: dev
+    JHI_PROFILE: dev,webpack
     JHI_RUN_APP: 1
     JHI_PROTRACTOR: 0
     JHI_ENTITY: sql
@@ -65,7 +65,8 @@ jobs:
         JHI_PROTRACTOR: 1
         JHI_ENTITY: sql
       ngx-mariadb-oauth2-sass-infinispan:
-        JHI_APP: ngx-mariadb-oauth2-sass-infinispan
+        JHI_APP: ngx-mariadb-oauth2-infinispan
+        JHI_PROFILE: prod
         JHI_PROTRACTOR: 1
         JHI_ENTITY: sql
       ms-ngx-gateway-eureka:
