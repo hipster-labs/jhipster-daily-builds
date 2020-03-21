@@ -50,12 +50,12 @@ jobs:
                 app-type:
                     - ms-ngx-gateway-eureka-uaa
                     - ms-micro-eureka-uaa
-                    - ms-ngx-gateway-consul-uaa
-                    - ms-micro-consul-uaa
+                    # - ms-ngx-gateway-consul-uaa
+                    # - ms-micro-consul-uaa
                     - gradle-ms-ngx-gateway-eureka-uaa
                     - gradle-ms-micro-eureka-uaa
-                    - gradle-ms-ngx-gateway-consul-uaa
-                    - gradle-ms-micro-consul-uaa
+                    # - gradle-ms-ngx-gateway-consul-uaa
+                    # - gradle-ms-micro-consul-uaa
                 include:
                     - app-type: ms-ngx-gateway-eureka-uaa
                       entity: uaa
@@ -67,16 +67,16 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 0
-                    - app-type: ms-ngx-gateway-consul-uaa
-                      entity: uaa
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    - app-type: ms-micro-consul-uaa
-                      entity: micro
-                      profile: prod
-                      war: 0
-                      protractor: 1
+                    # - app-type: ms-ngx-gateway-consul-uaa
+                    #   entity: uaa
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
+                    # - app-type: ms-micro-consul-uaa
+                    #   entity: micro
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
                     - app-type: gradle-ms-ngx-gateway-eureka-uaa
                       entity: uaa
                       profile: prod
@@ -87,16 +87,16 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 0
-                    - app-type: gradle-ms-ngx-gateway-consul-uaa
-                      entity: uaa
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    - app-type: gradle-ms-micro-consul-uaa
-                      entity: micro
-                      profile: prod
-                      war: 0
-                      protractor: 1
+                    # - app-type: gradle-ms-ngx-gateway-consul-uaa
+                    #   entity: uaa
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
+                    # - app-type: gradle-ms-micro-consul-uaa
+                    #   entity: micro
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
