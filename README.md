@@ -2,9 +2,11 @@
 
 ## GitHub Actions builds
 
-![Angular Maven](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg) ![Angular Maven NoSQL](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg) ![Angular Gradle](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle/badge.svg) ![Angular Gradle NoSQL](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20NoSQL/badge.svg)
+| <!-- -->                               | <!-- -->                                           | <!-- -->                                 | <!-- -->                                             |
+|:---------------------------------------|:---------------------------------------------------|:-----------------------------------------|:-----------------------------------------------------|
+| ![Angular Maven][github-angular-maven] | ![Angular Maven NoSQL][github-angular-maven-nosql] | ![Angular Gradle][github-angular-gradle] | ![Angular Gradle NoSQL][github-angular-gradle-nosql] |
+| ![React Maven][github-react-maven]     | ![React Maven NoSQL][github-react-maven-nosql]     | ![React Gradle][github-react-gradle]     | ![React Gradle NoSQL][github-react-gradle-nosql]     |
 
-![React Maven](https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven/badge.svg) ![React Maven NoSQL](https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20NoSQL/badge.svg) ![React Gradle](https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle/badge.svg) ![React Gradle NoSQL](https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20NoSQL/badge.svg)
 
 ## Azure builds
 
@@ -82,3 +84,13 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-jdlms-caffeine-mysql]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Caffeine.MySQL
 [img-jdlms-keycloak]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Keycloak
 [img-windows]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Windows.GitBash.Official
+
+[github-angular-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg
+[github-angular-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg
+[github-angular-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle/badge.svg
+[github-angular-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20NoSQL/badge.svg
+
+[github-react-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven/badge.svg
+[github-react-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20NoSQL/badge.svg
+[github-react-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle/badge.svg
+[github-react-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20NoSQL/badge.svg
