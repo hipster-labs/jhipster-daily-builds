@@ -1,8 +1,12 @@
 # jhipster-daily-builds
 
-All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
+## GitHub Actions builds
+
+![Angular Maven](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg)
 
 ## Azure builds
+
+All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 
 | Type                     | Status                                                     | At          |
 |:-------------------------|:-----------------------------------------------------------|:------------|
