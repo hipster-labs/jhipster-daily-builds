@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: Elasticsearch
-# on: [push, pull_request]
-on:
-    schedule:
-        - cron: '0 5 * * *'
+name: Yarn
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '30 7 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,16 +48,28 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - ngx-psql-es-noi18n-mapsid
-                    - gradle-ngx-psql-es-noi18n
+                    - yarn-ngx-mysql
+                    - yarn-gradle-ngx-mysql
+                    - yarn-react-mysql
+                    - yarn-gradle-react-mysql
                 include:
-                    - app-type: ngx-psql-es-noi18n-mapsid
-                      entity: sqllight
+                    - app-type: yarn-ngx-mysql
+                      entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-psql-es-noi18n
-                      entity: sqllight
+                    - app-type: yarn-gradle-ngx-mysql
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: yarn-react-mysql
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: yarn-gradle-react-mysql
+                      entity: sql
                       profile: prod
                       war: 0
                       protractor: 1

@@ -5,7 +5,7 @@
 | <!-- -->                               | <!-- -->                                           | <!-- -->                                 | <!-- -->                                             |
 |:---------------------------------------|:---------------------------------------------------|:-----------------------------------------|:-----------------------------------------------------|
 | ![Angular Maven][github-angular-maven] | ![Angular Maven NoSQL][github-angular-maven-nosql] | ![Angular Gradle][github-angular-gradle] | ![Angular Gradle NoSQL][github-angular-gradle-nosql] |
-| ![React Maven][github-react-maven]     | ![React Maven NoSQL][github-react-maven-nosql]     | ![React Gradle][github-react-gradle]     | ![React Gradle NoSQL][github-react-gradle-nosql]     |
+| ![React Maven][github-react-maven]     | ![React Maven NoSQL][github-react-maven-nosql]     | ![React Gradle][github-react-gradle]     | ![React Gradle NoSQL][github-react-gradle-nosql]     |
 
 
 ## Azure builds
