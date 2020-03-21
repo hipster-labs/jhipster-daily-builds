@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: Angular Maven NoSQL
+name: Angular Gradle NoSQL
 on:
     schedule:
         - cron: '30 2 * * *'

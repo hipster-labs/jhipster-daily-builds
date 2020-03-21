@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: Angular Maven
+name: Angular Gradle
 on:
     schedule:
         - cron: '0 2 * * *'
