@@ -18,10 +18,10 @@
 #
 
 name: React Maven NoSQL
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '30 3 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '30 3 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -51,7 +51,7 @@ jobs:
                     - react-mongodb
                     - react-cassandra
                     - react-couchbase
-                    - react-neo4j
+                    # - react-neo4j
                 include:
                     - app-type: react-mongodb
                       entity: mongodb
@@ -68,11 +68,11 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: react-neo4j
-                      entity: neo4j
-                      profile: prod
-                      war: 0
-                      protractor: 1
+                    # - app-type: react-neo4j
+                    #   entity: neo4j
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}

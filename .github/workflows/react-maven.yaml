@@ -18,10 +18,10 @@
 #
 
 name: React Maven
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '0 3 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '0 3 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -52,7 +52,7 @@ jobs:
                     - react-sass-noi18n
                     - react-websocket
                     - react-hazelcast-cucumber
-                    - react-mariadb-kafka-nol2
+                    - react-mariadb-kafka
                     - react-session
                     - react-infinispan
                 include:
@@ -76,7 +76,7 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: react-mariadb-kafka-nol2
+                    - app-type: react-mariadb-kafka
                       entity: sql
                       profile: prod
                       war: 0
