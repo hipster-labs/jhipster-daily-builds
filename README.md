@@ -1,8 +1,8 @@
 # jhipster-daily-builds
 
-## GitHub Actions builds
+## GitHub Actions builds
 
-![Angular Maven](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg)
+![Angular Maven](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg)![Angular Maven NoSQL](https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg)
 
 ## Azure builds
 
