@@ -18,10 +18,10 @@
 #
 
 name: Docker Image
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '30 8 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '30 8 * * *'
 jobs:
     builds:
         runs-on: 'ubuntu-latest'

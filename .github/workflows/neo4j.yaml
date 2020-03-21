@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: Angular Gradle NoSQL
-# on: [push, pull_request]
-on:
-    schedule:
-        - cron: '30 2 * * *'
+name: Neo4j
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '0 9 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,31 +48,19 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-ngx-mongodb
-                    - gradle-ngx-cassandra
-                    - gradle-ngx-couchbase
-                    # - gradle-ngx-neo4j
+                    - ngx-neo4j
+                    - gradle-ngx-neo4j
                 include:
-                    - app-type: gradle-ngx-mongodb
-                      entity: mongodb
+                    - app-type: ngx-neo4j
+                      entity: neo4j
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-cassandra
-                      entity: cassandra
+                    - app-type: gradle-ngx-neo4j
+                      entity: neo4j
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-couchbase
-                      entity: couchbase
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    # - app-type: gradle-ngx-neo4j
-                    #   entity: neo4j
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}

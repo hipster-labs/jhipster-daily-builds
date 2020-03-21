@@ -51,7 +51,7 @@ jobs:
                     - ngx-mongodb
                     - ngx-cassandra
                     - ngx-couchbase
-                    - ngx-neo4j
+                    # - ngx-neo4j
                 include:
                     - app-type: ngx-mongodb
                       entity: mongodb
@@ -68,11 +68,11 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: ngx-neo4j
-                      entity: neo4j
-                      profile: prod
-                      war: 0
-                      protractor: 1
+                    # - app-type: ngx-neo4j
+                    #   entity: neo4j
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
