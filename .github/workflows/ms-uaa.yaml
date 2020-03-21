@@ -21,7 +21,7 @@ name: Microservices UAA
 on: [push, pull_request]
 # on:
 #     schedule:
-#         - cron: '0 6 * * *'
+#         - cron: '0 8 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -58,7 +58,7 @@ jobs:
                     - gradle-ms-micro-consul-uaa
                 include:
                     - app-type: ms-ngx-gateway-eureka-uaa
-                      entity: sql
+                      entity: uaa
                       profile: prod
                       war: 0
                       protractor: 1
@@ -68,7 +68,7 @@ jobs:
                       war: 0
                       protractor: 0
                     - app-type: ms-ngx-gateway-consul-uaa
-                      entity: sql
+                      entity: uaa
                       profile: prod
                       war: 0
                       protractor: 1
@@ -78,7 +78,7 @@ jobs:
                       war: 0
                       protractor: 1
                     - app-type: gradle-ms-ngx-gateway-eureka-uaa
-                      entity: sql
+                      entity: uaa
                       profile: prod
                       war: 0
                       protractor: 1
@@ -88,7 +88,7 @@ jobs:
                       war: 0
                       protractor: 0
                     - app-type: gradle-ms-ngx-gateway-consul-uaa
-                      entity: sql
+                      entity: uaa
                       profile: prod
                       war: 0
                       protractor: 1
