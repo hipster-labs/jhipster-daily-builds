@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: Angular Gradle
-on:
-    schedule:
-        - cron: '0 2 * * *'
+name: React Gradle
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '0 4 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -47,45 +48,45 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-ngx-mysql
-                    - gradle-ngx-sass-noi18n
-                    - gradle-ngx-websocket
-                    - gradle-ngx-hazelcast-cucumber
-                    - gradle-ngx-mariadb-kafka-nol2
-                    - gradle-ngx-session
-                    - gradle-ngx-infinispan
+                    - gradle-react-mysql
+                    - gradle-react-sass-noi18n
+                    - gradle-react-websocket
+                    - gradle-react-hazelcast-cucumber
+                    - gradle-react-mariadb-kafka-nol2
+                    - gradle-react-session
+                    - gradle-react-infinispan
                 include:
-                    - app-type: gradle-ngx-mysql
+                    - app-type: gradle-react-mysql
                       entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-sass-noi18n
+                    - app-type: gradle-react-sass-noi18n
                       entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-websocket
+                    - app-type: gradle-react-websocket
                       entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-hazelcast-cucumber
+                    - app-type: gradle-react-hazelcast-cucumber
                       entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-mariadb-kafka-nol2
+                    - app-type: gradle-react-mariadb-kafka-nol2
                       entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-session
+                    - app-type: gradle-react-session
                       entity: sql
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-infinispan
+                    - app-type: gradle-react-infinispan
                       entity: sql
                       profile: prod
                       war: 0

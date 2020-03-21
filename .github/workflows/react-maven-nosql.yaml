@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: Angular Gradle
-on:
-    schedule:
-        - cron: '0 2 * * *'
+name: React Maven NoSQL
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '30 3 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -47,46 +48,28 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-ngx-mysql
-                    - gradle-ngx-sass-noi18n
-                    - gradle-ngx-websocket
-                    - gradle-ngx-hazelcast-cucumber
-                    - gradle-ngx-mariadb-kafka-nol2
-                    - gradle-ngx-session
-                    - gradle-ngx-infinispan
+                    - react-mongodb
+                    - react-cassandra
+                    - react-couchbase
+                    - react-neo4j
                 include:
-                    - app-type: gradle-ngx-mysql
-                      entity: sqlfull
+                    - app-type: react-mongodb
+                      entity: mongodb
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-sass-noi18n
-                      entity: sql
+                    - app-type: react-cassandra
+                      entity: cassandra
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-websocket
-                      entity: sql
+                    - app-type: react-couchbase
+                      entity: couchbase
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-ngx-hazelcast-cucumber
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    - app-type: gradle-ngx-mariadb-kafka-nol2
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    - app-type: gradle-ngx-session
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      protractor: 1
-                    - app-type: gradle-ngx-infinispan
-                      entity: sql
+                    - app-type: react-neo4j
+                      entity: neo4j
                       profile: prod
                       war: 0
                       protractor: 1
