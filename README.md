@@ -6,7 +6,7 @@
 |:---------------------------------------|:---------------------------------------------------|:-----------------------------------------|:-----------------------------------------------------|
 | ![Angular Maven][github-angular-maven] | ![Angular Maven NoSQL][github-angular-maven-nosql] | ![Angular Gradle][github-angular-gradle] | ![Angular Gradle NoSQL][github-angular-gradle-nosql] |
 | ![React Maven][github-react-maven]     | ![React Maven NoSQL][github-react-maven-nosql]     | ![React Gradle][github-react-gradle]     | ![React Gradle NoSQL][github-react-gradle-nosql]     |
-
+| ![Elasticsearch][github-elasticsearch] | ![Monolith OAuth2][github-monolith-oauth2]         | ![Yarn][github-yarn]                     | ![No Database][github-no-database]                   |
 
 ## Azure builds
 
@@ -94,3 +94,8 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [github-react-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20NoSQL/badge.svg
 [github-react-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle/badge.svg
 [github-react-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20NoSQL/badge.svg
+
+[github-elasticsearch]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Elasticsearch/badge.svg
+[github-monolith-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Monolith%20OAuth2/badge.svg
+[github-yarn]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Yarn/badge.svg
+[github-no-database]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/No%20Database/badge.svg
