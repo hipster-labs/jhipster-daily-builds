@@ -7,7 +7,8 @@
 | ![Angular Maven][github-angular-maven] | ![Angular Maven NoSQL][github-angular-maven-nosql] | ![Angular Gradle][github-angular-gradle] | ![Angular Gradle NoSQL][github-angular-gradle-nosql] |
 | ![React Maven][github-react-maven]     | ![React Maven NoSQL][github-react-maven-nosql]     | ![React Gradle][github-react-gradle]     | ![React Gradle NoSQL][github-react-gradle-nosql]     |
 | ![Elasticsearch][github-elasticsearch] | ![Monolith OAuth2][github-monolith-oauth2]         | ![Yarn][github-yarn]                     | ![No Database][github-no-database]                   |
-| ![Microservices JWT][github-ms-jwt]    | ![Microservices OAuth2][github-ms-oauth2]          | ![Microservices UAA][github-ms-uaa]      | ![Docker Image][github-docker-image]                       |
+| ![Microservices JWT][github-ms-jwt]    | ![Microservices OAuth2][github-ms-oauth2]          | ![Microservices UAA][github-ms-uaa]      | ![Docker Image][github-docker-image]                 |
+| ![Neo4j][github-neo4j]                 |                                                    |                                          |                                                      |
 
 ## Azure builds
 
@@ -105,3 +106,5 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [github-ms-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20OAuth2/badge.svg
 [github-ms-uaa]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20UAA/badge.svg
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
+
+[github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
