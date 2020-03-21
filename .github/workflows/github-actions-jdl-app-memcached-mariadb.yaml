@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDL Microservices
+name: JDLMS_Memcached_MariaDB
 on:
   schedule:
     - cron: '0 11 * * *'

@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDL Microservices
+name: JDLMS_Redis_MySQL
 on:
   schedule:
     - cron: '30 15 * * *'
