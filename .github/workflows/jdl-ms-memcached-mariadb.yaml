@@ -18,10 +18,10 @@
 #
 
 name: JDLMS Memcached MariaDB
-# on: [push, pull_request]
-on:
-    schedule:
-        - cron: '0 7 * * *'
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '0 7 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
