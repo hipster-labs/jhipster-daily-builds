@@ -6,7 +6,7 @@
     "packageFolder": "io/github/jhipster/app",
     "serverPort": "8081",
     "authenticationType": "uaa",
-    "uaaBaseName": "travisUaa",
+    "uaaBaseName": "appUaa",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
     "websocket": false,
