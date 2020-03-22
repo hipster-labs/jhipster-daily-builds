@@ -2,6 +2,40 @@
 
 ## GitHub Actions builds
 
+![Angular Maven][github-angular-maven][github-actions]
+![Angular Maven NoSQL][github-angular-maven-nosql][github-actions]
+![Angular Gradle][github-angular-gradle][github-actions]
+![Angular Gradle NoSQL][github-angular-gradle-nosql][github-actions]
+![React Maven][github-react-maven][github-actions]
+![React Maven NoSQL][github-react-maven-nosql][github-actions]
+![React Gradle][github-react-gradle][github-actions]
+![React Gradle NoSQL][github-react-gradle-nosql][github-actions]
+![Elasticsearch][github-elasticsearch][github-actions]
+![Monolith OAuth2][github-monolith-oauth2][github-actions]
+![Yarn][github-yarn][github-actions]
+![No Database][github-no-database][github-actions]
+![Microservices JWT][github-ms-jwt][github-actions]
+![Microservices OAuth2][github-ms-oauth2][github-actions]
+![Microservices UAA][github-ms-uaa][github-actions]
+![Docker Image][github-docker-image][github-actions]
+![Neo4j][github-neo4j][github-actions]
+
+![JDLMS Caffeine MariaDB][github-jdlms-caffeine-mariadb][github-actions]
+![JDLMS Caffeine MySQL][github-jdlms-caffeine-mysql][github-actions]
+![JDLMS Ehcache MariaDB][github-jdlms-ehcache-mariadb][github-actions]
+![JDLMS Ehcache MySQL][github-jdlms-ehcache-mysql][github-actions]
+![JDLMS Hazelcast MariaDB][github-jdlms-hazelcast-mariadb][github-actions]
+![JDLMS Hazelcast MySQL][github-jdlms-hazelcast-mysql][github-actions]
+![JDLMS Infinispan MariaDB][github-jdlms-infinispan-mariadb][github-actions]
+![JDLMS Infinispan MySQL][github-jdlms-infinispan-mysql][github-actions]
+![JDLMS Memcached MariaDB][github-jdlms-memcached-mariadb][github-actions]
+![JDLMS Memcached MySQL][github-jdlms-memcached-mysql][github-actions]
+![JDLMS Nocache MariaDB][github-jdlms-nocache-mariadb][github-actions]
+![JDLMS Nocache MySQL][github-jdlms-nocache-mysql][github-actions]
+![JDLMS Redis MariaDB][github-jdlms-redis-mariadb][github-actions]
+![JDLMS Redis MySQL][github-jdlms-redis-mysql][github-actions]
+
+
 | <!-- -->                               | <!-- -->                                           | <!-- -->                                 | <!-- -->                                             |
 |:---------------------------------------|:---------------------------------------------------|:-----------------------------------------|:-----------------------------------------------------|
 | ![Angular Maven][github-angular-maven] | ![Angular Maven NoSQL][github-angular-maven-nosql] | ![Angular Gradle][github-angular-gradle] | ![Angular Gradle NoSQL][github-angular-gradle-nosql] |
@@ -87,6 +121,8 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [img-jdlms-keycloak]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/JDLMs.Keycloak
 [img-windows]: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_apis/build/status/Windows.GitBash.Official
 
+[github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
+
 [github-angular-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg
 [github-angular-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg
 [github-angular-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle/badge.svg
@@ -108,3 +144,4 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
 
 [github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
+

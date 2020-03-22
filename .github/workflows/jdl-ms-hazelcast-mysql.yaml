@@ -18,10 +18,10 @@
 #
 
 name: JDLMS Hazelcast MySQL
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '0 6 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '0 6 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -18,10 +18,10 @@
 #
 
 name: JDLMS Caffeine MariaDB
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '0 5 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '0 5 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
