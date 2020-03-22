@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "applicationType": "monolith",
-    "baseName": "travisSocialWebsocket",
+    "baseName": "appSocialWebsocket",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "authenticationType": "jwt",

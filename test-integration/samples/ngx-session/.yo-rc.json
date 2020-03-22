@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "baseName": "travisNg2Jwt",
+    "baseName": "appNg2Jwt",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "serverPort": "8080",

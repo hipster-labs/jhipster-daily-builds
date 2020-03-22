@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "baseName": "travisDefault",
+    "baseName": "appDefault",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "serverPort": "8080",

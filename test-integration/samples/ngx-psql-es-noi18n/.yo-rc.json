@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "applicationType": "monolith",
-    "baseName": "travisPsqlEsNoi18n",
+    "baseName": "appPsqlEsNoi18n",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "authenticationType": "jwt",

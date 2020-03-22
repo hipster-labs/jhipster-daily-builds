@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "applicationType": "monolith",
-    "baseName": "travisCouchbase",
+    "baseName": "appCouchbase",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "authenticationType": "jwt",

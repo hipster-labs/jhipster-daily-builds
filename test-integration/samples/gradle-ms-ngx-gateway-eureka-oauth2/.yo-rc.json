@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "applicationType": "gateway",
-    "baseName": "travisDefault",
+    "baseName": "appDefault",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "authenticationType": "oauth2",

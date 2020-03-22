@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "baseName": "travisNg2SassNoi18n",
+    "baseName": "appNg2SassNoi18n",
     "packageName": "io.github.jhipster.app",
     "packageFolder": "io/github/jhipster/app",
     "serverPort": "8080",
