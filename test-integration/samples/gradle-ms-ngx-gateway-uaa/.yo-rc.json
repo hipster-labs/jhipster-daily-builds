@@ -28,7 +28,7 @@
     "languages": [
       "en"
     ],
-    "travis": true,
+    "ci": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX"
   }

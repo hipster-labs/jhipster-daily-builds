@@ -28,7 +28,7 @@
     "skipUserManagement": true,
     "serverPort": "8081",
     "jhiPrefix": "jhi",
-    "travis": true,
+    "ci": true,
     "websocket": false,
     "messageBroker": false,
     "clientFramework": "angular1",

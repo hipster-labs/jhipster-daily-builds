@@ -31,6 +31,6 @@
     ],
     "skipClient": true,
     "skipUserManagement": true,
-    "travis": true
+    "ci": true
   }
 }

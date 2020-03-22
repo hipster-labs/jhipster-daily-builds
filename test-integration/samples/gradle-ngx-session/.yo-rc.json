@@ -26,7 +26,7 @@
     "languages": [
       "en"
     ],
-    "travis": true,
+    "ci": true,
     "serviceDiscoveryType": false,
     "rememberMeKey": "6c18944b8caccc396e79d82825d1eecd4a47c037e7241d176dbf25778658f263f15bdb60a925e818e698145237296029ecd4",
     "clientPackageManager": "npm",

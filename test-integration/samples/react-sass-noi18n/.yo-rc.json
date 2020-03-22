@@ -22,7 +22,7 @@
       "protractor"
     ],
     "jhiPrefix": "jhi",
-    "travis": true,
+    "ci": true,
     "serviceDiscoveryType": false,
     "enableTranslation": false,
     "clientPackageManager": "npm",

@@ -27,7 +27,7 @@
     "languages": [
       "en"
     ],
-    "travis": true,
+    "ci": true,
     "serviceDiscoveryType": false,
     "clientPackageManager": "yarn",
     "clientFramework": "angularX"
