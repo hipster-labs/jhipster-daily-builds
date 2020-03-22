@@ -2,8 +2,8 @@
   "generator-jhipster": {
     "applicationType": "gateway",
     "baseName": "travisDefault",
-    "packageName": "io.github.jhipster.travis",
-    "packageFolder": "io/github/jhipster/travis",
+    "packageName": "io.github.jhipster.app",
+    "packageFolder": "io/github/jhipster/app",
     "authenticationType": "oauth2",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,

@@ -2,8 +2,8 @@
   "generator-jhipster": {
     "applicationType": "monolith",
     "baseName": "travisMongo",
-    "packageName": "io.github.jhipster.travis",
-    "packageFolder": "io/github/jhipster/travis",
+    "packageName": "io.github.jhipster.app",
+    "packageFolder": "io/github/jhipster/app",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "enableHibernateCache": false,
