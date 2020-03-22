@@ -155,3 +155,17 @@ All builds: https://dev.azure.com/hipster-labs/jhipster-daily-builds/_build
 
 [github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
 
+[github-jdlms-caffeine-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MariaDB/badge.svg
+[github-jdlms-caffeine-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MySQL/badge.svg
+[github-jdlms-ehcache-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Ehcache%20MariaDB/badge.svg
+[github-jdlms-ehcache-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Ehcache%20MySQL/badge.svg
+[github-jdlms-hazelcast-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Hazelcast%20MariaDB/badge.svg
+[github-jdlms-hazelcast-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Hazelcast%20MySQL/badge.svg
+[github-jdlms-infinispan-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Infinispan%20MariaDB/badge.svg
+[github-jdlms-infinispan-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Infinispan%20MySQL/badge.svg
+[github-jdlms-memcached-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Memcached%20MariaDB/badge.svg
+[github-jdlms-memcached-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Memcached%20MySQL/badge.svg
+[github-jdlms-nocache-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Nocache%20MariaDB/badge.svg
+[github-jdlms-nocache-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Nocache%20MySQL/badge.svg
+[github-jdlms-redis-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MariaDB/badge.svg
+[github-jdlms-redis-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MySQL/badge.svg
