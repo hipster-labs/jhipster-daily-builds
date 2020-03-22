@@ -21,7 +21,7 @@ name: React Gradle NoSQL
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '30 4 * * *'
+        - cron: '45 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

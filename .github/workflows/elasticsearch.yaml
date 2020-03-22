@@ -21,7 +21,7 @@ name: Elasticsearch
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '0 5 * * *'
+        - cron: '0 2 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -21,7 +21,7 @@ name: Microservices JWT
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '0 7 * * *'
+        - cron: '0 3 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

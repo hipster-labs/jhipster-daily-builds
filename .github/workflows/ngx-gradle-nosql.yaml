@@ -21,7 +21,7 @@ name: Angular Gradle NoSQL
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '30 2 * * *'
+        - cron: '45 0 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

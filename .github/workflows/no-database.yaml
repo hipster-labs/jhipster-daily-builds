@@ -21,7 +21,7 @@ name: No Database
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '30 6 * * *'
+        - cron: '45 2 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -21,7 +21,7 @@ name: Angular Gradle
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '0 2 * * *'
+        - cron: '30 0 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
