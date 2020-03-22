@@ -18,10 +18,10 @@
 #
 
 name: JDLMS Redis MariaDB
-on: [push, pull_request]
-# on:
-#     schedule:
-#         - cron: '0 8 * * *'
+# on: [push, pull_request]
+on:
+    schedule:
+        - cron: '0 8 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
