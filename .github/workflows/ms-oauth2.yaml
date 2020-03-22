@@ -21,7 +21,7 @@ name: Microservices OAuth2
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '15 3 * * *'
+        - cron: '0 3 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Nocache_MySQL
+name: JDLMS Nocache MySQL
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '30 13 * * *'
+    schedule:
+        - cron: '30 7 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

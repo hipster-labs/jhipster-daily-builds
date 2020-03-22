@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Nocache_MariaDB
+name: JDLMS Nocache MariaDB
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '0 13 * * *'
+    schedule:
+        - cron: '30 7 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Redis_MariaDB
+name: JDLMS Redis MariaDB
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '30 14 * * *'
+    schedule:
+        - cron: '0 8 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

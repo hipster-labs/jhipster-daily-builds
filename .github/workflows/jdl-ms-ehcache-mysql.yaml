@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Ehcache_MySQL
+name: JDLMS Ehcache MySQL
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '30 10 * * *'
+    schedule:
+        - cron: '30 5 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Memcached_MySQL
+name: JDLMS Memcached MySQL
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '30 11 * * *'
+    schedule:
+        - cron: '0 7 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

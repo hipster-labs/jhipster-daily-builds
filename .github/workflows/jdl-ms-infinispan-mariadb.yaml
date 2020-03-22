@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
-name: JDLMS_Infinispan_MariaDB
+name: JDLMS Infinispan MariaDB
+# on: [push, pull_request]
 on:
-  schedule:
-    - cron: '0 12 * * *'
+    schedule:
+        - cron: '30 6 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
