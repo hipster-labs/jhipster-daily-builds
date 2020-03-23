@@ -2,6 +2,8 @@
 
 ## GitHub Actions builds
 
+Please note shown times below are in UTC.
+
 | Pipeline Status                                                                | At    |
 |:-------------------------------------------------------------------------------|:------|
 | [![Angular Maven][github-angular-maven]][github-actions]                       | 00:00 |
