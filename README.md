@@ -2,40 +2,40 @@
 
 ## GitHub Actions builds
 
-| Type                     | Azure Pipelines Status                                                         | At          |
-|:-------------------------|:-------------------------------------------------------------------------------|:------------|
-| Angular.Maven            | [![Angular Maven][github-angular-maven]][github-actions]                       | 00:00 (UTC) |
-| Angular.Maven.NoSQL      | [![Angular Maven NoSQL][github-angular-maven-nosql]][github-actions]           | 00:00 (UTC) |
-| Angular.Gradle           | [![Angular Gradle][github-angular-gradle]][github-actions]                     | 00:30 (UTC) |
-| Angular.Gradle.NoSQL     | [![Angular Gradle NoSQL][github-angular-gradle-nosql]][github-actions]         | 00:30 (UTC) |
-| React.Maven              | [![React Maven][github-react-maven]][github-actions]                           | 01:00 (UTC) |
-| React.Maven.NoSQL        | [![React Maven NoSQL][github-react-maven-nosql]][github-actions]               | 01:00 (UTC) |
-| React.Gradle             | [![React Gradle][github-react-gradle]][github-actions]                         | 01:30 (UTC) |
-| React.Gradle.NoSQL       | [![React Gradle NoSQL][github-react-gradle-nosql]][github-actions]             | 01:30 (UTC) |
-| Elasticsearch            | [![Elasticsearch][github-elasticsearch]][github-actions]                       | 02:00 (UTC) |
-| Monolith.OAuth2          | [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:00 (UTC) |
-| Yarn                     | [![Yarn][github-yarn]][github-actions]                                         | 02:30 (UTC) |
-| No Database              | [![No Database][github-no-database]][github-actions]                           | 02:30 (UTC) |
-| Microservices.JWT        | [![Microservices JWT][github-ms-jwt]][github-actions]                          | 03:00 (UTC) |
-| Microservices.OAuth2     | [![Microservices OAuth2][github-ms-oauth2]][github-actions]                    | 03:00 (UTC) |
-| Microservices.UAA        | [![Microservices UAA][github-ms-uaa]][github-actions]                          | 03:30 (UTC) |
-| Docker                   | [![Docker Image][github-docker-image]][github-actions]                         | 03:30 (UTC) |
-| Neo4J                    | [![Neo4j][github-neo4j]][github-actions]                                       | 04:00 (UTC) | 
-| JDLMs.Caffeine.MariaDB   | [![JDLMS Caffeine MariaDB][github-jdlms-caffeine-mariadb]][github-actions]     | 05:00 (UTC) |
-| JDLMs.Caffeine.MySQL     | [![JDLMS Caffeine MySQL][github-jdlms-caffeine-mysql]][github-actions]         | 05:00 (UTC) |
-| JDLMs.Ehcache.MariaDB    | [![JDLMS Ehcache MariaDB][github-jdlms-ehcache-mariadb]][github-actions]       | 05:30 (UTC) |
-| JDLMs.Ehcache.MySQL      | [![JDLMS Ehcache MySQL][github-jdlms-ehcache-mysql]][github-actions]           | 05:30 (UTC) |
-| JDLMs.Hazelcast.MariaDB  | [![JDLMS Hazelcast MariaDB][github-jdlms-hazelcast-mariadb]][github-actions]   | 06:00 (UTC) |
-| JDLMs.Hazelcast.MySQL    | [![JDLMS Hazelcast MySQL][github-jdlms-hazelcast-mysql]][github-actions]       | 06:00 (UTC) |
-| JDLMs.Infinispan.MariaDB | [![JDLMS Infinispan MariaDB][github-jdlms-infinispan-mariadb]][github-actions] | 06:30 (UTC) |
-| JDLMs.Infinispan.MySQL   | [![JDLMS Infinispan MySQL][github-jdlms-infinispan-mysql]][github-actions]     | 06:30 (UTC) |
-| JDLMs.Memcached.MariaDB  | [![JDLMS Memcached MariaDB][github-jdlms-memcached-mariadb]][github-actions]   | 07:00 (UTC) |
-| JDLMs.Memcached.MySQL    | [![JDLMS Memcached MySQL][github-jdlms-memcached-mysql]][github-actions]       | 07:00 (UTC) |
-| JDLMs.Nocache.MariaDB    | [![JDLMS Nocache MariaDB][github-jdlms-nocache-mariadb]][github-actions]       | 07:30 (UTC) |
-| JDLMS.Nocache.MySQL      | [![JDLMS Nocache MySQL][github-jdlms-nocache-mysql]][github-actions]           | 07:30 (UTC) |
-| JDLMs.Redis.MariaDB      | [![JDLMS Redis MariaDB][github-jdlms-redis-mariadb]][github-actions]           | 08:00 (UTC) |
-| JDLMs.Redis.MySQL        | [![JDLMS Redis MySQL][github-jdlms-redis-mysql]][github-actions]               | 08:00 (UTC) |
-| Windows.GitBash.Official | # TODO [![Build Status][img-windows]][azure-url]                               | 16:30 (UTC) |
+| Pipeline Status                                                                | At    |
+|:-------------------------------------------------------------------------------|:------|
+| [![Angular Maven][github-angular-maven]][github-actions]                       | 00:00 |
+| [![Angular Maven NoSQL][github-angular-maven-nosql]][github-actions]           | 00:00 |
+| [![Angular Gradle][github-angular-gradle]][github-actions]                     | 00:30 |
+| [![Angular Gradle NoSQL][github-angular-gradle-nosql]][github-actions]         | 00:30 |
+| [![React Maven][github-react-maven]][github-actions]                           | 01:00 |
+| [![React Maven NoSQL][github-react-maven-nosql]][github-actions]               | 01:00 |
+| [![React Gradle][github-react-gradle]][github-actions]                         | 01:30 |
+| [![React Gradle NoSQL][github-react-gradle-nosql]][github-actions]             | 01:30 |
+| [![Elasticsearch][github-elasticsearch]][github-actions]                       | 02:00 |
+| [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:00 |
+| [![Yarn][github-yarn]][github-actions]                                         | 02:30 |
+| [![No Database][github-no-database]][github-actions]                           | 02:30 |
+| [![Microservices JWT][github-ms-jwt]][github-actions]                          | 03:00 |
+| [![Microservices OAuth2][github-ms-oauth2]][github-actions]                    | 03:00 |
+| [![Microservices UAA][github-ms-uaa]][github-actions]                          | 03:30 |
+| [![Docker Image][github-docker-image]][github-actions]                         | 03:30 |
+| [![Neo4j][github-neo4j]][github-actions]                                       | 04:00 | 
+| [![JDLMS Caffeine MariaDB][github-jdlms-caffeine-mariadb]][github-actions]     | 05:00 |
+| [![JDLMS Caffeine MySQL][github-jdlms-caffeine-mysql]][github-actions]         | 05:00 |
+| [![JDLMS Ehcache MariaDB][github-jdlms-ehcache-mariadb]][github-actions]       | 05:30 |
+| [![JDLMS Ehcache MySQL][github-jdlms-ehcache-mysql]][github-actions]           | 05:30 |
+| [![JDLMS Hazelcast MariaDB][github-jdlms-hazelcast-mariadb]][github-actions]   | 06:00 |
+| [![JDLMS Hazelcast MySQL][github-jdlms-hazelcast-mysql]][github-actions]       | 06:00 |
+| [![JDLMS Infinispan MariaDB][github-jdlms-infinispan-mariadb]][github-actions] | 06:30 |
+| [![JDLMS Infinispan MySQL][github-jdlms-infinispan-mysql]][github-actions]     | 06:30 |
+| [![JDLMS Memcached MariaDB][github-jdlms-memcached-mariadb]][github-actions]   | 07:00 |
+| [![JDLMS Memcached MySQL][github-jdlms-memcached-mysql]][github-actions]       | 07:00 |
+| [![JDLMS Nocache MariaDB][github-jdlms-nocache-mariadb]][github-actions]       | 07:30 |
+| [![JDLMS Nocache MySQL][github-jdlms-nocache-mysql]][github-actions]           | 07:30 |
+| [![JDLMS Redis MariaDB][github-jdlms-redis-mariadb]][github-actions]           | 08:00 |
+| [![JDLMS Redis MySQL][github-jdlms-redis-mysql]][github-actions]               | 08:00 |
+| # TODO [![Build Status][img-windows]][azure-url]                               | 16:30 |
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
 
