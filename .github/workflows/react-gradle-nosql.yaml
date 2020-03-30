@@ -50,7 +50,7 @@ jobs:
                 app-type:
                     - gradle-react-mongodb
                     - gradle-react-cassandra
-                    - gradle-react-couchbase
+                    # - gradle-react-couchbase
                     # - gradle-react-neo4j
                 include:
                     - app-type: gradle-react-mongodb
