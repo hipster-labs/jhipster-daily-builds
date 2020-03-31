@@ -75,30 +75,30 @@ jobs:
                   entity: sql
                 - app-type: ms-ngx-gateway-eureka
                   entity: sql
-                - app-tpye: ms-micro-eureka
+                - app-type: ms-micro-eureka
                   entity: micro
                 - app-type: ngx-mongodb-kafka-cucumber
                   entity: mongodb
-                - app-type: react-default
-                  profile: prod
-                  protractor: 1
-                  entity: sql
-                - app-type: react-noi18n-es-ws-gradle-session
-                  profile: prod
-                  protractor: 1
-                  entity: sql
-                - app-type: ms-ngx-gateway-eureka-oauth2
-                  profile: prod
-                  protractor: 1
-                  entity: sql
-                - app-type: ms-ngx-gateway-consul
-                  entity: sql
-                - app-type: ms-ngx-gateway-uaa
-                  entity: uaa
-                - app-type: ms-micro-consul
-                  entity: micro
-                - app-type: webflux-mongodb
-                  entity: none
+                # - app-type: react-default
+                #   profile: prod
+                #   protractor: 1
+                #   entity: sql
+                # - app-type: react-noi18n-es-ws-gradle-session
+                #   profile: prod
+                #   protractor: 1
+                #   entity: sql
+                # - app-type: ms-ngx-gateway-eureka-oauth2
+                #   profile: prod
+                #   protractor: 1
+                #   entity: sql
+                # - app-type: ms-ngx-gateway-consul
+                #   entity: sql
+                # - app-type: ms-ngx-gateway-uaa
+                #   entity: uaa
+                # - app-type: ms-micro-consul
+                #   entity: micro
+                # - app-type: webflux-mongodb
+                #   entity: none
         env:
           JHI_ENTITY: ${{ matrix.entity }}
           JHI_APP: ${{ matrix.app-type }}
