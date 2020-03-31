@@ -63,11 +63,11 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-react-couchbase
-                      entity: couchbase
-                      profile: prod
-                      war: 0
-                      protractor: 1
+                    # - app-type: gradle-react-couchbase
+                    #   entity: couchbase
+                    #   profile: prod
+                    #   war: 0
+                    #   protractor: 1
                     # - app-type: gradle-react-neo4j
                     #   entity: neo4j
                     #   profile: prod
