@@ -38,7 +38,7 @@ Please note shown times below are in UTC.
 | [![JDLMS Nocache MySQL][github-jdlms-nocache-mysql]][github-actions]           | 07:30 |
 | [![JDLMS Redis MariaDB][github-jdlms-redis-mariadb]][github-actions]           | 08:00 |
 | [![JDLMS Redis MySQL][github-jdlms-redis-mysql]][github-actions]               | 08:00 |
-| # TODO [![Build Status][img-windows]][azure-url]                               | 16:30 |
+| [![Official Windows][github-official-windows]][github-actions]                 | 08:30 |
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
 
@@ -79,3 +79,4 @@ Please note shown times below are in UTC.
 [github-jdlms-nocache-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Nocache%20MySQL/badge.svg
 [github-jdlms-redis-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MariaDB/badge.svg
 [github-jdlms-redis-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MySQL/badge.svg
+[github-official-windows]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Official%20Windows/badge.svg
