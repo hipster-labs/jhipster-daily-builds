@@ -21,7 +21,7 @@ name: Couchbase
 # on: [push, pull_request]
 on:
    schedule:
-       - cron: '0,30 * * * *'
+       - cron: '0 4 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
