@@ -54,6 +54,7 @@ jobs:
                 app-type:
                     - ngx-neo4j
                     - gradle-ngx-neo4j
+                    - webflux-neo4j
                 include:
                     - app-type: ngx-neo4j
                       entity: neo4j
@@ -61,6 +62,11 @@ jobs:
                       war: 0
                       protractor: 1
                     - app-type: gradle-ngx-neo4j
+                      entity: neo4j
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: webflux-neo4j
                       entity: neo4j
                       profile: prod
                       war: 0
