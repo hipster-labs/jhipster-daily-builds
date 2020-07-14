@@ -113,6 +113,8 @@ jobs:
               run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
             - name: 'GENERATION: jhipster info'
               run: $JHI_SCRIPTS/14-jhipster-info.sh
+            - name: 'DEBUG'
+              run: cat "$JHI_FOLDER_APP"/pom.xml
             #----------------------------------------------------------------------
             # Launch tests
             #----------------------------------------------------------------------
