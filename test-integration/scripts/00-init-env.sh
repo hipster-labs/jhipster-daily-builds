@@ -25,15 +25,15 @@ JHI_FOLDER_APP="$HOME"/app
 JHI_FOLDER_UAA="$HOME"/uaa
 
 # set correct OpenJDK version
-if [[ -z "$JHI_WINDOWS" ]]; then
-    echo "====> DEBUG1"
-    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-fi
+# if [[ -z "$JHI_WINDOWS" ]]; then
+#     echo "====> DEBUG1"
+#     JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+# fi
 
 # set correct OpenJDK version
-if [[ "$JHI_JDK" == "11" && "$JHI_GITHUB_CI" != "true" ]]; then
-    echo "====> DEBUG2"
-    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-fi
+# if [[ "$JHI_JDK" == "11" && "$JHI_GITHUB_CI" != "true" ]]; then
+#     echo "====> DEBUG2"
+#     JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+# fi
 
 echo JAVA_HOME="$JAVA_HOME"
