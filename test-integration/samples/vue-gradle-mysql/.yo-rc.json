@@ -9,11 +9,11 @@
     "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
+    "devDatabaseType": "mysql",
     "prodDatabaseType": "mysql",
     "searchEngine": false,
     "messageBroker": false,
-    "buildTool": "maven",
+    "buildTool": "gradle",
     "rememberMeKey": "448f9a67a8a292c4905a733ec22cc3b78e493c56",
     "useSass": false,
     "applicationType": "monolith",
@@ -30,6 +30,6 @@
     "ci": true,
     "serviceDiscoveryType": false,
     "clientPackageManager": "npm",
-    "clientFramework": "vue"
+    "clientFramework": "angularX"
   }
 }
