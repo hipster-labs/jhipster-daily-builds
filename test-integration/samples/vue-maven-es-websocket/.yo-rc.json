@@ -17,8 +17,12 @@
     "testFrameworks": ["gatling", "protractor"],
     "pages": [],
     "creationTimestamp": 1595060535913,
+    "promptValues": {
+      "packageName": "io.github.jhipster.sample",
+      "nativeLanguage": "en"
+    },
     "serviceDiscoveryType": false,
-    "authenticationType": "session",
+    "authenticationType": "jwt",
     "packageName": "io.github.jhipster.sample",
     "serverPort": "8080",
     "cacheProvider": "ehcache",
