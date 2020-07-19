@@ -24,7 +24,8 @@ JHI_FOLDER_APP="$HOME"/app
 # folder for uaa app
 JHI_FOLDER_UAA="$HOME"/uaa
 
+# can be removed later if no need anymore
 # set correct OpenJDK version
-if [[ "$JHI_WINDOWS" == "true" ]]; then
-    JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-fi
+# if [[ "$JHI_WINDOWS" == "true" ]]; then
+#     JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+# fi
