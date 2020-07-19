@@ -17,10 +17,6 @@
     "testFrameworks": ["gatling", "protractor"],
     "pages": [],
     "creationTimestamp": 1595060535913,
-    "promptValues": {
-      "packageName": "io.github.jhipster.sample",
-      "nativeLanguage": "en"
-    },
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "packageName": "io.github.jhipster.sample",
@@ -37,12 +33,12 @@
     "messageBroker": false,
     "enableSwaggerCodegen": false,
     "clientFramework": "vue",
-    "clientTheme": "none",
+    "clientTheme": "cosmo",
     "enableTranslation": true,
     "nativeLanguage": "en",
     "packageFolder": "io/github/jhipster/sample",
     "jwtSecretKey": "OWE1OTNlNDU1ZDI1ZTdkYTU2NDA0M2Q2MTc0MjZmNTFlZWExMjZjYjQ2YjAyYzEwNTRjNTQxMjQ1MDk5MThkMTVmNDZjZWFmOTYyM2Y4M2YyNWJkZTQ5Nzk5YzEyYzBjNDY3NzVmMjE1NzU3MmE0NTFjZGU2Nzk2ZTY5MTVhYmU=",
-    "clientThemeVariant": "primary",
+    "clientThemeVariant": "light",
     "useSass": true,
     "languages": ["en"]
   }

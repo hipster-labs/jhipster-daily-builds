@@ -51,13 +51,12 @@ jobs:
                     - vue-maven-psql
                     - vue-maven-mysql
                     - vue-maven-noi18n
-                    # - vue-maven-fulli18n
-                    # - vue-maven-fr
+                    - vue-maven-fulli18n-fr
                     - vue-maven-oauth2
-                    # - vue-maven-session
-                    # - vue-maven-es
-                    # - vue-maven-websocket
-                    # - vue-maven-theme
+                    - vue-maven-session
+                    - vue-maven-es
+                    - vue-maven-websocket
+                    - vue-maven-theme
                 include:
                     - app-type: vue-maven-psql
                       entity: sqlfull
@@ -74,36 +73,36 @@ jobs:
                       profile: prod
                       war: 0
                       protractor: 1
+                    - app-type: vue-maven-fulli18n-fr
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
                     - app-type: vue-maven-oauth2
                       entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    # - app-type: vue-maven-websocket
-                    #   entity: sql
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: vue-maven-hazelcast-cucumber
-                    #   entity: sql
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: vue-maven-mariadb-kafka
-                    #   entity: sql
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: vue-maven-session
-                    #   entity: sql
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: vue-maven-infinispan
-                    #   entity: sql
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
+                    - app-type: vue-maven-session
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-es
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-websocket
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-theme
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
