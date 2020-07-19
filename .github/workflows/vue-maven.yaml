@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: React Maven NoSQL
+name: Vue Maven
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '50 0 * * *'
+        - cron: '20 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,31 +48,61 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - react-mongodb
-                    - react-cassandra
-                    # - react-couchbase
-                    # - react-neo4j
+                    - vue-maven-psql
+                    - vue-maven-mysql
+                    - vue-maven-noi18n
+                    - vue-maven-fulli18n-fr
+                    - vue-maven-oauth2
+                    - vue-maven-session
+                    - vue-maven-es
+                    - vue-maven-websocket
+                    - vue-maven-theme
                 include:
-                    - app-type: react-mongodb
-                      entity: mongodb
+                    - app-type: vue-maven-psql
+                      entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: react-cassandra
-                      entity: cassandra
+                    - app-type: vue-maven-mysql
+                      entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    # - app-type: react-couchbase
-                    #   entity: couchbase
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: react-neo4j
-                    #   entity: neo4j
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
+                    - app-type: vue-maven-noi18n
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-fulli18n-fr
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-oauth2
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-session
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-es
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-websocket
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-theme
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}

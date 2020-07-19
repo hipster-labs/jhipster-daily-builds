@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: React Maven NoSQL
+name: Vue Gradle
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '50 0 * * *'
+        - cron: '40 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,31 +48,61 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - react-mongodb
-                    - react-cassandra
-                    # - react-couchbase
-                    # - react-neo4j
+                    - vue-gradle-psql
+                    - vue-gradle-mysql
+                    - vue-gradle-noi18n
+                    - vue-gradle-fulli18n-fr
+                    - vue-gradle-oauth2
+                    - vue-gradle-session
+                    - vue-gradle-es
+                    - vue-gradle-websocket
+                    - vue-gradle-theme
                 include:
-                    - app-type: react-mongodb
-                      entity: mongodb
+                    - app-type: vue-gradle-psql
+                      entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: react-cassandra
-                      entity: cassandra
+                    - app-type: vue-gradle-mysql
+                      entity: sqlfull
                       profile: prod
                       war: 0
                       protractor: 1
-                    # - app-type: react-couchbase
-                    #   entity: couchbase
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: react-neo4j
-                    #   entity: neo4j
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
+                    - app-type: vue-gradle-noi18n
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-fulli18n-fr
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-oauth2
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-session
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-es
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-websocket
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-theme
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}

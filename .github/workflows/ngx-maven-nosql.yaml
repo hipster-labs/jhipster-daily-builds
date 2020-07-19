@@ -21,7 +21,7 @@ name: Angular Maven NoSQL
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '0 0 * * *'
+        - cron: '10 0 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11

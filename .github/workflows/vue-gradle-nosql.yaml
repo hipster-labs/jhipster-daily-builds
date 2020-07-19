@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: React Maven NoSQL
+name: Vue Gradle NoSQL
 # on: [push, pull_request]
 on:
     schedule:
-        - cron: '50 0 * * *'
+        - cron: '50 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,31 +48,31 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - react-mongodb
-                    - react-cassandra
-                    # - react-couchbase
-                    # - react-neo4j
+                    - vue-gradle-mongodb
+                    - vue-gradle-cassandra
+                    - vue-gradle-couchbase
+                    - vue-gradle-neo4j
                 include:
-                    - app-type: react-mongodb
+                    - app-type: vue-gradle-mongodb
                       entity: mongodb
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: react-cassandra
+                    - app-type: vue-gradle-cassandra
                       entity: cassandra
                       profile: prod
                       war: 0
                       protractor: 1
-                    # - app-type: react-couchbase
-                    #   entity: couchbase
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: react-neo4j
-                    #   entity: neo4j
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
+                    - app-type: vue-gradle-couchbase
+                      entity: couchbase
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-neo4j
+                      entity: neo4j
+                      profile: prod
+                      war: 0
+                      protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
