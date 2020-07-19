@@ -53,7 +53,7 @@ jobs:
                     - vue-maven-noi18n
                     # - vue-maven-fulli18n
                     # - vue-maven-fr
-                    # - vue-maven-oauth2
+                    - vue-maven-oauth2
                     # - vue-maven-session
                     # - vue-maven-es
                     # - vue-maven-websocket
@@ -70,6 +70,11 @@ jobs:
                       war: 0
                       protractor: 1
                     - app-type: vue-maven-noi18n
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-maven-oauth2
                       entity: sqlfull
                       profile: prod
                       war: 0
