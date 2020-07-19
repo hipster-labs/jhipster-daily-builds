@@ -26,8 +26,6 @@ Please note shown times below are in UTC.
 | [![Microservices OAuth2][github-ms-oauth2]][github-actions]                    | 03:00 |
 | [![Microservices UAA][github-ms-uaa]][github-actions]                          | 03:30 |
 | [![Docker Image][github-docker-image]][github-actions]                         | 03:30 |
-| [![Neo4j][github-neo4j]][github-actions]                                       | 04:00 |
-| [![Couchbase][github-couchbase]][github-actions]                               | 04:00 |
 | [![JDLMS Caffeine MariaDB][github-jdlms-caffeine-mariadb]][github-actions]     | 05:00 |
 | [![JDLMS Caffeine MySQL][github-jdlms-caffeine-mysql]][github-actions]         | 05:00 |
 | [![JDLMS Ehcache MariaDB][github-jdlms-ehcache-mariadb]][github-actions]       | 05:30 |
@@ -70,9 +68,6 @@ Please note shown times below are in UTC.
 [github-ms-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20OAuth2/badge.svg
 [github-ms-uaa]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20UAA/badge.svg
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
-
-[github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
-[github-couchbase]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Couchbase/badge.svg
 
 [github-jdlms-caffeine-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MariaDB/badge.svg
 [github-jdlms-caffeine-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MySQL/badge.svg
