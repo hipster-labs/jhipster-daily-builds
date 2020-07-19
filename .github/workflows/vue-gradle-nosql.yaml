@@ -18,10 +18,10 @@
 #
 
 name: Vue Gradle NoSQL
-# on: [push, pull_request]
-on:
-    schedule:
-        - cron: '45 1 * * *'
+on: [push, pull_request]
+# on:
+#     schedule:
+#         - cron: '45 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,31 +48,31 @@ jobs:
                 node_version: [12.16.1]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-vue-mongodb
-                    - gradle-vue-cassandra
-                    # - gradle-vue-couchbase
-                    # - gradle-vue-neo4j
+                    - vue-gradle-mongodb
+                    - vue-gradle-cassandra
+                    - vue-gradle-couchbase
+                    - vue-gradle-neo4j
                 include:
-                    - app-type: gradle-vue-mongodb
+                    - app-type: vue-gradle-mongodb
                       entity: mongodb
                       profile: prod
                       war: 0
                       protractor: 1
-                    - app-type: gradle-vue-cassandra
+                    - app-type: vue-gradle-cassandra
                       entity: cassandra
                       profile: prod
                       war: 0
                       protractor: 1
-                    # - app-type: gradle-vue-couchbase
-                    #   entity: couchbase
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
-                    # - app-type: gradle-vue-neo4j
-                    #   entity: neo4j
-                    #   profile: prod
-                    #   war: 0
-                    #   protractor: 1
+                    - app-type: vue-gradle-couchbase
+                      entity: couchbase
+                      profile: prod
+                      war: 0
+                      protractor: 1
+                    - app-type: vue-gradle-neo4j
+                      entity: neo4j
+                      profile: prod
+                      war: 0
+                      protractor: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
