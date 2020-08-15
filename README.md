@@ -19,8 +19,7 @@ Please note shown times below are in UTC.
 | [![Vue Gradle][github-vue-gradle]][github-actions]                             | 01:40 |
 | [![Vue Gradle NoSQL][github-vue-gradle-nosql]][github-actions]                 | 01:50 |
 | [![Elasticsearch][github-elasticsearch]][github-actions]                       | 02:00 |
-| [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:00 |
-| [![Yarn][github-yarn]][github-actions]                                         | 02:30 |
+| [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:00 |                                     | 02:30 |
 | [![No Database][github-no-database]][github-actions]                           | 02:30 |
 | [![Microservices JWT][github-ms-jwt]][github-actions]                          | 03:00 |
 | [![Microservices OAuth2][github-ms-oauth2]][github-actions]                    | 03:00 |
@@ -61,7 +60,6 @@ Please note shown times below are in UTC.
 
 [github-elasticsearch]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Elasticsearch/badge.svg
 [github-monolith-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Monolith%20OAuth2/badge.svg
-[github-yarn]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Yarn/badge.svg
 [github-no-database]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/No%20Database/badge.svg
 
 [github-ms-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20JWT/badge.svg
