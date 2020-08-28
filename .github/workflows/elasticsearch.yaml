@@ -55,18 +55,18 @@ jobs:
                       entity: sqllight
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: gradle-ngx-psql-es-noi18n
                       entity: sqllight
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
             JHI_PROFILE: ${{ matrix.profile }}
             JHI_WAR: ${{ matrix.war }}
-            JHI_PROTRACTOR: ${{ matrix.protractor }}
+            JHI_E2E: ${{ matrix.e2e }}
         steps:
             #----------------------------------------------------------------------
             # Install all tools and check configuration
