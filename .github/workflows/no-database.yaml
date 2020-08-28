@@ -59,38 +59,38 @@ jobs:
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: ngx-nodatabase-oauth2
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: ngx-nodatabase-session
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: react-nodatabase-jwt-gradle
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: react-nodatabase-oauth2-gradle
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
                     - app-type: react-nodatabase-session-gradle
                       entity: none
                       profile: prod
                       war: 0
-                      protractor: 1
+                      e2e: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
             JHI_PROFILE: ${{ matrix.profile }}
             JHI_WAR: ${{ matrix.war }}
-            JHI_PROTRACTOR: ${{ matrix.protractor }}
+            JHI_E2E: ${{ matrix.e2e }}
         steps:
             #----------------------------------------------------------------------
             # Install all tools and check configuration
