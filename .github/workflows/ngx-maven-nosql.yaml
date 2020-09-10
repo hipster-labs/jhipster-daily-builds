@@ -50,7 +50,7 @@ jobs:
                 app-type:
                     - ngx-mongodb
                     - ngx-cassandra
-                    - ngx-couchbase
+                    # - ngx-couchbase
                     - ngx-neo4j
                 include:
                     - app-type: ngx-mongodb
@@ -63,11 +63,11 @@ jobs:
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: ngx-couchbase
-                      entity: couchbase
-                      profile: prod
-                      war: 0
-                      e2e: 1
+                    # - app-type: ngx-couchbase
+                    #   entity: couchbase
+                    #   profile: prod
+                    #   war: 0
+                    #   e2e: 1
                     - app-type: ngx-neo4j
                       entity: neo4j
                       profile: prod

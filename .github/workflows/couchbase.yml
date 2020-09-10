@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: Angular Gradle NoSQL
+name: Couchbase
 # on: [push, pull_request]
 on:
-    schedule:
-        - cron: '30 0 * * *'
+   schedule:
+       - cron: '0 4 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,28 +48,16 @@ jobs:
                 node_version: [12.18.3]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-ngx-mongodb
-                    - gradle-ngx-cassandra
-                    # - gradle-ngx-couchbase
-                    - gradle-ngx-neo4j
+                    - ngx-couchbase
+                    - gradle-ngx-couchbase
                 include:
-                    - app-type: gradle-ngx-mongodb
-                      entity: mongodb
+                    - app-type: ngx-couchbase
+                      entity: couchbase
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-ngx-cassandra
-                      entity: cassandra
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    # - app-type: gradle-ngx-couchbase
-                    #   entity: couchbase
-                    #   profile: prod
-                    #   war: 0
-                    #   e2e: 1
-                    - app-type: gradle-ngx-neo4j
-                      entity: neo4j
+                    - app-type: gradle-ngx-couchbase
+                      entity: couchbase
                       profile: prod
                       war: 0
                       e2e: 1
@@ -78,7 +66,7 @@ jobs:
             JHI_APP: ${{ matrix.app-type }}
             JHI_PROFILE: ${{ matrix.profile }}
             JHI_WAR: ${{ matrix.war }}
-            JHI_E2E: ${{ matrix.e2e }}
+            JHI_PROTRACTOR: ${{ matrix.protractor }}
         steps:
             #----------------------------------------------------------------------
             # Install all tools and check configuration
