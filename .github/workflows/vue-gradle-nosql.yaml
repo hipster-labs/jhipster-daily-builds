@@ -50,7 +50,7 @@ jobs:
                 app-type:
                     - vue-gradle-mongodb
                     - vue-gradle-cassandra
-                    - vue-gradle-couchbase
+                    # - vue-gradle-couchbase
                     - vue-gradle-neo4j
                 include:
                     - app-type: vue-gradle-mongodb
@@ -63,11 +63,11 @@ jobs:
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: vue-gradle-couchbase
-                      entity: couchbase
-                      profile: prod
-                      war: 0
-                      e2e: 1
+                    # - app-type: vue-gradle-couchbase
+                    #   entity: couchbase
+                    #   profile: prod
+                    #   war: 0
+                    #   e2e: 1
                     - app-type: vue-gradle-neo4j
                       entity: neo4j
                       profile: prod
