@@ -28,7 +28,7 @@ application {
    buildTool gradle,
    clientFramework angularX,
    enableSwaggerCodegen true,
-   testFrameworks [protractor]
+   testFrameworks [cypress]
  }
  entities *
 }
@@ -136,7 +136,7 @@ microservice Customer, Product, ProductOrder, OrderItem, Invoice, Shipment with 
 deployment {
    deploymentType docker-compose,
    appsFolders [store, crm],
-   dockerRepositoryName "jeromepham"
+   dockerRepositoryName "hipsterslabs"
    monitoring no,
    serviceDiscoveryType <%= sdType %>
 }

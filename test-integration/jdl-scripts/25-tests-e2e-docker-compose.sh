@@ -15,7 +15,7 @@ fi
 #-------------------------------------------------------------------------------
 # Functions
 #-------------------------------------------------------------------------------
-launchCurlOrProtractor() {
+launchCurlOrEndToEnd() {
     retryCount=1
     maxRetry=30
     httpUrl="http://localhost:8080"
@@ -38,11 +38,11 @@ launchCurlOrProtractor() {
         return 1
     fi
 
-    if [ "$JHI_PROTRACTOR" != 1 ]; then
+    if [ "$JHI_E2E" != 1 ]; then
         return 0
     fi
     
-    protractorResult=0
+    endToEndResult=0
     for local_folder in $(ls "$JHI_FOLDER_APP"); do
         if [ -d "$JHI_FOLDER_APP"/"$local_folder" ];
         then
@@ -61,11 +61,11 @@ launchCurlOrProtractor() {
                 echo "*** e2e tests failed... retryCount =" $retryCount "/" $maxRetry
                 sleep 15
             done
-            protractorResult=$((protractorResult + $result))
+            endToEndResult=$((endToEndResult + $result))
         fi
     done
 
-    if [ "$protractorResult" -ne 0 ]; then
+    if [ "$endToEndResult" -ne 0 ]; then
         return 1
     fi
     
@@ -77,5 +77,5 @@ launchCurlOrProtractor() {
 #-------------------------------------------------------------------------------
 if [ "$JHI_RUN_APP" == 1 ]; then
     # After the script 24 (deploy with docker compose), the app should be already up
-    launchCurlOrProtractor
+    launchCurlOrEndToEnd
 fi

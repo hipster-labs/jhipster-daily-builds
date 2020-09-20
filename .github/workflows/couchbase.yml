@@ -66,7 +66,7 @@ jobs:
             JHI_APP: ${{ matrix.app-type }}
             JHI_PROFILE: ${{ matrix.profile }}
             JHI_WAR: ${{ matrix.war }}
-            JHI_PROTRACTOR: ${{ matrix.protractor }}
+            JHI_E2E: ${{ matrix.e2e }}
         steps:
             #----------------------------------------------------------------------
             # Install all tools and check configuration

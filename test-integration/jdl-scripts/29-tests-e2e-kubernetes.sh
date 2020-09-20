@@ -5,7 +5,7 @@ source $(dirname $0)/00-init-env.sh
 #-------------------------------------------------------------------------------
 # Functions
 #-------------------------------------------------------------------------------
-launchCurlOrProtractor() {
+launchCurlOrEndToEnd() {
     retryCount=1
     maxRetry=60
 
@@ -46,7 +46,7 @@ launchCurlOrProtractor() {
         return 1
     fi
 
-    if [ "$JHI_PROTRACTOR" != 1 ]; then
+    if [ "$JHI_E2E" != 1 ]; then
         return 0
     fi
 
@@ -73,5 +73,5 @@ launchCurlOrProtractor() {
 if [ "$JHI_RUN_APP" == 1 ]; then
     # After the script 28 (deploy with kubernetes), the app should be already up
     export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
-    launchCurlOrProtractor
+    launchCurlOrEndToEnd
 fi
