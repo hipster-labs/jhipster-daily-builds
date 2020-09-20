@@ -21,9 +21,9 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
         echo "went into $JHI_FOLDER_APP/$local_folder"
         ls -ll
         #-------------------------------------------------------------------------------
-        # Decrease Angular timeout for Protractor tests
+        # Decrease Angular timeout for E2E tests
         #-------------------------------------------------------------------------------
-        if [ "$JHI_PROTRACTOR" == 1 ] && [ -e "src/main/webapp/app/app.module.ts" ]; then
+        if [ "$JHI_E2E" == 1 ] && [ -e "src/main/webapp/app/app.module.ts" ]; then
             sed -e 's/alertTimeout: 5000/alertTimeout: 1/1;' src/main/webapp/app/core/core.module.ts > src/main/webapp/app/core/core.module.ts.sed
             mv -f src/main/webapp/app/core/core.module.ts.sed src/main/webapp/app/core/core.module.ts
             cat src/main/webapp/app/core/core.module.ts | grep alertTimeout
