@@ -53,7 +53,7 @@ jobs:
                 os: [windows-latest]
                 app-type:
                     - ngx-default
-                    - ngx-psql-es-noi18n-mapsid
+                    - ngx-mysql-es-noi18n-mapsid
                     - ngx-gradle-fr
                     - ngx-mariadb-oauth2-sass-infinispan
                     - ms-ngx-gateway-eureka
@@ -64,7 +64,7 @@ jobs:
                       profile: prod
                       e2e: 1
                       entity: sql
-                    - app-type: ngx-psql-es-noi18n-mapsid
+                    - app-type: ngx-mysql-es-noi18n-mapsid
                       profile: prod
                       e2e: 1
                       entity: sql

@@ -48,15 +48,15 @@ jobs:
                 node_version: [12.18.3]
                 os: [ubuntu-latest]
                 app-type:
-                    - ngx-psql-es-noi18n-mapsid
-                    - gradle-ngx-psql-es-noi18n
+                    - ngx-mysql-es-noi18n-mapsid
+                    - gradle-ngx-mysql-es-noi18n
                 include:
-                    - app-type: ngx-psql-es-noi18n-mapsid
+                    - app-type: ngx-mysql-es-noi18n-mapsid
                       entity: sqllight
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-ngx-psql-es-noi18n
+                    - app-type: gradle-ngx-mysql-es-noi18n
                       entity: sqllight
                       profile: prod
                       war: 0
