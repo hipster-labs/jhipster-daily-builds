@@ -33,9 +33,9 @@ for local_folder in $(ls "$JHI_FOLDER_APP"); do
             cat pom.xml | grep \<jhipster-dependencies.version\>
 
         elif [[ -a gradlew ]]; then
-            sed -e 's/jhipster_dependencies_version=.*/jhipster_dependencies_version='$JHI_VERSION'/1;' gradle.properties > gradle.properties.sed
+            sed -e 's/jhipsterDependenciesVersion=.*/jhipsterDependenciesVersion='$JHI_VERSION'/1;' gradle.properties > gradle.properties.sed
             mv -f gradle.properties.sed gradle.properties
-            cat gradle.properties | grep jhipster_dependencies_version=
+            cat gradle.properties | grep jhipsterDependenciesVersion=
 
         fi
     fi
