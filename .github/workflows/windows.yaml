@@ -58,7 +58,7 @@ jobs:
                     - ngx-mariadb-oauth2-sass-infinispan
                     - ms-ngx-gateway-eureka
                     - ms-micro-eureka
-                    - ngx-mongodb-kafka-cucumber
+                    # - ngx-mongodb-kafka-cucumber
                 include:
                     - app-type: ngx-default
                       profile: prod
@@ -82,9 +82,9 @@ jobs:
                     - app-type: ms-micro-eureka
                       profile: prod
                       entity: micro
-                    - app-type: ngx-mongodb-kafka-cucumber
-                      profile: prod
-                      entity: mongodb
+                    # - app-type: ngx-mongodb-kafka-cucumber
+                    #   profile: prod
+                    #   entity: mongodb
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
