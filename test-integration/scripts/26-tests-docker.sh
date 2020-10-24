@@ -5,7 +5,7 @@ set -e
 #-------------------------------------------------------------------------------
 # Test Docker image
 #-------------------------------------------------------------------------------
-docker container run -d -e JHI_DISABLE_WEBPACK_LOGS=true --name jhipster jhipster/jhipster:master
+docker container run -d -e JHI_DISABLE_WEBPACK_LOGS=true --name jhipster jhipster/jhipster
 docker container ps
 docker container exec -i jhipster npm --version
 docker container exec -i jhipster yo --version
@@ -19,7 +19,7 @@ docker container exec -i jhipster git clone https://github.com/jhipster/jhipster
 docker container exec -w /home/jhipster/jhipster -i jhipster ./mvnw -ntp clean install -Dgpg.skip=true
 
 # generate sample
-docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/master/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
+docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/main/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
 docker container exec -i jhipster ls -al
 docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
 docker container exec -i jhipster ls -al /home/jhipster/app/
