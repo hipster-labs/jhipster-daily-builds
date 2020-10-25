@@ -5,7 +5,7 @@ set -e
 #-------------------------------------------------------------------------------
 # Test Docker image
 #-------------------------------------------------------------------------------
-docker container run -d -e JHI_DISABLE_WEBPACK_LOGS=true --name jhipster jhipster/jhipster
+docker container run -d -e JHI_DISABLE_WEBPACK_LOGS=true --name jhipster jhipster/jhipster:main
 docker container ps
 docker container exec -i jhipster npm --version
 docker container exec -i jhipster yo --version

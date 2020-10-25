@@ -35,7 +35,7 @@ jobs:
               run: docker version
             - name: 'TOOLS: docker-compose version'
               run: docker-compose version
-            - name: 'INSTALL: pull jhipster/jhipster image'
-              run: docker pull jhipster/jhipster
-            - name: 'TESTS: test jhipster/jhipster image'
+            - name: 'INSTALL: pull jhipster/jhipster:main image'
+              run: docker pull jhipster/jhipster:main
+            - name: 'TESTS: test jhipster/jhipster:main image'
               run: test-integration/scripts/26-tests-docker.sh
