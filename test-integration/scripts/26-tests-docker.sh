@@ -15,8 +15,8 @@ docker container exec -i jhipster jhipster --help --no-insight
 docker container exec -i jhipster jhipster info --no-insight
 
 # install JHipster dependencies
-docker container exec -i jhipster git clone https://github.com/jhipster/jhipster /home/jhipster/jhipster
-docker container exec -w /home/jhipster/jhipster -i jhipster ./mvnw -ntp clean install -Dgpg.skip=true
+docker container exec -i jhipster git clone https://github.com/jhipster/jhipster-bom /home/jhipster/jhipster-bom
+docker container exec -w /home/jhipster/jhipster-bom -i jhipster ./mvnw -ntp clean install -Dgpg.skip=true
 
 # generate sample
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/main/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
