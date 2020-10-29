@@ -19,3 +19,5 @@ docker ps -a
 echo "*** waiting 60sec"
 sleep 60
 docker ps -a
+
+docker-compose logs
