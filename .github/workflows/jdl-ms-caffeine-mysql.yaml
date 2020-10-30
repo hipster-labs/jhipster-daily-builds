@@ -18,8 +18,8 @@
 #
 
 name: JDLMS Caffeine MySQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '0 5 * * *'
 env:

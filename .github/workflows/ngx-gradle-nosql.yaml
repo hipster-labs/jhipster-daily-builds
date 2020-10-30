@@ -18,8 +18,8 @@
 #
 
 name: Angular Gradle NoSQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '30 0 * * *'
 env:

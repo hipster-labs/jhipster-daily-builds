@@ -18,8 +18,8 @@
 #
 
 name: JDLMS Nocache MySQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '30 7 * * *'
 env:

@@ -18,8 +18,8 @@
 #
 
 name: Vue Maven
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '20 1 * * *'
 env:

@@ -18,8 +18,8 @@
 #
 
 name: JDLMS Ehcache MySQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '30 5 * * *'
 env:

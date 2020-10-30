@@ -18,8 +18,8 @@
 #
 
 name: Vue Gradle
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '40 1 * * *'
 env:
