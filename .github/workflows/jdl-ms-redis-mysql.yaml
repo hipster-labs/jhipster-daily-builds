@@ -22,6 +22,7 @@ name: JDLMS Redis MySQL
 on:
     schedule:
         - cron: '0 8 * * *'
+    workflow_dispatch:
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
