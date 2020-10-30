@@ -18,8 +18,8 @@
 #
 
 name: Vue Gradle NoSQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '50 1 * * *'
 env:

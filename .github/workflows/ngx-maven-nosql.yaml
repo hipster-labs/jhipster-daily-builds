@@ -18,8 +18,8 @@
 #
 
 name: Angular Maven NoSQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '10 0 * * *'
 env:

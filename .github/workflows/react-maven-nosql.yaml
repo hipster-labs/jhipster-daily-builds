@@ -18,8 +18,8 @@
 #
 
 name: React Maven NoSQL
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '50 0 * * *'
 env:

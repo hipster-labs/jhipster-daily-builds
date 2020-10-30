@@ -18,8 +18,8 @@
 #
 
 name: Microservices JWT
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '0 3 * * *'
 env:

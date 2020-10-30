@@ -18,9 +18,9 @@
 #
 
 name: Couchbase
-# on: [push, pull_request]
 on:
-   schedule:
+    workflow_dispatch:
+    schedule:
        - cron: '0 4 * * *'
 env:
     JHI_RUN_APP: 1

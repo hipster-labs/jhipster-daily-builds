@@ -18,8 +18,8 @@
 #
 
 name: Microservices UAA
-# on: [push, pull_request]
 on:
+    workflow_dispatch:
     schedule:
         - cron: '30 3 * * *'
 env:
