@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: Angular Maven
+name: Vue Maven SQL
 on:
     workflow_dispatch:
     schedule:
-        - cron: '0 0 * * *'
+        - cron: '20 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,45 +48,57 @@ jobs:
                 node_version: [12.18.3]
                 os: [ubuntu-latest]
                 app-type:
-                    - ngx-mysql
-                    - ngx-sass-noi18n
-                    - ngx-websocket
-                    - ngx-hazelcast-cucumber
-                    - ngx-mariadb-kafka-nol2
-                    - ngx-session
-                    - ngx-infinispan
+                    - vue-maven-psql
+                    - vue-maven-mysql
+                    - vue-maven-noi18n
+                    - vue-maven-fulli18n-fr
+                    - vue-maven-oauth2
+                    - vue-maven-session
+                    - vue-maven-es
+                    - vue-maven-websocket
+                    - vue-maven-theme
                 include:
-                    - app-type: ngx-mysql
+                    - app-type: vue-maven-psql
                       entity: sqlfull
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: ngx-sass-noi18n
+                    - app-type: vue-maven-mysql
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: vue-maven-noi18n
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: vue-maven-fulli18n-fr
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: vue-maven-oauth2
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: vue-maven-session
+                      entity: sqlfull
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: vue-maven-es
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: ngx-websocket
+                    - app-type: vue-maven-websocket
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: ngx-hazelcast-cucumber
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: ngx-mariadb-kafka-nol2
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: ngx-session
-                      entity: sql
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: ngx-infinispan
+                    - app-type: vue-maven-theme
                       entity: sql
                       profile: prod
                       war: 0

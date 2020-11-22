@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: React Gradle
+name: React Maven SQL
 on:
     workflow_dispatch:
     schedule:
-        - cron: '0 1 * * *'
+        - cron: '40 0 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,45 +48,45 @@ jobs:
                 node_version: [12.18.3]
                 os: [ubuntu-latest]
                 app-type:
-                    - gradle-react-mysql
-                    - gradle-react-sass-noi18n
-                    - gradle-react-websocket
-                    - gradle-react-hazelcast-cucumber
-                    - gradle-react-mariadb-kafka-nol2
-                    - gradle-react-session
-                    - gradle-react-infinispan
+                    - react-mysql
+                    - react-sass-noi18n
+                    - react-websocket
+                    - react-hazelcast-cucumber
+                    - react-mariadb-kafka
+                    - react-session
+                    - react-infinispan
                 include:
-                    - app-type: gradle-react-mysql
+                    - app-type: react-mysql
                       entity: sqlfull
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-sass-noi18n
+                    - app-type: react-sass-noi18n
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-websocket
+                    - app-type: react-websocket
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-hazelcast-cucumber
+                    - app-type: react-hazelcast-cucumber
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-mariadb-kafka-nol2
+                    - app-type: react-mariadb-kafka
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-session
+                    - app-type: react-session
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: gradle-react-infinispan
+                    - app-type: react-infinispan
                       entity: sql
                       profile: prod
                       war: 0
