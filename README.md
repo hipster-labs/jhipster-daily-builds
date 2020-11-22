@@ -6,13 +6,13 @@ Please note shown times below are in UTC.
 
 | Pipeline Status                                                                | At    |
 |:-------------------------------------------------------------------------------|:------|
-| [![Angular Maven SQL][github-angular-maven]][github-actions]                   | 00:00 |
+| [![Angular Maven SQL][github-angular-maven-sql]][github-actions]               | 00:00 |
 | [![Angular Maven NoSQL][github-angular-maven-nosql]][github-actions]           | 00:10 |
-| [![Angular Gradle SQL][github-angular-gradle]][github-actions]                 | 00:20 |
+| [![Angular Gradle SQL][github-angular-gradle-sql]][github-actions]             | 00:20 |
 | [![Angular Gradle NoSQL][github-angular-gradle-nosql]][github-actions]         | 00:30 |
-| [![React Maven SQL][github-react-maven]][github-actions]                       | 00:40 |
+| [![React Maven SQL][github-react-maven-sql]][github-actions]                   | 00:40 |
 | [![React Maven NoSQL][github-react-maven-nosql]][github-actions]               | 00:50 |
-| [![React Gradle SQL][github-react-gradle]][github-actions]                     | 01:00 |
+| [![React Gradle SQL][github-react-gradle-sql]][github-actions]                 | 01:00 |
 | [![React Gradle NoSQL][github-react-gradle-nosql]][github-actions]             | 01:10 |
 | [![Vue Maven SQL][github-vue-maven]][github-actions]                           | 01:20 |
 | [![Vue Maven NoSQL][github-vue-maven-nosql]][github-actions]                   | 01:30 |
