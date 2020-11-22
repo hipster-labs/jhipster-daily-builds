@@ -6,17 +6,17 @@ Please note shown times below are in UTC.
 
 | Pipeline Status                                                                | At    |
 |:-------------------------------------------------------------------------------|:------|
-| [![Angular Maven][github-angular-maven]][github-actions]                       | 00:00 |
+| [![Angular Maven SQL][github-angular-maven]][github-actions]                   | 00:00 |
 | [![Angular Maven NoSQL][github-angular-maven-nosql]][github-actions]           | 00:10 |
-| [![Angular Gradle][github-angular-gradle]][github-actions]                     | 00:20 |
+| [![Angular Gradle SQL][github-angular-gradle]][github-actions]                 | 00:20 |
 | [![Angular Gradle NoSQL][github-angular-gradle-nosql]][github-actions]         | 00:30 |
-| [![React Maven][github-react-maven]][github-actions]                           | 00:40 |
+| [![React Maven SQL][github-react-maven]][github-actions]                       | 00:40 |
 | [![React Maven NoSQL][github-react-maven-nosql]][github-actions]               | 00:50 |
-| [![React Gradle][github-react-gradle]][github-actions]                         | 01:00 |
+| [![React Gradle SQL][github-react-gradle]][github-actions]                     | 01:00 |
 | [![React Gradle NoSQL][github-react-gradle-nosql]][github-actions]             | 01:10 |
-| [![Vue Maven][github-vue-maven]][github-actions]                               | 01:20 |
+| [![Vue Maven SQL][github-vue-maven]][github-actions]                           | 01:20 |
 | [![Vue Maven NoSQL][github-vue-maven-nosql]][github-actions]                   | 01:30 |
-| [![Vue Gradle][github-vue-gradle]][github-actions]                             | 01:40 |
+| [![Vue Gradle SQL][github-vue-gradle]][github-actions]                         | 01:40 |
 | [![Vue Gradle NoSQL][github-vue-gradle-nosql]][github-actions]                 | 01:50 |
 | [![Elasticsearch][github-elasticsearch]][github-actions]                       | 02:00 |
 | [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:30 |
@@ -44,19 +44,19 @@ Please note shown times below are in UTC.
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
 
-[github-angular-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven/badge.svg
+[github-angular-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20SQL/badge.svg
 [github-angular-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg
-[github-angular-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle/badge.svg
+[github-angular-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20SQL/badge.svg
 [github-angular-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20NoSQL/badge.svg
 
-[github-react-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven/badge.svg
+[github-react-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20SQL/badge.svg
 [github-react-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20NoSQL/badge.svg
-[github-react-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle/badge.svg
+[github-react-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20SQL/badge.svg
 [github-react-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20NoSQL/badge.svg
 
-[github-vue-maven]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Maven/badge.svg
+[github-vue-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Maven%20SQL/badge.svg
 [github-vue-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Maven%20NoSQL/badge.svg
-[github-vue-gradle]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Gradle/badge.svg
+[github-vue-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Gradle%20SQL/badge.svg
 [github-vue-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Gradle%20NoSQL/badge.svg
 
 [github-elasticsearch]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Elasticsearch/badge.svg

@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-name: Vue Maven
+name: React Gradle SQL
 on:
     workflow_dispatch:
     schedule:
-        - cron: '20 1 * * *'
+        - cron: '0 1 * * *'
 env:
     JHI_RUN_APP: 1
     JHI_JDK: 11
@@ -48,57 +48,45 @@ jobs:
                 node_version: [12.18.3]
                 os: [ubuntu-latest]
                 app-type:
-                    - vue-maven-psql
-                    - vue-maven-mysql
-                    - vue-maven-noi18n
-                    - vue-maven-fulli18n-fr
-                    - vue-maven-oauth2
-                    - vue-maven-session
-                    - vue-maven-es
-                    - vue-maven-websocket
-                    - vue-maven-theme
+                    - gradle-react-mysql
+                    - gradle-react-sass-noi18n
+                    - gradle-react-websocket
+                    - gradle-react-hazelcast-cucumber
+                    - gradle-react-mariadb-kafka-nol2
+                    - gradle-react-session
+                    - gradle-react-infinispan
                 include:
-                    - app-type: vue-maven-psql
+                    - app-type: gradle-react-mysql
                       entity: sqlfull
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: vue-maven-mysql
-                      entity: sqlfull
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: vue-maven-noi18n
-                      entity: sqlfull
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: vue-maven-fulli18n-fr
-                      entity: sqlfull
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: vue-maven-oauth2
-                      entity: sqlfull
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: vue-maven-session
-                      entity: sqlfull
-                      profile: prod
-                      war: 0
-                      e2e: 1
-                    - app-type: vue-maven-es
+                    - app-type: gradle-react-sass-noi18n
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: vue-maven-websocket
+                    - app-type: gradle-react-websocket
                       entity: sql
                       profile: prod
                       war: 0
                       e2e: 1
-                    - app-type: vue-maven-theme
+                    - app-type: gradle-react-hazelcast-cucumber
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: gradle-react-mariadb-kafka-nol2
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: gradle-react-session
+                      entity: sql
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: gradle-react-infinispan
                       entity: sql
                       profile: prod
                       war: 0

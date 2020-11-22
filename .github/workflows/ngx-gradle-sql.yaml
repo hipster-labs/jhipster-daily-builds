@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: Angular Gradle
+name: Angular Gradle SQL
 on:
     workflow_dispatch:
     schedule:
