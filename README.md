@@ -14,9 +14,9 @@ Please note shown times below are in UTC.
 | [![React Maven NoSQL][github-react-maven-nosql]][github-actions]               | 00:50 |
 | [![React Gradle SQL][github-react-gradle-sql]][github-actions]                 | 01:00 |
 | [![React Gradle NoSQL][github-react-gradle-nosql]][github-actions]             | 01:10 |
-| [![Vue Maven SQL][github-vue-maven]][github-actions]                           | 01:20 |
+| [![Vue Maven SQL][github-vue-maven-sql]][github-actions]                       | 01:20 |
 | [![Vue Maven NoSQL][github-vue-maven-nosql]][github-actions]                   | 01:30 |
-| [![Vue Gradle SQL][github-vue-gradle]][github-actions]                         | 01:40 |
+| [![Vue Gradle SQL][github-vue-gradle-sql]][github-actions]                     | 01:40 |
 | [![Vue Gradle NoSQL][github-vue-gradle-nosql]][github-actions]                 | 01:50 |
 | [![Elasticsearch][github-elasticsearch]][github-actions]                       | 02:00 |
 | [![Monolith OAuth2][github-monolith-oauth2]][github-actions]                   | 02:30 |
