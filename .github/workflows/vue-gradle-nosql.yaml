@@ -51,7 +51,7 @@ jobs:
                     - vue-gradle-mongodb
                     - vue-gradle-cassandra
                     # - vue-gradle-couchbase
-                    - vue-gradle-neo4j
+                    # - vue-gradle-neo4j
                 include:
                     - app-type: vue-gradle-mongodb
                       entity: mongodb
@@ -68,11 +68,11 @@ jobs:
                     #   profile: prod
                     #   war: 0
                     #   e2e: 1
-                    - app-type: vue-gradle-neo4j
-                      entity: neo4j
-                      profile: prod
-                      war: 0
-                      e2e: 1
+                    # - app-type: vue-gradle-neo4j
+                    #   entity: neo4j
+                    #   profile: prod
+                    #   war: 0
+                    #   e2e: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}

@@ -51,7 +51,7 @@ jobs:
                     - gradle-ngx-mongodb
                     - gradle-ngx-cassandra
                     # - gradle-ngx-couchbase
-                    - gradle-ngx-neo4j
+                    # - gradle-ngx-neo4j
                 include:
                     - app-type: gradle-ngx-mongodb
                       entity: mongodb
@@ -68,11 +68,11 @@ jobs:
                     #   profile: prod
                     #   war: 0
                     #   e2e: 1
-                    - app-type: gradle-ngx-neo4j
-                      entity: neo4j
-                      profile: prod
-                      war: 0
-                      e2e: 1
+                    # - app-type: gradle-ngx-neo4j
+                    #   entity: neo4j
+                    #   profile: prod
+                    #   war: 0
+                    #   e2e: 1
         env:
             JHI_ENTITY: ${{ matrix.entity }}
             JHI_APP: ${{ matrix.app-type }}
