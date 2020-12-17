@@ -40,6 +40,11 @@ env:
     JHI_E2E_HEADLESS: true
     JHI_SCRIPTS: /c/Users/runneradmin/generator-jhipster/test-integration/scripts
     JHI_GITHUB_CI: true
+    # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
+    MAVEN_OPTS: >-
+        -Dhttp.keepAlive=false
+        -Dmaven.wagon.http.pool=false
+        -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
 jobs:
     applications:
         name: ${{ matrix.app-type }}
