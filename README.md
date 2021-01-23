@@ -23,7 +23,6 @@ Please note shown times below are in UTC.
 | [![No Database][github-no-database]][github-actions]                           | 02:30 |
 | [![Microservices JWT][github-ms-jwt]][github-actions]                          | 03:00 |
 | [![Microservices OAuth2][github-ms-oauth2]][github-actions]                    | 03:00 |
-| [![Microservices UAA][github-ms-uaa]][github-actions]                          | 03:30 |
 | [![Docker Image][github-docker-image]][github-actions]                         | 03:30 |
 | [![Couchbase][github-couchbase]][github-actions]                               | 04:00 |
 | [![Neo4j][github-neo4j]][github-actions]                                       | 04:30 |
@@ -66,7 +65,6 @@ Please note shown times below are in UTC.
 
 [github-ms-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20JWT/badge.svg
 [github-ms-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20OAuth2/badge.svg
-[github-ms-uaa]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20UAA/badge.svg
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
 
 [github-couchbase]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Couchbase/badge.svg

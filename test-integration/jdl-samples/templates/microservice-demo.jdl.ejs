@@ -1,28 +1,10 @@
-<% if(authType === 'uaa') { %>
-application {
- config {
-   baseName uaa,
-   packageName com.jhipster.demo.uaa,
-   serviceDiscoveryType <%= sdType %>,
-   authenticationType uaa,
-   uaaBaseName "uaa",
-   prodDatabaseType <%= proddbType %>,
-   cacheProvider <%= cacheType %>,
-   buildTool maven,
-   serverPort 9999,
-   testFrameworks [gatling, cucumber]
- }
-}
-<% } %>
-
 application {
  config {
    baseName store,
    applicationType gateway,
    packageName com.jhipster.demo.store,
    serviceDiscoveryType <%= sdType %>,
-   authenticationType <%= authType %>,<% if(authType === 'uaa') { %>
-   uaaBaseName "uaa",<% } %>
+   authenticationType <%= authType %>,
    prodDatabaseType <%= proddbType %>,
    cacheProvider <%= cacheType %>,
    buildTool gradle,
@@ -40,9 +22,6 @@ application {
    packageName com.jhipster.demo.crm,
    serviceDiscoveryType <%= sdType %>,
    authenticationType <%= authType %>,
-   <% if(authType === 'uaa') { %>
-   uaaBaseName "uaa",
-   <% } %>
    prodDatabaseType postgresql,
    buildTool maven,
    searchEngine elasticsearch,
