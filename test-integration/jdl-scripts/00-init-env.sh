@@ -19,6 +19,3 @@ JHI_SAMPLES="$JHI_INTEG"/jdl-samples
 JHI_SCRIPTS="$JHI_INTEG"/jdl-scripts
 # folder for app
 JHI_FOLDER_APP="$HOME"/app
-
-# folder for uaa app
-JHI_FOLDER_UAA="$HOME"/app/uaa
