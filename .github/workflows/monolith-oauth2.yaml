@@ -69,22 +69,22 @@ jobs:
                     - gradle-react-oauth2
                 include:
                     - app-type: ngx-oauth2
-                      entity: sql
+                      entity: sqllight
                       profile: prod
                       war: 0
                       e2e: 1
                     - app-type: react-oauth2
-                      entity: sql
+                      entity: sqllight
                       profile: prod
                       war: 0
                       e2e: 1
                     - app-type: gradle-ngx-oauth2
-                      entity: sql
+                      entity: sqllight
                       profile: prod
                       war: 0
                       e2e: 1
                     - app-type: gradle-react-oauth2
-                      entity: sql
+                      entity: sqllight
                       profile: prod
                       war: 0
                       e2e: 1
