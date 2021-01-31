@@ -65,6 +65,7 @@ jobs:
                 app-type:
                     - ngx-couchbase
                     - gradle-ngx-couchbase
+                    - webflux-couchbase
                 include:
                     - app-type: ngx-couchbase
                       entity: couchbase
@@ -72,6 +73,11 @@ jobs:
                       war: 0
                       e2e: 1
                     - app-type: gradle-ngx-couchbase
+                      entity: couchbase
+                      profile: prod
+                      war: 0
+                      e2e: 1
+                    - app-type: webflux-couchbase
                       entity: couchbase
                       profile: prod
                       war: 0
