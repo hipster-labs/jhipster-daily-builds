@@ -19,23 +19,23 @@
 
 name: Docker Image
 on:
-    workflow_dispatch:
-    schedule:
-        - cron: '30 3 * * *'
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
 jobs:
-    builds:
-        runs-on: 'ubuntu-latest'
-        if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
-        steps:
-            #----------------------------------------------------------------------
-            # Install all tools and check configuration
-            #----------------------------------------------------------------------
-            - uses: actions/checkout@v2
-            - name: 'TOOLS: docker version'
-              run: docker version
-            - name: 'TOOLS: docker-compose version'
-              run: docker-compose version
-            - name: 'INSTALL: pull jhipster/jhipster:main image'
-              run: docker pull jhipster/jhipster:main
-            - name: 'TESTS: test jhipster/jhipster:main image'
-              run: test-integration/scripts/26-tests-docker.sh
+  builds:
+    runs-on: "ubuntu-latest"
+    if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      #----------------------------------------------------------------------
+      # Install all tools and check configuration
+      #----------------------------------------------------------------------
+      - uses: actions/checkout@v2
+      - name: "TOOLS: docker version"
+        run: docker version
+      - name: "TOOLS: docker-compose version"
+        run: docker-compose version
+      - name: "INSTALL: pull jhipster/jhipster:main image"
+        run: docker pull jhipster/jhipster:main
+      - name: "TESTS: test jhipster/jhipster:main image"
+        run: test-integration/scripts/26-tests-docker.sh

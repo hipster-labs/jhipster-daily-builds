@@ -5,7 +5,7 @@
 Please note shown times below are in UTC.
 
 | Pipeline Status                                                                | At    |
-|:-------------------------------------------------------------------------------|:------|
+| :----------------------------------------------------------------------------- | :---- |
 | [![Angular Maven SQL][github-angular-maven-sql]][github-actions]               | 00:00 |
 | [![Angular Maven NoSQL][github-angular-maven-nosql]][github-actions]           | 00:10 |
 | [![Angular Gradle SQL][github-angular-gradle-sql]][github-actions]             | 00:20 |
@@ -43,33 +43,26 @@ Please note shown times below are in UTC.
 | [![Official Windows][github-official-windows]][github-actions]                 | 08:30 |
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
-
 [github-angular-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20SQL/badge.svg
 [github-angular-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Maven%20NoSQL/badge.svg
 [github-angular-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20SQL/badge.svg
 [github-angular-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Angular%20Gradle%20NoSQL/badge.svg
-
 [github-react-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20SQL/badge.svg
 [github-react-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Maven%20NoSQL/badge.svg
 [github-react-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20SQL/badge.svg
 [github-react-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/React%20Gradle%20NoSQL/badge.svg
-
 [github-vue-maven-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Maven%20SQL/badge.svg
 [github-vue-maven-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Maven%20NoSQL/badge.svg
 [github-vue-gradle-sql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Gradle%20SQL/badge.svg
 [github-vue-gradle-nosql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Vue%20Gradle%20NoSQL/badge.svg
-
 [github-elasticsearch]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Elasticsearch/badge.svg
 [github-monolith-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Monolith%20OAuth%202.0/badge.svg
 [github-no-database]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/No%20Database/badge.svg
-
 [github-ms-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20JWT/badge.svg
 [github-ms-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Microservices%20OAuth%202.0/badge.svg
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
-
 [github-couchbase]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Couchbase/badge.svg
 [github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
-
 [github-jdlms-caffeine-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MariaDB/badge.svg
 [github-jdlms-caffeine-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MySQL/badge.svg
 [github-jdlms-ehcache-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Ehcache%20MariaDB/badge.svg
