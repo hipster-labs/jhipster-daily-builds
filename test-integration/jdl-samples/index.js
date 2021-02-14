@@ -48,7 +48,7 @@ try {
     });
   });
   console.log(
-    `Samples (${config.serviceDiscoveryType.length * config.buildTool.length * config.authenticationType.length * config.cacheProvider.length} files) generated succesfully.`
+    `Samples (${config.serviceDiscoveryType.length * config.buildTool.length * config.authenticationType.length * config.cacheProvider.length} files) generated successfully.`
   );
   } catch (e) {
   console.error(e);
