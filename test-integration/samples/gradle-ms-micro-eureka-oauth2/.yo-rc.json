@@ -16,14 +16,8 @@
     "jwtSecretKey": "bXktc2VjcmV0LWtleS13aGljaC1zaG91bGQtYmUtY2hhbmdlZC1pbi1wcm9kdWN0aW9uLWFuZC1iZS1iYXNlNjQtZW5jb2RlZAo=",
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "fr"
-    ],
-    "testFrameworks": [
-      "gatling",
-      "protractor"
-    ],
+    "languages": ["en", "fr"],
+    "testFrameworks": ["gatling", "protractor"],
     "skipClient": true,
     "skipUserManagement": true,
     "serverPort": "8081",

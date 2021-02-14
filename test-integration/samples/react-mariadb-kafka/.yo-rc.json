@@ -17,17 +17,11 @@
     "rememberMeKey": "f19f0827c622eb9b81f5227a869ccd44932d78eb",
     "useSass": false,
     "applicationType": "monolith",
-    "testFrameworks": [
-      "gatling",
-      "protractor"
-    ],
+    "testFrameworks": ["gatling", "protractor"],
     "jhiPrefix": "jhi",
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "fr"
-    ],
+    "languages": ["en", "fr"],
     "ci": true,
     "serviceDiscoveryType": false,
     "clientPackageManager": "npm",

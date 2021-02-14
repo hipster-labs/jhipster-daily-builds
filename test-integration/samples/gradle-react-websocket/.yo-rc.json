@@ -16,15 +16,9 @@
     "buildTool": "gradle",
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "fr"
-    ],
+    "languages": ["en", "fr"],
     "rememberMeKey": "f19f0827c622eb9b81f5227a869ccd44932d78eb",
-    "testFrameworks": [
-      "gatling",
-      "protractor"
-    ],
+    "testFrameworks": ["gatling", "protractor"],
     "serverPort": "8080",
     "jhiPrefix": "jhi",
     "ci": true,
