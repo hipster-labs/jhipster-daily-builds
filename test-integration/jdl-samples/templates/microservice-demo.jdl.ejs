@@ -2,12 +2,11 @@ application {
  config {
    baseName store,
    applicationType gateway,
-   packageName com.jhipster.demo.store,
+   packageName tech.jhipster.demo.store,
    serviceDiscoveryType <%= sdType %>,
    authenticationType <%= authType %>,
-   prodDatabaseType <%= proddbType %>,
-   cacheProvider <%= cacheType %>,
-   buildTool gradle,
+   prodDatabaseType mysql,
+   buildTool <%= buildTool %>,
    clientFramework angularX,
    enableSwaggerCodegen true,
    testFrameworks [cypress]
@@ -19,12 +18,12 @@ application {
  config {
    baseName crm,
    applicationType microservice,
-   packageName com.jhipster.demo.crm,
+   packageName tech.jhipster.demo.crm,
    serviceDiscoveryType <%= sdType %>,
    authenticationType <%= authType %>,
+   cacheProvider <%= cacheType %>,
    prodDatabaseType postgresql,
-   buildTool maven,
-   searchEngine elasticsearch,
+   buildTool <%= buildTool %>,
    serverPort 8081,
    skipUserManagement true
  }
