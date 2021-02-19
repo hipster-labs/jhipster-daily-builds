@@ -26,20 +26,14 @@ Please note shown times below are in UTC.
 | [![Docker Image][github-docker-image]][github-actions]                         | 03:30 |
 | [![Couchbase][github-couchbase]][github-actions]                               | 04:00 |
 | [![Neo4j][github-neo4j]][github-actions]                                       | 04:30 |
-| [![JDLMS Caffeine MariaDB][github-jdlms-caffeine-mariadb]][github-actions]     | 05:00 |
-| [![JDLMS Caffeine MySQL][github-jdlms-caffeine-mysql]][github-actions]         | 05:00 |
-| [![JDLMS Ehcache MariaDB][github-jdlms-ehcache-mariadb]][github-actions]       | 05:30 |
-| [![JDLMS Ehcache MySQL][github-jdlms-ehcache-mysql]][github-actions]           | 05:30 |
-| [![JDLMS Hazelcast MariaDB][github-jdlms-hazelcast-mariadb]][github-actions]   | 06:00 |
-| [![JDLMS Hazelcast MySQL][github-jdlms-hazelcast-mysql]][github-actions]       | 06:00 |
-| [![JDLMS Infinispan MariaDB][github-jdlms-infinispan-mariadb]][github-actions] | 06:30 |
-| [![JDLMS Infinispan MySQL][github-jdlms-infinispan-mysql]][github-actions]     | 06:30 |
-| [![JDLMS Memcached MariaDB][github-jdlms-memcached-mariadb]][github-actions]   | 07:00 |
-| [![JDLMS Memcached MySQL][github-jdlms-memcached-mysql]][github-actions]       | 07:00 |
-| [![JDLMS Nocache MariaDB][github-jdlms-nocache-mariadb]][github-actions]       | 07:30 |
-| [![JDLMS Nocache MySQL][github-jdlms-nocache-mysql]][github-actions]           | 07:30 |
-| [![JDLMS Redis MariaDB][github-jdlms-redis-mariadb]][github-actions]           | 08:00 |
-| [![JDLMS Redis MySQL][github-jdlms-redis-mysql]][github-actions]               | 08:00 |
+| [![JDL Eureka Maven JWT][github-jdl-eureka-maven-jwt]][github-actions]         | 05:00 |
+| [![JDL Eureka Maven OAuth2][github-jdl-eureka-maven-oauth2]][github-actions]   | 05:00 |
+| [![JDL Eureka Gradle JWT][github-jdl-eureka-gradle-jwt]][github-actions]       | 05:30 |
+| [![JDL Eureka Gradle OAuth2][github-jdl-eureka-gradle-oauth2]][github-actions] | 05:30 |
+| [![JDL Consul Maven JWT][github-jdl-consul-maven-jwt]][github-actions]         | 06:00 |
+| [![JDL Consul Maven OAuth2][github-jdl-consul-maven-oauth2]][github-actions]   | 06:00 |
+| [![JDL Consul Gradle JWT][github-jdl-consul-gradle-jwt]][github-actions]       | 06:30 |
+| [![JDL Consul Gradle OAuth2][github-jdl-consul-gradle-oauth2]][github-actions] | 06:30 |
 | [![Official Windows][github-official-windows]][github-actions]                 | 08:30 |
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
@@ -63,18 +57,12 @@ Please note shown times below are in UTC.
 [github-docker-image]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Docker%20Image/badge.svg
 [github-couchbase]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Couchbase/badge.svg
 [github-neo4j]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Neo4j/badge.svg
-[github-jdlms-caffeine-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MariaDB/badge.svg
-[github-jdlms-caffeine-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Caffeine%20MySQL/badge.svg
-[github-jdlms-ehcache-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Ehcache%20MariaDB/badge.svg
-[github-jdlms-ehcache-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Ehcache%20MySQL/badge.svg
-[github-jdlms-hazelcast-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Hazelcast%20MariaDB/badge.svg
-[github-jdlms-hazelcast-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Hazelcast%20MySQL/badge.svg
-[github-jdlms-infinispan-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Infinispan%20MariaDB/badge.svg
-[github-jdlms-infinispan-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Infinispan%20MySQL/badge.svg
-[github-jdlms-memcached-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Memcached%20MariaDB/badge.svg
-[github-jdlms-memcached-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Memcached%20MySQL/badge.svg
-[github-jdlms-nocache-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Nocache%20MariaDB/badge.svg
-[github-jdlms-nocache-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Nocache%20MySQL/badge.svg
-[github-jdlms-redis-mariadb]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MariaDB/badge.svg
-[github-jdlms-redis-mysql]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDLMS%20Redis%20MySQL/badge.svg
+[github-jdl-eureka-maven-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Eureka%20Maven%20JWT/badge.svg
+[github-jdl-eureka-maven-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Eureka%20Maven%20OAuth2/badge.svg
+[github-jdl-eureka-gradle-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Eureka%20Gradle%20JWT/badge.svg
+[github-jdl-eureka-gradle-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Eureka%20Gradle%20OAuth2/badge.svg
+[github-jdl-consul-maven-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Maven%20JWT/badge.svg
+[github-jdl-consul-maven-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Maven%20OAuth2/badge.svg
+[github-jdl-consul-gradle-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Gradme%20JWT/badge.svg
+[github-jdl-consul-gradle-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Gradle%20OAuth2/badge.svg
 [github-official-windows]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Official%20Windows/badge.svg
