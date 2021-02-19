@@ -65,7 +65,7 @@ jobs:
           - eureka-maven-jwt-react-ehcache
           - eureka-maven-jwt-vue-hazelcast
           - eureka-maven-jwt-angularX-infinispan
-          - eureka-maven-jwt-react-memcached
+          # - eureka-maven-jwt-react-memcached
           - eureka-maven-jwt-vue-no
           - eureka-maven-jwt-angularX-redis
         include:
@@ -89,11 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-react-memcached
-            entity: jdl
-            profile: prod
-            war: 0
-            e2e: 1
+          # - app-type: eureka-maven-jwt-react-memcached
+          #   entity: jdl
+          #   profile: prod
+          #   war: 0
+          #   e2e: 1
           - app-type: eureka-maven-jwt-vue-no
             entity: jdl
             profile: prod

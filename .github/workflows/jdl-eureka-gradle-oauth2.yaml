@@ -65,7 +65,7 @@ jobs:
           - eureka-gradle-oauth2-angularX-ehcache
           - eureka-gradle-oauth2-react-hazelcast
           - eureka-gradle-oauth2-vue-infinispan
-          - eureka-gradle-oauth2-angularX-memcached
+          # - eureka-gradle-oauth2-angularX-memcached
           - eureka-gradle-oauth2-react-no
           - eureka-gradle-oauth2-vue-redis
         include:
@@ -89,11 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-angularX-memcached
-            entity: jdl
-            profile: prod
-            war: 0
-            e2e: 1
+          # - app-type: eureka-gradle-oauth2-angularX-memcached
+          #   entity: jdl
+          #   profile: prod
+          #   war: 0
+          #   e2e: 1
           - app-type: eureka-gradle-oauth2-react-no
             entity: jdl
             profile: prod
