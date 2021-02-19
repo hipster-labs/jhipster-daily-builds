@@ -63,6 +63,6 @@ Please note shown times below are in UTC.
 [github-jdl-eureka-gradle-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Eureka%20Gradle%20OAuth2/badge.svg
 [github-jdl-consul-maven-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Maven%20JWT/badge.svg
 [github-jdl-consul-maven-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Maven%20OAuth2/badge.svg
-[github-jdl-consul-gradle-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Gradme%20JWT/badge.svg
+[github-jdl-consul-gradle-jwt]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Gradle%20JWT/badge.svg
 [github-jdl-consul-gradle-oauth2]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/JDL%20Consul%20Gradle%20OAuth2/badge.svg
 [github-official-windows]: https://github.com/hipster-labs/jhipster-daily-builds/workflows/Official%20Windows/badge.svg
