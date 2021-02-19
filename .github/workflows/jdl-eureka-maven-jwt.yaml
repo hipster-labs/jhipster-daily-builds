@@ -67,7 +67,7 @@ jobs:
           - eureka-maven-jwt-angularX-infinispan
           - eureka-maven-jwt-react-memcached
           - eureka-maven-jwt-vue-no
-          - eureka-maven-jwt-angularXredis
+          - eureka-maven-jwt-angularX-redis
         include:
           - app-type: eureka-maven-jwt-angularX-caffeine
             entity: jdl
