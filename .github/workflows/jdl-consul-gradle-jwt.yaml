@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Consul Gradle JWT
+name: JDL Consul Gradle JWT
 on:
   workflow_dispatch:
     inputs:

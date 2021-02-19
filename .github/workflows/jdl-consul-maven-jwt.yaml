@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Consul Maven JWT
+name: JDL Consul Maven JWT
 on:
   workflow_dispatch:
     inputs:

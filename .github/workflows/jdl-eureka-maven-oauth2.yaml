@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Eureka Maven OAuth2
+name: JDL Eureka Maven OAuth2
 on:
   workflow_dispatch:
     inputs:

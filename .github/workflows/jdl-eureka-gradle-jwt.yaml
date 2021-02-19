@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Eureka Gradle JWT
+name: JDL Eureka Gradle JWT
 on:
   workflow_dispatch:
     inputs:

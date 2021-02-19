@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Consul Gradle OAuth2
+name: JDL Consul Gradle OAuth2
 on:
   workflow_dispatch:
     inputs:

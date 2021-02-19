@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-name: JDLMS Eureka Maven JWT
+name: JDL Eureka Maven JWT
 on:
   workflow_dispatch:
     inputs:
