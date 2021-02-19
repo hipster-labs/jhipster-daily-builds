@@ -34,6 +34,7 @@ Please note shown times below are in UTC.
 | [![JDL Consul Maven OAuth2][github-jdl-consul-maven-oauth2]][github-actions]   | 06:00 |
 | [![JDL Consul Gradle JWT][github-jdl-consul-gradle-jwt]][github-actions]       | 06:30 |
 | [![JDL Consul Gradle OAuth2][github-jdl-consul-gradle-oauth2]][github-actions] | 06:30 |
+| [![JDL Broken Config][github-jdl-broken-config]][github-actions]               | 07:00 |
 | [![Official Windows][github-official-windows]][github-actions]                 | 08:30 |
 
 [github-actions]: https://github.com/hipster-labs/jhipster-daily-builds/actions
