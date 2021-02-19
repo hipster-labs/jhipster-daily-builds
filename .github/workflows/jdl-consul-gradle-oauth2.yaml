@@ -1,0 +1,167 @@
+#
+# Copyright 2018-2021 the original author or authors from the JHipster project.
+#
+# This file is part of the JHipster project, see https://www.jhipster.tech/
+# for more information.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+name: JDLMS Consul Gradle OAuth2
+on:
+  workflow_dispatch:
+    inputs:
+      jhiGenRepo:
+        description: "JHipster repository url"
+        default: "https://github.com/jhipster/generator-jhipster.git"
+        required: false
+      jhiGenBranch:
+        description: "JHipster repository branch"
+        default: "main"
+        required: false
+  schedule:
+    - cron: "30 6 * * *"
+env:
+  JHI_RUN_APP: 1
+  JHI_JDK: 11
+  JHI_LIB_REPO: https://github.com/jhipster/jhipster-bom.git
+  JHI_LIB_BRANCH: main
+  JHI_GEN_REPO: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
+  JHI_GEN_BRANCH: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+  SPRING_OUTPUT_ANSI_ENABLED: ALWAYS
+  SPRING_JPA_SHOW_SQL: false
+  JHI_DISABLE_WEBPACK_LOGS: true
+  JHI_SCRIPTS: ./test-integration/jdl-scripts
+  NG_CLI_ANALYTICS: "false"
+  JHI_GITHUB_CI: true
+  # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
+  MAVEN_OPTS: >-
+    -Dhttp.keepAlive=false
+    -Dmaven.wagon.http.pool=false
+    -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
+jobs:
+  applications:
+    name: ${{ matrix.app-type }}
+    runs-on: ${{ matrix.os }}
+    if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        node_version: [14.15.5]
+        os: [ubuntu-latest]
+        app-type:
+          - consul-gradle-oauth2-caffeine
+          - consul-gradle-oauth2-ehcache
+          - consul-gradle-oauth2-hazelcast
+          - consul-gradle-oauth2-infinispan
+          - consul-gradle-oauth2-memcached
+          - consul-gradle-oauth2-no
+          - consul-gradle-oauth2-redis
+        include:
+          - app-type: consul-gradle-oauth2-caffeine
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-gradle-oauth2-ehcache
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-gradle-oauth2-hazelcast
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-gradle-oauth2-infinispan
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-gradle-oauth2-no
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-gradle-oauth2-redis
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+    env:
+      JHI_ENTITY: ${{ matrix.entity }}
+      JHI_APP: ${{ matrix.app-type }}
+      JHI_PROFILE: ${{ matrix.profile }}
+      JHI_WAR: ${{ matrix.war }}
+      JHI_E2E: ${{ matrix.e2e }}
+    steps:
+      #----------------------------------------------------------------------
+      # Install all tools and check configuration
+      #----------------------------------------------------------------------
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Download latest chrome binary
+        run: |
+          sudo apt update
+          sudo apt install google-chrome-stable
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "11.x"
+      - name: "TOOLS: generating jdl-samples"
+        run: |
+          cd $GITHUB_WORKSPACE/test-integration/jdl-samples
+          npm i
+          npm start
+        shell: bash
+      - name: "TOOLS: display configuration"
+        run: $JHI_SCRIPTS/01-display-configuration.sh
+      - name: "TOOLS: configure tools installed by the system"
+        run: $JHI_SCRIPTS/03-system.sh
+      - name: "TOOLS: configure git"
+        run: $JHI_SCRIPTS/04-git-config.sh
+      #----------------------------------------------------------------------
+      # Install JHipster and generate project+entities
+      #----------------------------------------------------------------------
+      - name: "GENERATION: install JHipster"
+        run: $JHI_SCRIPTS/10-install-jhipster-daily-builds.sh
+      - name: "GENERATION: project"
+        run: $JHI_SCRIPTS/12-generate-project.sh
+      - name: "GENERATION: replace version in generated project"
+        run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
+      - name: "GENERATION: jhipster info"
+        run: $JHI_SCRIPTS/14-jhipster-info.sh
+      # ----------------------------------------------------------------------
+      # Launch tests (Docker-Compose)
+      # ----------------------------------------------------------------------
+      - name: "TESTS: packaging"
+        run: $JHI_SCRIPTS/23-package.sh
+      - name: "TESTS: Deploying with docker-compose file"
+        run: $JHI_SCRIPTS/24-deploy-with-docker-compose.sh
+      - name: "TESTS: END-to-End (Docker-compose)"
+        run: $JHI_SCRIPTS/25-tests-e2e-docker-compose.sh
+      # ----------------------------------------------------------------------
+      # Launch tests (Kubernetes)
+      # ----------------------------------------------------------------------
+      # - name: Booting Kubernetes in Docker
+      #   run: |
+      #     echo $KUBECONFIG
+      #     kubectl cluster-info
+      #     kubectl get pods -n kube-system
+      #     kubectl version
+      # - name: 'TESTS: Deploying with kubernetes'
+      #   run: $JHI_SCRIPTS/28-deploy-with-kubernetes.sh
+      # - name: 'TESTS: Tests End-to-End (Kubernetes)'
+      #   run: $JHI_SCRIPTS/29-tests-e2e-kubernetes.sh
