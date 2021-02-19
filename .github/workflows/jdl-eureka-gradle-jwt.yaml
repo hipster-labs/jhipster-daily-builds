@@ -89,6 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
+          - app-type: eureka-gradle-jwt-memcached
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
           - app-type: eureka-gradle-jwt-no
             entity: jdl
             profile: prod
