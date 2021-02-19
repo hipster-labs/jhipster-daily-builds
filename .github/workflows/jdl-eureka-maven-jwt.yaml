@@ -19,9 +19,6 @@
 
 name: JDLMS Eureka Maven JWT
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       jhiGenRepo:
