@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - eureka-gradle-oauth2-caffeine
-          - eureka-gradle-oauth2-ehcache
-          - eureka-gradle-oauth2-hazelcast
-          - eureka-gradle-oauth2-infinispan
-          - eureka-gradle-oauth2-memcached
-          - eureka-gradle-oauth2-no
-          - eureka-gradle-oauth2-redis
+          - eureka-gradle-oauth2-vue-caffeine
+          - eureka-gradle-oauth2-angularX-ehcache
+          - eureka-gradle-oauth2-react-hazelcast
+          - eureka-gradle-oauth2-vue-infinispan
+          - eureka-gradle-oauth2-angularX-memcached
+          - eureka-gradle-oauth2-react-no
+          - eureka-gradle-oauth2-vue-redis
         include:
-          - app-type: eureka-gradle-oauth2-caffeine
+          - app-type: eureka-gradle-oauth2-vue-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-ehcache
+          - app-type: eureka-gradle-oauth2-angularX-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-hazelcast
+          - app-type: eureka-gradle-oauth2-react-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-infinispan
+          - app-type: eureka-gradle-oauth2-vue-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-memcached
+          - app-type: eureka-gradle-oauth2-angularX-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-no
+          - app-type: eureka-gradle-oauth2-react-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-redis
+          - app-type: eureka-gradle-oauth2-vue-redis
             entity: jdl
             profile: prod
             war: 0

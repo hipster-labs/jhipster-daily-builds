@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - consul-gradle-jwt-caffeine
-          - consul-gradle-jwt-ehcache
-          - consul-gradle-jwt-hazelcast
-          - consul-gradle-jwt-infinispan
-          - consul-gradle-jwt-memcached
-          - consul-gradle-jwt-no
-          - consul-gradle-jwt-redis
+          - consul-gradle-jwt-angularX-caffeine
+          - consul-gradle-jwt-react-ehcache
+          - consul-gradle-jwt-vue-hazelcast
+          - consul-gradle-jwt-angularX-infinispan
+          - consul-gradle-jwt-react-memcached
+          - consul-gradle-jwt-vue-no
+          - consul-gradle-jwt-angularX-redis
         include:
-          - app-type: consul-gradle-jwt-caffeine
+          - app-type: consul-gradle-jwt-angularX-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-ehcache
+          - app-type: consul-gradle-jwt-react-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-hazelcast
+          - app-type: consul-gradle-jwt-vue-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-infinispan
+          - app-type: consul-gradle-jwt-angularX-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-memcached
+          - app-type: consul-gradle-jwt-react-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-no
+          - app-type: consul-gradle-jwt-vue-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-redis
+          - app-type: consul-gradle-jwt-angularX-redis
             entity: jdl
             profile: prod
             war: 0

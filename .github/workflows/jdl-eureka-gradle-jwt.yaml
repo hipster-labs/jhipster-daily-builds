@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - eureka-gradle-jwt-caffeine
-          - eureka-gradle-jwt-ehcache
-          - eureka-gradle-jwt-hazelcast
-          - eureka-gradle-jwt-infinispan
-          - eureka-gradle-jwt-memcached
-          - eureka-gradle-jwt-no
-          - eureka-gradle-jwt-redis
+          - eureka-gradle-jwt-react-caffeine
+          - eureka-gradle-jwt-vue-ehcache
+          - eureka-gradle-jwt-angularX-hazelcast
+          - eureka-gradle-jwt-react-infinispan
+          - eureka-gradle-jwt-vue-memcached
+          - eureka-gradle-jwt-angularX-no
+          - eureka-gradle-jwt-react-redis
         include:
-          - app-type: eureka-gradle-jwt-caffeine
+          - app-type: eureka-gradle-jwt-react-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-ehcache
+          - app-type: eureka-gradle-jwt-vue-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-hazelcast
+          - app-type: eureka-gradle-jwt-angularX-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-infinispan
+          - app-type: eureka-gradle-jwt-react-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-memcached
+          - app-type: eureka-gradle-jwt-vue-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-no
+          - app-type: eureka-gradle-jwt-angularX-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-redis
+          - app-type: eureka-gradle-jwt-react-redis
             entity: jdl
             profile: prod
             war: 0

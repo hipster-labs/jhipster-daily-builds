@@ -7,42 +7,45 @@ const filename = "templates/microservice-demo.jdl.ejs";
 try {
   config.serviceDiscoveryType.forEach(sdType => {
     config.buildTool.forEach(buildTool => {
-      config.authenticationType.forEach(authType => {
-        config.cacheProvider.forEach(cacheType => {
-          ejs.renderFile(
-            filename,
-            {
-              sdType: sdType,
-              buildTool: buildTool,
-              authType: authType,
-              cacheType: cacheType
-            },
-            function(err, str) {
-              if (err) console.log(err);
-              else {
-                fs.mkdirSync(
-                  path.join(
-                    __dirname,
-                    `/../jdl-samples/${sdType}-${buildTool}-${authType}-${cacheType}`
-                  ),
-                  { recursive: true },
-                  err => {
-                    if (err) throw err;
-                  }
-                );
-                fs.writeFile(
-                  path.join(
-                    __dirname,
-                    `/../jdl-samples/${sdType}-${buildTool}-${authType}-${cacheType}/microservice-demo.jdl`
-                  ),
-                  str,
-                  function(error, data) {
-                    if (error) throw err;
-                  }
-                );
+      config.clientFramework.forEach(clientFramework => {
+        config.authenticationType.forEach(authType => {
+          config.cacheProvider.forEach(cacheType => {
+            ejs.renderFile(
+              filename,
+              {
+                sdType: sdType,
+                buildTool: buildTool,
+                clientFramework: clientFramework,
+                authType: authType,
+                cacheType: cacheType
+              },
+              function(err, str) {
+                if (err) console.log(err);
+                else {
+                  fs.mkdirSync(
+                    path.join(
+                      __dirname,
+                      `/../jdl-samples/${sdType}-${buildTool}-${authType}-${clientFramework}-${cacheType}`
+                    ),
+                    { recursive: true },
+                    err => {
+                      if (err) throw err;
+                    }
+                  );
+                  fs.writeFile(
+                    path.join(
+                      __dirname,
+                      `/../jdl-samples/${sdType}-${buildTool}-${authType}-${clientFramework}-${cacheType}/microservice-demo.jdl`
+                    ),
+                    str,
+                    function(error, data) {
+                      if (error) throw err;
+                    }
+                  );
+                }
               }
-            }
-          );
+            );
+          });
         });
       });
     });

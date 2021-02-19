@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - eureka-maven-jwt-caffeine
-          - eureka-maven-jwt-ehcache
-          - eureka-maven-jwt-hazelcast
-          - eureka-maven-jwt-infinispan
-          - eureka-maven-jwt-memcached
-          - eureka-maven-jwt-no
-          - eureka-maven-jwt-redis
+          - eureka-maven-jwt-angularX-caffeine
+          - eureka-maven-jwt-react-ehcache
+          - eureka-maven-jwt-vue-hazelcast
+          - eureka-maven-jwt-angularX-infinispan
+          - eureka-maven-jwt-react-memcached
+          - eureka-maven-jwt-vue-no
+          - eureka-maven-jwt-angularXredis
         include:
-          - app-type: eureka-maven-jwt-caffeine
+          - app-type: eureka-maven-jwt-angularX-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-ehcache
+          - app-type: eureka-maven-jwt-react-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-hazelcast
+          - app-type: eureka-maven-jwt-vue-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-infinispan
+          - app-type: eureka-maven-jwt-angularX-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-memcached
+          - app-type: eureka-maven-jwt-react-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-no
+          - app-type: eureka-maven-jwt-vue-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-redis
+          - app-type: eureka-maven-jwt-angularX-redis
             entity: jdl
             profile: prod
             war: 0

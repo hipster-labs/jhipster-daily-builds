@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - eureka-maven-oauth2-caffeine
-          - eureka-maven-oauth2-ehcache
-          - eureka-maven-oauth2-hazelcast
-          - eureka-maven-oauth2-infinispan
-          - eureka-maven-oauth2-memcached
-          - eureka-maven-oauth2-no
-          - eureka-maven-oauth2-redis
+          - eureka-maven-oauth2-react-caffeine
+          - eureka-maven-oauth2-vue-ehcache
+          - eureka-maven-oauth2-angularX-hazelcast
+          - eureka-maven-oauth2-react-infinispan
+          - eureka-maven-oauth2-vue-memcached
+          - eureka-maven-oauth2-angularX-no
+          - eureka-maven-oauth2-react-redis
         include:
-          - app-type: eureka-maven-oauth2-caffeine
+          - app-type: eureka-maven-oauth2-react-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-ehcache
+          - app-type: eureka-maven-oauth2-vue-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-hazelcast
+          - app-type: eureka-maven-oauth2-angularX-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-infinispan
+          - app-type: eureka-maven-oauth2-react-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-memcached
+          - app-type: eureka-maven-oauth2-vue-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-no
+          - app-type: eureka-maven-oauth2-angularX-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-oauth2-redis
+          - app-type: eureka-maven-oauth2-react-redis
             entity: jdl
             profile: prod
             war: 0

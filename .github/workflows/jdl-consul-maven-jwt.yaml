@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - consul-maven-jwt-caffeine
-          - consul-maven-jwt-ehcache
-          - consul-maven-jwt-hazelcast
-          - consul-maven-jwt-infinispan
-          - consul-maven-jwt-memcached
-          - consul-maven-jwt-no
-          - consul-maven-jwt-redis
+          - consul-maven-jwt-vue-caffeine
+          - consul-maven-jwt-angularX-ehcache
+          - consul-maven-jwt-react-hazelcast
+          - consul-maven-jwt-vue-infinispan
+          - consul-maven-jwt-angularX-memcached
+          - consul-maven-jwt-react-no
+          - consul-maven-jwt-vue-redis
         include:
-          - app-type: consul-maven-jwt-caffeine
+          - app-type: consul-maven-jwt-vue-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-ehcache
+          - app-type: consul-maven-jwt-angularX-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-hazelcast
+          - app-type: consul-maven-jwt-react-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-infinispan
+          - app-type: consul-maven-jwt-vue-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-memcached
+          - app-type: consul-maven-jwt-angularX-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-no
+          - app-type: consul-maven-jwt-react-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-redis
+          - app-type: consul-maven-jwt-vue-redis
             entity: jdl
             profile: prod
             war: 0

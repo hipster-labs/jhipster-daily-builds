@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - consul-maven-oauth2-caffeine
-          - consul-maven-oauth2-ehcache
-          - consul-maven-oauth2-hazelcast
-          - consul-maven-oauth2-infinispan
-          - consul-maven-oauth2-memcached
-          - consul-maven-oauth2-no
-          - consul-maven-oauth2-redis
+          - consul-maven-oauth2-angularX-caffeine
+          - consul-maven-oauth2-react-ehcache
+          - consul-maven-oauth2-vue-hazelcast
+          - consul-maven-oauth2-angularX-infinispan
+          - consul-maven-oauth2-react-memcached
+          - consul-maven-oauth2-vue-no
+          - consul-maven-oauth2-angularX-redis
         include:
-          - app-type: consul-maven-oauth2-caffeine
+          - app-type: consul-maven-oauth2-angularX-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-ehcache
+          - app-type: consul-maven-oauth2-react-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-hazelcast
+          - app-type: consul-maven-oauth2-vue-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-infinispan
+          - app-type: consul-maven-oauth2-angularX-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-memcached
+          - app-type: consul-maven-oauth2-react-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-no
+          - app-type: consul-maven-oauth2-vue-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-redis
+          - app-type: consul-maven-oauth2-angularX-redis
             entity: jdl
             profile: prod
             war: 0

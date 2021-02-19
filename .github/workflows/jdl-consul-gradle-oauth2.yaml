@@ -61,45 +61,45 @@ jobs:
         node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - consul-gradle-oauth2-caffeine
-          - consul-gradle-oauth2-ehcache
-          - consul-gradle-oauth2-hazelcast
-          - consul-gradle-oauth2-infinispan
-          - consul-gradle-oauth2-memcached
-          - consul-gradle-oauth2-no
-          - consul-gradle-oauth2-redis
+          - consul-gradle-oauth2-react-caffeine
+          - consul-gradle-oauth2-vue-ehcache
+          - consul-gradle-oauth2-angularX-hazelcast
+          - consul-gradle-oauth2-react-infinispan
+          - consul-gradle-oauth2-vue-memcached
+          - consul-gradle-oauth2-angularX-no
+          - consul-gradle-oauth2-react-redis
         include:
-          - app-type: consul-gradle-oauth2-caffeine
+          - app-type: consul-gradle-oauth2-react-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-ehcache
+          - app-type: consul-gradle-oauth2-vue-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-hazelcast
+          - app-type: consul-gradle-oauth2-angularX-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-infinispan
+          - app-type: consul-gradle-oauth2-react-infinispan
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-memcached
+          - app-type: consul-gradle-oauth2-vue-memcached
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-no
+          - app-type: consul-gradle-oauth2-angularX-no
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-redis
+          - app-type: consul-gradle-oauth2-react-redis
             entity: jdl
             profile: prod
             war: 0
