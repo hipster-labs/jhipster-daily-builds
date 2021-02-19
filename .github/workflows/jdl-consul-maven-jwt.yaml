@@ -17,18 +17,27 @@
 # limitations under the License.
 #
 
-name: JDLMS Infinispan MariaDB
+name: JDLMS Consul Maven JWT
 on:
   workflow_dispatch:
+    inputs:
+      jhiGenRepo:
+        description: "JHipster repository url"
+        default: "https://github.com/jhipster/generator-jhipster.git"
+        required: false
+      jhiGenBranch:
+        description: "JHipster repository branch"
+        default: "main"
+        required: false
   schedule:
-    - cron: "30 6 * * *"
+    - cron: "0 6 * * *"
 env:
   JHI_RUN_APP: 1
   JHI_JDK: 11
   JHI_LIB_REPO: https://github.com/jhipster/jhipster-bom.git
   JHI_LIB_BRANCH: main
-  JHI_GEN_REPO: https://github.com/jhipster/generator-jhipster.git
-  JHI_GEN_BRANCH: main
+  JHI_GEN_REPO: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
+  JHI_GEN_BRANCH: ${{ github.event.inputs.jhiGenBranch || 'main' }}
   SPRING_OUTPUT_ANSI_ENABLED: ALWAYS
   SPRING_JPA_SHOW_SQL: false
   JHI_DISABLE_WEBPACK_LOGS: true
@@ -49,30 +58,43 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node_version: [12.18.3]
+        node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
-          - eureka-jwt-mariadb-infinispan
-          - eureka-oauth2-mariadb-infinispan
-          - consul-jwt-mariadb-infinispan
-          - consul-oauth2-mariadb-infinispan
+          - consul-maven-jwt-caffeine
+          - consul-maven-jwt-ehcache
+          - consul-maven-jwt-hazelcast
+          - consul-maven-jwt-infinispan
+          - consul-maven-jwt-memcached
+          - consul-maven-jwt-no
+          - consul-maven-jwt-redis
         include:
-          - app-type: eureka-jwt-mariadb-infinispan
+          - app-type: consul-maven-jwt-caffeine
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-oauth2-mariadb-infinispan
+          - app-type: consul-maven-jwt-ehcache
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-jwt-mariadb-infinispan
+          - app-type: consul-maven-jwt-hazelcast
             entity: jdl
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-oauth2-mariadb-infinispan
+          - app-type: consul-maven-jwt-infinispan
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-maven-jwt-no
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
+          - app-type: consul-maven-jwt-redis
             entity: jdl
             profile: prod
             war: 0

@@ -1,15 +1,14 @@
 application {
  config {
-   baseName store,
-   applicationType gateway,
-   packageName com.jhipster.demo.store,
-   serviceDiscoveryType <%= sdType %>,
-   authenticationType <%= authType %>,
-   prodDatabaseType <%= proddbType %>,
-   cacheProvider <%= cacheType %>,
-   buildTool gradle,
-   clientFramework angularX,
-   enableSwaggerCodegen true,
+   baseName store
+   applicationType gateway
+   packageName tech.jhipster.demo.store
+   serviceDiscoveryType <%= sdType %>
+   authenticationType <%= authType %>
+   prodDatabaseType mysql
+   buildTool <%= buildTool %>
+   clientFramework angularX
+   enableSwaggerCodegen true
    testFrameworks [cypress]
  }
  entities *
@@ -17,15 +16,15 @@ application {
 
 application {
  config {
-   baseName crm,
-   applicationType microservice,
-   packageName com.jhipster.demo.crm,
-   serviceDiscoveryType <%= sdType %>,
-   authenticationType <%= authType %>,
-   prodDatabaseType postgresql,
-   buildTool maven,
-   searchEngine elasticsearch,
-   serverPort 8081,
+   baseName crm
+   applicationType microservice
+   packageName tech.jhipster.demo.crm
+   serviceDiscoveryType <%= sdType %>
+   authenticationType <%= authType %>
+   cacheProvider <%= cacheType %>
+   prodDatabaseType postgresql
+   buildTool <%= buildTool %>
+   serverPort 8081
    skipUserManagement true
  }
  entities *
@@ -113,22 +112,22 @@ microservice Customer, Product, ProductOrder, OrderItem, Invoice, Shipment with 
 
 // will be created under 'docker-compose' folder
 deployment {
-   deploymentType docker-compose,
-   appsFolders [store, crm],
+   deploymentType docker-compose
+   appsFolders [store, crm]
    dockerRepositoryName "hipsterslabs"
-   monitoring no,
+   monitoring no
    serviceDiscoveryType <%= sdType %>
 }
 
 // will be created under 'kubernetes' folder
 deployment {
-   deploymentType kubernetes,
+   deploymentType kubernetes
    appsFolders [store, crm]
-   dockerRepositoryName "hipsterslabs",
-   gatewayType zuul,
-   monitoring no,
+   dockerRepositoryName "hipsterslabs"
+   gatewayType zuul
+   monitoring no
    serviceDiscoveryType <%= sdType %>
-   kubernetesNamespace jhipster,
-   kubernetesServiceType LoadBalancer,
+   kubernetesNamespace jhipster
+   kubernetesServiceType LoadBalancer
    istio false
 }

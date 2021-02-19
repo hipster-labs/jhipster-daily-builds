@@ -1,7 +1,7 @@
 {
   "serviceDiscoveryType": ["eureka", "consul"],
-  "authenticationType": ["jwt", "session", "oauth2"],
-  "prodDatabaseType": ["mysql", "mariadb"],
+  "authenticationType": ["jwt", "oauth2"],
+  "buildTool": ["maven", "gradle"],
   "cacheProvider": [
     "hazelcast",
     "ehcache",
@@ -10,7 +10,5 @@
     "redis",
     "caffeine",
     "no"
-  ],
-  "searchEngine": "elasticsearch",
-  "messageBroker": "useKakfa: = true"
+  ]
 }

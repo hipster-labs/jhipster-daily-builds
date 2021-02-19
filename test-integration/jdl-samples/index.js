@@ -1,30 +1,20 @@
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
-// const config = {
-//   serviceDiscoveryType: ["eureka", "consul"],
-//   authenticationType: ["jwt", "session", "oauth2"],
-//   prodDatabaseType: ["mysql", "mariadb"],
-//   cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
-
-//   searchEngine: "elasticsearch", //optional, at the moment not covered
-//   messageBroker: "useKakfa: = true" //optional, at the moment not covered
-//   //Open API?
-// };
 const config = require("./config.json");
 
 const filename = "templates/microservice-demo.jdl.ejs";
 try {
   config.serviceDiscoveryType.forEach(sdType => {
-    config.authenticationType.forEach(authType => {
-      config.prodDatabaseType.forEach(proddbType => {
+    config.buildTool.forEach(buildTool => {
+      config.authenticationType.forEach(authType => {
         config.cacheProvider.forEach(cacheType => {
           ejs.renderFile(
             filename,
             {
               sdType: sdType,
+              buildTool: buildTool,
               authType: authType,
-              proddbType: proddbType,
               cacheType: cacheType
             },
             function(err, str) {
@@ -33,7 +23,7 @@ try {
                 fs.mkdirSync(
                   path.join(
                     __dirname,
-                    `/../jdl-samples/${sdType}-${authType}-${proddbType}-${cacheType}`
+                    `/../jdl-samples/${sdType}-${buildTool}-${authType}-${cacheType}`
                   ),
                   { recursive: true },
                   err => {
@@ -43,7 +33,7 @@ try {
                 fs.writeFile(
                   path.join(
                     __dirname,
-                    `/../jdl-samples/${sdType}-${authType}-${proddbType}-${cacheType}/microservice-demo.jdl`
+                    `/../jdl-samples/${sdType}-${buildTool}-${authType}-${cacheType}/microservice-demo.jdl`
                   ),
                   str,
                   function(error, data) {
@@ -58,7 +48,7 @@ try {
     });
   });
   console.log(
-    `Samples (${config.serviceDiscoveryType.length * config.authenticationType.length * config.prodDatabaseType.length * config.cacheProvider.length} files) generated succesfully.`
+    `Samples (${config.serviceDiscoveryType.length * config.buildTool.length * config.authenticationType.length * config.cacheProvider.length} files) generated successfully.`
   );
   } catch (e) {
   console.error(e);
