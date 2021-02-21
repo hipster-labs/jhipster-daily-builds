@@ -63,7 +63,7 @@ jobs:
           - gradle-ms-micro-consul
         include:
           - app-type: ms-ngx-gateway-eureka
-            entity: sql
+            entity: sqllight
             profile: prod
             war: 0
             e2e: 1
@@ -73,7 +73,7 @@ jobs:
             war: 0
             e2e: 0
           - app-type: ms-ngx-gateway-consul
-            entity: sql
+            entity: sqllight
             profile: prod
             war: 0
             e2e: 1
@@ -83,7 +83,7 @@ jobs:
             war: 0
             e2e: 1
           - app-type: gradle-ms-ngx-gateway-eureka
-            entity: sql
+            entity: sqllight
             profile: prod
             war: 0
             e2e: 1
@@ -93,7 +93,7 @@ jobs:
             war: 0
             e2e: 0
           - app-type: gradle-ms-ngx-gateway-consul
-            entity: sql
+            entity: sqllight
             profile: prod
             war: 0
             e2e: 1
