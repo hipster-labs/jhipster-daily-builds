@@ -83,7 +83,7 @@ jobs:
             entity: sql
           - app-type: ms-ngx-gateway-eureka
             profile: prod
-            entity: sql
+            entity: sqllight
           - app-type: ms-micro-eureka
             profile: prod
             entity: micro
