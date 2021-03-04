@@ -20,6 +20,15 @@
 name: Official Windows
 on:
   workflow_dispatch:
+    inputs:
+      jhiGenRepo:
+        description: "JHipster repository url"
+        default: "https://github.com/jhipster/generator-jhipster.git"
+        required: false
+      jhiGenBranch:
+        description: "JHipster repository branch"
+        default: "main"
+        required: false
   schedule:
     - cron: "30 8 * * *"
 env:
@@ -31,8 +40,8 @@ env:
   JHI_LIB_REPO: https://github.com/jhipster/jhipster-bom.git
   JHI_LIB_BRANCH: main
   # if JHI_GEN_BRANCH value is release, use the release from NPM
-  JHI_GEN_REPO: https://github.com/jhipster/generator-jhipster.git
-  JHI_GEN_BRANCH: main
+  JHI_GEN_REPO: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
+  JHI_GEN_BRANCH: ${{ github.event.inputs.jhiGenBranch || 'main' }}
   # specific config
   SPRING_OUTPUT_ANSI_ENABLED: NEVER
   SPRING_JPA_SHOW_SQL: false
