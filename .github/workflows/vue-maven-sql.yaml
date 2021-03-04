@@ -29,7 +29,6 @@ on:
         description: "JHipster repository branch"
         default: "main"
         required: false
-
   schedule:
     - cron: "20 1 * * *"
 env:
