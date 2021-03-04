@@ -29,8 +29,8 @@ on:
         description: "JHipster repository branch"
         default: "main"
         required: false
-  schedule:
-    - cron: "0 7 * * *"
+  # schedule:
+  #   - cron: "0 7 * * *"
 env:
   JHI_RUN_APP: 1
   JHI_JDK: 11
