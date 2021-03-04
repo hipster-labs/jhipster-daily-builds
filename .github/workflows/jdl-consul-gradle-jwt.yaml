@@ -65,7 +65,7 @@ jobs:
           - consul-gradle-jwt-react-ehcache
           - consul-gradle-jwt-vue-hazelcast
           - consul-gradle-jwt-angularX-infinispan
-          # - consul-gradle-jwt-react-memcached
+          - consul-gradle-jwt-react-memcached
           - consul-gradle-jwt-vue-no
           - consul-gradle-jwt-angularX-redis
         include:
@@ -89,11 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          # - app-type: consul-gradle-jwt-react-memcached
-          #   entity: jdl
-          #   profile: prod
-          #   war: 0
-          #   e2e: 1
+          - app-type: consul-gradle-jwt-react-memcached
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
           - app-type: consul-gradle-jwt-vue-no
             entity: jdl
             profile: prod

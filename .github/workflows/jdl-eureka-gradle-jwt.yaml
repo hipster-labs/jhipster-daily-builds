@@ -65,7 +65,7 @@ jobs:
           - eureka-gradle-jwt-vue-ehcache
           - eureka-gradle-jwt-angularX-hazelcast
           - eureka-gradle-jwt-react-infinispan
-          # - eureka-gradle-jwt-vue-memcached
+          - eureka-gradle-jwt-vue-memcached
           - eureka-gradle-jwt-angularX-no
           - eureka-gradle-jwt-react-redis
         include:
@@ -89,11 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          # - app-type: eureka-gradle-jwt-vue-memcached
-          #   entity: jdl
-          #   profile: prod
-          #   war: 0
-          #   e2e: 1
+          - app-type: eureka-gradle-jwt-vue-memcached
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
           - app-type: eureka-gradle-jwt-angularX-no
             entity: jdl
             profile: prod

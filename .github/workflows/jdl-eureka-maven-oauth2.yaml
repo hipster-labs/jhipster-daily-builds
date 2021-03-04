@@ -65,7 +65,7 @@ jobs:
           - eureka-maven-oauth2-vue-ehcache
           - eureka-maven-oauth2-angularX-hazelcast
           - eureka-maven-oauth2-react-infinispan
-          # - eureka-maven-oauth2-vue-memcached
+          - eureka-maven-oauth2-vue-memcached
           - eureka-maven-oauth2-angularX-no
           - eureka-maven-oauth2-react-redis
         include:
@@ -89,11 +89,11 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          # - app-type: eureka-maven-oauth2-vue-memcached
-          #   entity: jdl
-          #   profile: prod
-          #   war: 0
-          #   e2e: 1
+          - app-type: eureka-maven-oauth2-vue-memcached
+            entity: jdl
+            profile: prod
+            war: 0
+            e2e: 1
           - app-type: eureka-maven-oauth2-angularX-no
             entity: jdl
             profile: prod
