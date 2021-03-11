@@ -103,11 +103,11 @@ jobs:
           #   entity: mongodb
           - app-type: vue-default
             entity: sql
-            environment: prod
+            profile: prod
             e2e: 1
           - app-type: react-default
             entity: sql
-            environment: prod
+            profile: prod
             e2e: 1
     env:
       JHI_ENTITY: ${{ matrix.entity }}
