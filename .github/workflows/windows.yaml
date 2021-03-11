@@ -73,6 +73,8 @@ jobs:
           - ms-ngx-gateway-eureka
           - ms-micro-eureka
           # - ngx-mongodb-kafka-cucumber
+          - vue-default
+          - react-default
         include:
           - app-type: ngx-default
             profile: prod
@@ -99,6 +101,17 @@ jobs:
           # - app-type: ngx-mongodb-kafka-cucumber
           #   profile: prod
           #   entity: mongodb
+          - app-type: vue-default
+            entity: sqlfull
+            environment: prod
+            war: 0
+            e2e: 1
+          - app-type: react-default
+            entity: sql
+            environment: prod
+            war: 0
+            e2e: 1
+            testcontainers: 0
     env:
       JHI_ENTITY: ${{ matrix.entity }}
       JHI_APP: ${{ matrix.app-type }}
