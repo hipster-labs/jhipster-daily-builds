@@ -64,7 +64,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node_version: [12.16.1]
+        node_version: [14.15.5]
         os: [ubuntu-latest]
         app-type:
           - ngx-neo4j
