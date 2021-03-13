@@ -63,7 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node_version: [12.18.3]
+        node_version: [14.15.5]
         os: [windows-latest]
         app-type:
           - ngx-default
