@@ -141,6 +141,7 @@ jobs:
           sudo apt install google-chrome-stable
       - uses: actions/setup-java@v2
         with:
+          distribution: 'adopt'
           java-version: "11.x"
       - name: "TOOLS: display configuration"
         run: ./test-integration/scripts/01-display-configuration.sh
