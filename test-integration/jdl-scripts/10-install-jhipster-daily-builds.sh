@@ -83,5 +83,5 @@ cp "$JHI_CLONED"/test-integration/jdl-scripts/00-init-env.sh "$JHI_HOME"/test-in
 
 # copy all samples
 cp -R "$JHI_CLONED"/test-integration/samples/* "$JHI_HOME"/test-integration/samples/
-mkdir "$JHI_HOME"/test-integration/jdl-samples
+mkdir -p "$JHI_HOME"/test-integration/jdl-samples
 cp -R "$JHI_CLONED"/test-integration/jdl-samples/* "$JHI_HOME"/test-integration/jdl-samples/
