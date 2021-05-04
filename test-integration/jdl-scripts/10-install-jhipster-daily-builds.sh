@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bina/bash
 
 set -e
 source $(dirname $0)/00-init-env.sh
