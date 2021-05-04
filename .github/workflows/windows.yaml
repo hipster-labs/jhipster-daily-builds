@@ -167,4 +167,4 @@ jobs:
         shell: bash
       - name: "TESTS: packaging"
         run: $JHI_SCRIPTS/23-package.sh
-        shell: bash
+        shell: bass
