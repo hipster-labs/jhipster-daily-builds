@@ -3,13 +3,5 @@
   "authenticationType": ["jwt", "oauth2"],
   "buildTool": ["maven", "gradle"],
   "clientFramework": ["angularX", "react", "vue"],
-  "cacheProvider": [
-    "hazelcast",
-    "ehcache",
-    "infinispan",
-    "memcached",
-    "redis",
-    "caffeine",
-    "no"
-  ]
+  "cacheProvider": ["hazelcast", "ehcache", "infinispan", "memcached", "redis", "caffeine", "no"]
 }

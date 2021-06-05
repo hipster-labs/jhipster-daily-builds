@@ -22,15 +22,15 @@ on:
   workflow_dispatch:
     inputs:
       jhiGenRepo:
-        description: "JHipster repository url"
-        default: "https://github.com/jhipster/generator-jhipster.git"
+        description: 'JHipster repository url'
+        default: 'https://github.com/jhipster/generator-jhipster.git'
         required: false
       jhiGenBranch:
-        description: "JHipster repository branch"
-        default: "main"
+        description: 'JHipster repository branch'
+        default: 'main'
         required: false
   schedule:
-    - cron: "30 5 * * *"
+    - cron: '30 5 * * *'
 env:
   JHI_RUN_APP: 1
   JHI_JDK: 11
@@ -42,7 +42,7 @@ env:
   SPRING_JPA_SHOW_SQL: false
   JHI_DISABLE_WEBPACK_LOGS: true
   JHI_SCRIPTS: ./test-integration/jdl-scripts
-  NG_CLI_ANALYTICS: "false"
+  NG_CLI_ANALYTICS: 'false'
   JHI_GITHUB_CI: true
   # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
   MAVEN_OPTS: >-
@@ -125,38 +125,38 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: "11.x"
-      - name: "TOOLS: generating jdl-samples"
+          java-version: '11.x'
+      - name: 'TOOLS: generating jdl-samples'
         run: |
           cd $GITHUB_WORKSPACE/test-integration/jdl-samples
           npm i
           npm start
         shell: bash
-      - name: "TOOLS: display configuration"
+      - name: 'TOOLS: display configuration'
         run: $JHI_SCRIPTS/01-display-configuration.sh
-      - name: "TOOLS: configure tools installed by the system"
+      - name: 'TOOLS: configure tools installed by the system'
         run: $JHI_SCRIPTS/03-system.sh
-      - name: "TOOLS: configure git"
+      - name: 'TOOLS: configure git'
         run: $JHI_SCRIPTS/04-git-config.sh
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - name: "GENERATION: install JHipster"
+      - name: 'GENERATION: install JHipster'
         run: $JHI_SCRIPTS/10-install-jhipster-daily-builds.sh
-      - name: "GENERATION: project"
+      - name: 'GENERATION: project'
         run: $JHI_SCRIPTS/12-generate-project.sh
-      - name: "GENERATION: replace version in generated project"
+      - name: 'GENERATION: replace version in generated project'
         run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
-      - name: "GENERATION: jhipster info"
+      - name: 'GENERATION: jhipster info'
         run: $JHI_SCRIPTS/14-jhipster-info.sh
       # ----------------------------------------------------------------------
       # Launch tests (Docker-Compose)
       # ----------------------------------------------------------------------
-      - name: "TESTS: packaging"
+      - name: 'TESTS: packaging'
         run: $JHI_SCRIPTS/23-package.sh
-      - name: "TESTS: Deploying with docker-compose file"
+      - name: 'TESTS: Deploying with docker-compose file'
         run: $JHI_SCRIPTS/24-deploy-with-docker-compose.sh
-      - name: "TESTS: END-to-End (Docker-compose)"
+      - name: 'TESTS: END-to-End (Docker-compose)'
         run: $JHI_SCRIPTS/25-tests-e2e-docker-compose.sh
       # ----------------------------------------------------------------------
       # Launch tests (Kubernetes)
