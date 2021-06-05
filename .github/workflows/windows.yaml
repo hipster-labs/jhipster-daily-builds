@@ -8,7 +8,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#      https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,15 +22,15 @@ on:
   workflow_dispatch:
     inputs:
       jhiGenRepo:
-        description: "JHipster repository url"
-        default: "https://github.com/jhipster/generator-jhipster.git"
+        description: 'JHipster repository url'
+        default: 'https://github.com/jhipster/generator-jhipster.git'
         required: false
       jhiGenBranch:
-        description: "JHipster repository branch"
-        default: "main"
+        description: 'JHipster repository branch'
+        default: 'main'
         required: false
   schedule:
-    - cron: "30 8 * * *"
+    - cron: '30 8 * * *'
 env:
   JHI_RUN_APP: 1
   JHI_E2E: 0
@@ -125,46 +125,46 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: "11.x"
-      - name: "TOOLS: display configuration"
+          java-version: '11.x'
+      - name: 'TOOLS: display configuration'
         run: ./test-integration/scripts/01-display-configuration.sh
         shell: bash
-      - name: "TOOLS: configure git"
+      - name: 'TOOLS: configure git'
         run: ./test-integration/scripts/04-git-config.sh
         shell: bash
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - name: "GENERATION: install JHipster"
+      - name: 'GENERATION: install JHipster'
         run: ./test-integration/scripts/10-install-jhipster-daily-builds.sh
         shell: bash
-      - name: "GENERATION: entities"
+      - name: 'GENERATION: entities'
         run: $JHI_SCRIPTS/11-generate-entities.sh
         shell: bash
-      - name: "GENERATION: project"
+      - name: 'GENERATION: project'
         run: $JHI_SCRIPTS/12-generate-project.sh
         shell: bash
-      - name: "GENERATION: replace version in generated project"
+      - name: 'GENERATION: replace version in generated project'
         run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
         shell: bash
-      - name: "GENERATION: jhipster info"
+      - name: 'GENERATION: jhipster info'
         run: $JHI_SCRIPTS/14-jhipster-info.sh
         shell: bash
       #----------------------------------------------------------------------
       # Bugs fix
       #----------------------------------------------------------------------
-      - name: "BUGS-FIX: no memory limit for Elastichsearch"
+      - name: 'BUGS-FIX: no memory limit for Elastichsearch'
         run: $JHI_SCRIPTS/20-no-memory-limit-elasticsearch.sh
         shell: bash
       #----------------------------------------------------------------------
       # Launch Tests
       #----------------------------------------------------------------------
-      - name: "TESTS: backend"
+      - name: 'TESTS: backend'
         run: $JHI_SCRIPTS/21-tests-backend.sh
         shell: bash
-      - name: "TESTS: frontend"
+      - name: 'TESTS: frontend'
         run: $JHI_SCRIPTS/22-tests-frontend.sh
         shell: bash
-      - name: "TESTS: packaging"
+      - name: 'TESTS: packaging'
         run: $JHI_SCRIPTS/23-package.sh
         shell: bash

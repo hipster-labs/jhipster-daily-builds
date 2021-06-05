@@ -8,7 +8,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#      https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,21 +21,21 @@ name: Docker Image
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 3 * * *"
+    - cron: '30 3 * * *'
 jobs:
   builds:
-    runs-on: "ubuntu-latest"
+    runs-on: 'ubuntu-latest'
     if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       #----------------------------------------------------------------------
       # Install all tools and check configuration
       #----------------------------------------------------------------------
       - uses: actions/checkout@v2
-      - name: "TOOLS: docker version"
+      - name: 'TOOLS: docker version'
         run: docker version
-      - name: "TOOLS: docker-compose version"
+      - name: 'TOOLS: docker-compose version'
         run: docker-compose version
-      - name: "INSTALL: pull jhipster/jhipster:main image"
+      - name: 'INSTALL: pull jhipster/jhipster:main image'
         run: docker pull jhipster/jhipster:main
-      - name: "TESTS: test jhipster/jhipster:main image"
+      - name: 'TESTS: test jhipster/jhipster:main image'
         run: test-integration/scripts/26-tests-docker.sh
