@@ -32,33 +32,19 @@ on:
   schedule:
     - cron: '30 6 * * *'
 env:
-  JHI_RUN_APP: 1
-  JHI_JDK: 11
-  JHI_LIB_REPO: https://github.com/jhipster/jhipster-bom.git
-  JHI_LIB_BRANCH: main
-  JHI_GEN_REPO: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
-  JHI_GEN_BRANCH: ${{ github.event.inputs.jhiGenBranch || 'main' }}
-  SPRING_OUTPUT_ANSI_ENABLED: ALWAYS
-  SPRING_JPA_SHOW_SQL: false
-  JHI_DISABLE_WEBPACK_LOGS: true
-  JHI_SCRIPTS: ./test-integration/jdl-scripts
-  NG_CLI_ANALYTICS: 'false'
-  JHI_GITHUB_CI: true
-  # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
-  MAVEN_OPTS: >-
-    -Dhttp.keepAlive=false
-    -Dmaven.wagon.http.pool=false
-    -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
+  JHI_JDL_SAMPLES: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-samples
+  JHI_JDL_SCRIPTS: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-scripts
 jobs:
   applications:
     name: ${{ matrix.app-type }}
     runs-on: ${{ matrix.os }}
-    if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/app
     timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
-        node_version: [14.16.0]
         os: [ubuntu-latest]
         app-type:
           - consul-gradle-oauth2-react-caffeine
@@ -104,20 +90,35 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-    env:
-      JHI_ENTITY: ${{ matrix.entity }}
-      JHI_APP: ${{ matrix.app-type }}
-      JHI_PROFILE: ${{ matrix.profile }}
-      JHI_WAR: ${{ matrix.war }}
-      JHI_E2E: ${{ matrix.e2e }}
     steps:
       #----------------------------------------------------------------------
       # Install all tools and check configuration
       #----------------------------------------------------------------------
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: 'SETUP: Checkout jhipster-daily-builds'
+        uses: actions/checkout@v2.3.4
         with:
-          node-version: ${{ matrix.node_version }}
+          path: jhipster-daily-builds
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v2.3.4
+        with:
+          repository: 'jhipster/generator-jhipster'
+          path: generator-jhipster
+          # shows 5 commits at log
+          fetch-depth: 5
+          ref: main
+      - name: 'SETUP: environment'
+        id: setup
+        uses: ./generator-jhipster/.github/actions/setup
+        with:
+          jdl-sample: ${{ matrix.app-type }}
+          application-environment: ${{ matrix.profile }}
+          application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
+          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
+          generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
+          generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ steps.setup.outputs.node-version }}
       - name: Download latest chrome binary
         run: |
           sudo apt update
@@ -125,15 +126,26 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: '11.x'
+          java-version: ${{ steps.setup.outputs.java-version }}
+      - name: 'SETUP: load cache'
+        uses: actions/cache@v2.1.6
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/Cypress/
+            ~/.m2/repository
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}-${{ hashFiles('pom.xml', '**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}-
+            ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}
       - name: 'TOOLS: generating jdl-samples'
         run: |
-          cd $GITHUB_WORKSPACE/test-integration/jdl-samples
+          cd $GITHUB_WORKSPACE/jhipster-daily-builds/test-integration/jdl-samples
           npm i
           npm start
         shell: bash
-      - name: 'TOOLS: display configuration'
-        run: $JHI_SCRIPTS/01-display-configuration.sh
       - name: 'TOOLS: configure tools installed by the system'
         run: $JHI_SCRIPTS/03-system.sh
       - name: 'TOOLS: configure git'
@@ -142,22 +154,24 @@ jobs:
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
       - name: 'GENERATION: install JHipster'
-        run: $JHI_SCRIPTS/10-install-jhipster-daily-builds.sh
+        run: $JHI_SCRIPTS/10-install-jhipster.sh
+      - name: 'GENERATION: config'
+        run: $JHI_SCRIPTS/11-generate-config.sh
       - name: 'GENERATION: project'
         run: $JHI_SCRIPTS/12-generate-project.sh
       - name: 'GENERATION: replace version in generated project'
-        run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
+        run: $JHI_JDL_SCRIPTS/13-replace-version-generated-project.sh
       - name: 'GENERATION: jhipster info'
-        run: $JHI_SCRIPTS/14-jhipster-info.sh
+        run: $JHI_JDL_SCRIPTS/14-jhipster-info.sh
       # ----------------------------------------------------------------------
       # Launch tests (Docker-Compose)
       # ----------------------------------------------------------------------
       - name: 'TESTS: packaging'
-        run: $JHI_SCRIPTS/23-package.sh
+        run: $JHI_JDL_SCRIPTS/23-package.sh
       - name: 'TESTS: Deploying with docker-compose file'
-        run: $JHI_SCRIPTS/24-deploy-with-docker-compose.sh
-      - name: 'TESTS: END-to-End (Docker-compose)'
-        run: $JHI_SCRIPTS/25-tests-e2e-docker-compose.sh
+        run: $JHI_JDL_SCRIPTS/24-deploy-with-docker-compose.sh
+      - name: 'TESTS: End-to-End (Docker-compose)'
+        run: $JHI_JDL_SCRIPTS/25-tests-e2e-docker-compose.sh
       # ----------------------------------------------------------------------
       # Launch tests (Kubernetes)
       # ----------------------------------------------------------------------
@@ -168,6 +182,6 @@ jobs:
       #     kubectl get pods -n kube-system
       #     kubectl version
       # - name: 'TESTS: Deploying with kubernetes'
-      #   run: $JHI_SCRIPTS/28-deploy-with-kubernetes.sh
+      #   run: $JHI_JDL_SCRIPTS/28-deploy-with-kubernetes.sh
       # - name: 'TESTS: Tests End-to-End (Kubernetes)'
-      #   run: $JHI_SCRIPTS/29-tests-e2e-kubernetes.sh
+      #   run: $JHI_JDL_SCRIPTS/29-tests-e2e-kubernetes.sh
