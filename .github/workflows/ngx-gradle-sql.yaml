@@ -30,7 +30,7 @@ on:
         default: 'main'
         required: false
   schedule:
-    - cron: '20 0 * * *'
+    - cron: '50 0 * * *'
 env:
   JHI_RUN_APP: 1
   JHI_JDK: 11
