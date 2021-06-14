@@ -18,6 +18,10 @@
 #
 
 name: React Gradle SQL
+concurrency:
+  # Group PRs by head_ref, push event by ref.
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 on:
   workflow_dispatch:
     inputs:
