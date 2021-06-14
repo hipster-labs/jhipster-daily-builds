@@ -19,8 +19,7 @@
 
 name: JDL Consul Gradle OAuth2
 concurrency:
-  # Group PRs by head_ref, push event by ref.
-  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.jhiGenRepo }}-${{ github.event.inputs.jhiGenBranch }}
   cancel-in-progress: true
 on:
   workflow_dispatch:
