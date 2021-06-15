@@ -18,14 +18,6 @@
 #
 
 name: Neo4j
-# concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.jhiGenRepo }}-${{ github.event.inputs.jhiGenBranch }}
-  cancel-in-progress: true
-on:
-#   push:
-#     branches-ignore:
-#       - '**'
-# on: [push, pull_request]
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.jhiGenRepo }}-${{ github.event.inputs.jhiGenBranch }}
   cancel-in-progress: true
