@@ -40,6 +40,18 @@ else
 fi
 
 #-------------------------------------------------------------------------------
+# Override config
+#-------------------------------------------------------------------------------
+
+# replace 00-init-env.sh
+cp "$JHI_CLONED"/test-integration/jdl-scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
+
+# copy all samples
+cp -R "$JHI_CLONED"/test-integration/samples/* "$JHI_HOME"/test-integration/samples/
+mkdir -p "$JHI_HOME"/test-integration/jdl-samples
+cp -R "$JHI_CLONED"/test-integration/jdl-samples/* "$JHI_HOME"/test-integration/jdl-samples/
+
+#-------------------------------------------------------------------------------
 # Install JHipster Dependencies and Server-side library
 #-------------------------------------------------------------------------------
 cd "$HOME"
@@ -73,15 +85,3 @@ else
     ls -al ~/.m2/repository/tech/jhipster/jhipster-dependencies/
     ls -al ~/.m2/repository/tech/jhipster/jhipster-parent/
 fi
-
-#-------------------------------------------------------------------------------
-# Override config
-#-------------------------------------------------------------------------------
-
-# replace 00-init-env.sh
-cp "$JHI_CLONED"/test-integration/jdl-scripts/00-init-env.sh "$JHI_HOME"/test-integration/scripts/
-
-# copy all samples
-cp -R "$JHI_CLONED"/test-integration/samples/* "$JHI_HOME"/test-integration/samples/
-mkdir -p "$JHI_HOME"/test-integration/jdl-samples
-cp -R "$JHI_CLONED"/test-integration/jdl-samples/* "$JHI_HOME"/test-integration/jdl-samples/
