@@ -18,6 +18,9 @@
 #
 
 name: Vue Maven NoSQL
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.jhiGenRepo }}-${{ github.event.inputs.jhiGenBranch }}
+  cancel-in-progress: true
 on:
   workflow_dispatch:
     inputs:
