@@ -32,38 +32,18 @@ on:
   schedule:
     - cron: '30 8 * * *'
 env:
-  JHI_RUN_APP: 1
-  JHI_E2E: 0
-  JHI_ENTITY: sql
-  JHI_WINDOWS: true
-  # if JHI_LIB_BRANCH value is release, use the release from Maven
-  JHI_LIB_REPO: https://github.com/jhipster/jhipster-bom.git
-  JHI_LIB_BRANCH: main
-  # if JHI_GEN_BRANCH value is release, use the release from NPM
-  JHI_GEN_REPO: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
-  JHI_GEN_BRANCH: ${{ github.event.inputs.jhiGenBranch || 'main' }}
-  # specific config
-  SPRING_OUTPUT_ANSI_ENABLED: NEVER
-  SPRING_JPA_SHOW_SQL: false
-  JHI_DISABLE_WEBPACK_LOGS: true
-  JHI_E2E_HEADLESS: true
-  JHI_SCRIPTS: /c/Users/runneradmin/generator-jhipster/test-integration/scripts
-  JHI_GITHUB_CI: true
-  # https://github.com/actions/virtual-environments/issues/1499#issuecomment-689467080
-  MAVEN_OPTS: >-
-    -Dhttp.keepAlive=false
-    -Dmaven.wagon.http.pool=false
-    -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
+  JHI_SAMPLES: ${{ github.workspace }}/jhipster-daily-builds/test-integration/samples
 jobs:
   applications:
     name: ${{ matrix.app-type }}
     runs-on: ${{ matrix.os }}
-    if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
+    defaults:
+      run:
+        shell: bash
     timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
-        node_version: [14.16.0]
         os: [windows-latest]
         app-type:
           - ngx-default
@@ -109,62 +89,68 @@ jobs:
             entity: sql
             profile: prod
             e2e: 1
-    env:
-      JHI_ENTITY: ${{ matrix.entity }}
-      JHI_APP: ${{ matrix.app-type }}
-      JHI_PROFILE: ${{ matrix.profile }}
-      JHI_E2E: ${{ matrix.e2e }}
     steps:
       #----------------------------------------------------------------------
       # Install all tools and check configuration
       #----------------------------------------------------------------------
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: 'SETUP: Checkout jhipster-daily-builds'
+        uses: actions/checkout@v2.3.4
         with:
-          node-version: ${{ matrix.node_version }}
+          path: jhipster-daily-builds
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v2.3.4
+        with:
+          repository: 'jhipster/generator-jhipster'
+          path: generator-jhipster
+          # shows 5 commits at log
+          fetch-depth: 5
+          ref: main
+      - name: 'SETUP: environment'
+        id: setup
+        uses: ./generator-jhipster/.github/actions/setup
+        with:
+          entities-sample: ${{ matrix.entity }}
+          application-sample: ${{ matrix.app-type }}
+          application-environment: ${{ matrix.profile }}
+          application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
+          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
+          generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
+          generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ steps.setup.outputs.node-version }}
       - uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: '11.x'
-      - name: 'TOOLS: display configuration'
-        run: ./test-integration/scripts/01-display-configuration.sh
-        shell: bash
+          java-version: ${{ steps.setup.outputs.java-version }}
       - name: 'TOOLS: configure git'
-        run: ./test-integration/scripts/04-git-config.sh
-        shell: bash
+        run: $JHI_SCRIPTS/04-git-config.sh
+      - name: 'Copy samples'
+        run: cp -R "$JHI_HOME/test-integration/samples/.jhipster" "$JHI_SAMPLES"
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
       - name: 'GENERATION: install JHipster'
-        run: ./test-integration/scripts/10-install-jhipster-daily-builds.sh
-        shell: bash
-      - name: 'GENERATION: entities'
-        run: $JHI_SCRIPTS/11-generate-entities.sh
-        shell: bash
+        run: $JHI_SCRIPTS/10-install-jhipster.sh
+      - name: 'GENERATION: config'
+        run: $JHI_SCRIPTS/11-generate-config.sh
       - name: 'GENERATION: project'
         run: $JHI_SCRIPTS/12-generate-project.sh
-        shell: bash
       - name: 'GENERATION: replace version in generated project'
         run: $JHI_SCRIPTS/13-replace-version-generated-project.sh
-        shell: bash
       - name: 'GENERATION: jhipster info'
         run: $JHI_SCRIPTS/14-jhipster-info.sh
-        shell: bash
       #----------------------------------------------------------------------
       # Bugs fix
       #----------------------------------------------------------------------
       - name: 'BUGS-FIX: no memory limit for Elastichsearch'
         run: $JHI_SCRIPTS/20-no-memory-limit-elasticsearch.sh
-        shell: bash
       #----------------------------------------------------------------------
-      # Launch Tests
+      # Launch tests
       #----------------------------------------------------------------------
       - name: 'TESTS: backend'
-        run: $JHI_SCRIPTS/21-tests-backend.sh
-        shell: bash
+        run: $JHI_SCRIPTS/21-tests-backend-npm.sh
       - name: 'TESTS: frontend'
-        run: $JHI_SCRIPTS/22-tests-frontend.sh
-        shell: bash
+        run: $JHI_SCRIPTS/22-tests-frontend-npm.sh
       - name: 'TESTS: packaging'
-        run: $JHI_SCRIPTS/23-package.sh
-        shell: bash
+        run: $JHI_SCRIPTS/23-package-npm.sh
