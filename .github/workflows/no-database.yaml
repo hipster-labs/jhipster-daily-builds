@@ -52,17 +52,11 @@ jobs:
           - ngx-nodatabase-jwt
           - ngx-nodatabase-oauth2
           - ngx-nodatabase-session
-          - ngx-nodatabase-gateway-consul-jwt
-          - ngx-nodatabase-gateway-consul-oauth2
-          - ngx-nodatabase-gateway-eureka-jwt
           - ngx-nodatabase-gateway-eureka-oauth2
           - react-nodatabase-jwt-gradle
           - react-nodatabase-oauth2-gradle
           - react-nodatabase-session-gradle
           - gradle-ngx-nodatabase-gateway-consul-jwt
-          - gradle-ngx-nodatabase-gateway-consul-oauth2
-          - gradle-ngx-nodatabase-gateway-eureka-jwt
-          - gradle-ngx-nodatabase-gateway-eureka-oauth2
         include:
           - app-type: ngx-nodatabase-jwt
             entity: none
@@ -75,21 +69,6 @@ jobs:
             war: 0
             e2e: 1
           - app-type: ngx-nodatabase-session
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: ngx-nodatabase-gateway-consul-jwt
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: ngx-nodatabase-gateway-consul-oauth2
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: ngx-nodatabase-gateway-eureka-jwt
             entity: none
             profile: prod
             war: 0
@@ -115,21 +94,6 @@ jobs:
             war: 0
             e2e: 1
           - app-type: gradle-ngx-nodatabase-gateway-consul-jwt
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-ngx-nodatabase-gateway-consul-oauth2
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-ngx-nodatabase-gateway-eureka-jwt
-            entity: none
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-ngx-nodatabase-gateway-eureka-oauth2
             entity: none
             profile: prod
             war: 0
