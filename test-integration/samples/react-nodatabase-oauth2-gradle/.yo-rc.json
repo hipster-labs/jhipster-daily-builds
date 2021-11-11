@@ -27,7 +27,7 @@
     "clientThemeVariant": "",
     "useSass": true,
     "clientPackageManager": "npm",
-    "testFrameworks": ["protractor"],
+    "testFrameworks": ["cypress"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
