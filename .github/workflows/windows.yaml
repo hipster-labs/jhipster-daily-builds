@@ -43,6 +43,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ${{ github.workspace }}/app
     timeout-minutes: 40
     strategy:
       fail-fast: false
