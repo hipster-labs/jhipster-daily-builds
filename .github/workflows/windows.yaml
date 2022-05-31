@@ -50,7 +50,8 @@ jobs:
         os: [windows-latest]
         app-type:
           - ngx-default
-          - ngx-mysql-es-noi18n-mapsid
+          # Elasticsearch requires docker for tests
+          # - ngx-mysql-es-noi18n-mapsid
           - ngx-gradle-fr
           - ngx-mariadb-oauth2-sass-infinispan
           - ms-ngx-gateway-eureka
@@ -60,37 +61,37 @@ jobs:
           - react-default
         include:
           - app-type: ngx-default
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
-          - app-type: ngx-mysql-es-noi18n-mapsid
-            profile: prod
-            e2e: 1
-            entity: sql
+          # - app-type: ngx-mysql-es-noi18n-mapsid
+          #   profile: prod
+          #   e2e: 1
+          #   entity: sql
           - app-type: ngx-gradle-fr
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
           - app-type: ngx-mariadb-oauth2-sass-infinispan
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
           - app-type: ms-ngx-gateway-eureka
-            profile: prod
+            profile: dev
             entity: sqllight
           - app-type: ms-micro-eureka
-            profile: prod
+            profile: dev
             entity: micro
           # - app-type: ngx-mongodb-kafka-cucumber
           #   profile: prod
           #   entity: mongodb
           - app-type: vue-default
             entity: sql
-            profile: prod
+            profile: dev
             e2e: 1
           - app-type: react-default
             entity: sql
-            profile: prod
+            profile: dev
             e2e: 1
     steps:
       #----------------------------------------------------------------------
