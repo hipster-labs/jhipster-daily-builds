@@ -160,7 +160,7 @@ jobs:
       - name: 'GENERATION: config'
         run: $JHI_SCRIPTS/11-generate-config.sh
       - name: 'GENERATION: project'
-        run: $JHI_SCRIPTS/12-generate-project.sh
+        run: $JHI_SCRIPTS/12-generate-project.sh --workspaces --monorepository
       - name: 'GENERATION: replace version in generated project'
         run: $JHI_JDL_SCRIPTS/13-replace-version-generated-project.sh
       - name: 'GENERATION: jhipster info'
