@@ -116,7 +116,6 @@ jobs:
           application-sample: ${{ matrix.app-type }}
           application-environment: ${{ matrix.profile }}
           application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
           generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
           generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
       - uses: actions/setup-node@v2.1.5
@@ -150,8 +149,8 @@ jobs:
       # Launch tests
       #----------------------------------------------------------------------
       - name: 'TESTS: backend'
-        run: $JHI_SCRIPTS/21-tests-backend.sh
+        run: npm run ci:backend:test
       - name: 'TESTS: frontend'
-        run: $JHI_SCRIPTS/22-tests-frontend-npm.sh
+        run: npm run ci:frontend:test
       - name: 'TESTS: packaging'
-        run: $JHI_SCRIPTS/23-package.sh
+        run: npm run ci:e2e:package

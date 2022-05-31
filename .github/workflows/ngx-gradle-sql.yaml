@@ -116,7 +116,6 @@ jobs:
           application-sample: ${{ matrix.app-type }}
           application-environment: ${{ matrix.profile }}
           application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
           generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
           generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
       - uses: actions/setup-node@v2.1.5
@@ -165,13 +164,13 @@ jobs:
       #----------------------------------------------------------------------
       # Launch tests
       #----------------------------------------------------------------------
-      - name: 'TESTS: Start docker-compose containers'
-        run: $JHI_SCRIPTS/20-docker-compose-npm.sh
       - name: 'TESTS: backend'
-        run: $JHI_SCRIPTS/21-tests-backend-npm.sh
+        run: npm run ci:backend:test
       - name: 'TESTS: frontend'
-        run: $JHI_SCRIPTS/22-tests-frontend-npm.sh
+        run: npm run ci:frontend:test
       - name: 'TESTS: packaging'
-        run: $JHI_SCRIPTS/23-package-npm.sh
-      - name: 'TESTS: End-to-End'
-        run: $JHI_SCRIPTS/24-tests-e2e-npm.sh
+        run: npm run ci:e2e:package
+      - name: 'TESTS: Deploying with docker-compose file'
+        run: npm run ci:e2e:prepare
+      - name: 'TESTS: End-to-End (Docker-compose)'
+        run: npm run ci:e2e:run --if-present

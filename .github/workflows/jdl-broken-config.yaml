@@ -122,7 +122,6 @@ jobs:
           jdl-sample: ${{ matrix.app-type }}
           application-environment: ${{ matrix.profile }}
           application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
           generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
           generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
       - uses: actions/setup-node@v2.1.5
@@ -176,11 +175,11 @@ jobs:
       # Launch tests (Docker-Compose)
       # ----------------------------------------------------------------------
       - name: 'TESTS: packaging'
-        run: $JHI_JDL_SCRIPTS/23-package.sh
+        run: npm run ci:e2e:package
       - name: 'TESTS: Deploying with docker-compose file'
-        run: $JHI_JDL_SCRIPTS/24-deploy-with-docker-compose.sh
+        run: npm run ci:e2e:prepare
       - name: 'TESTS: End-to-End (Docker-compose)'
-        run: $JHI_JDL_SCRIPTS/25-tests-e2e-docker-compose.sh
+        run: npm run ci:e2e:run --if-present
       # ----------------------------------------------------------------------
       # Launch tests (Kubernetes)
       # ----------------------------------------------------------------------
