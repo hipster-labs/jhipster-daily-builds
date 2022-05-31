@@ -50,7 +50,8 @@ jobs:
         os: [windows-latest]
         app-type:
           - ngx-default
-          - ngx-mysql-es-noi18n-mapsid
+          # Elasticsearch requires docker for tests
+          # - ngx-mysql-es-noi18n-mapsid
           - ngx-gradle-fr
           - ngx-mariadb-oauth2-sass-infinispan
           - ms-ngx-gateway-eureka
@@ -60,37 +61,37 @@ jobs:
           - react-default
         include:
           - app-type: ngx-default
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
-          - app-type: ngx-mysql-es-noi18n-mapsid
-            profile: prod
-            e2e: 1
-            entity: sql
+          # - app-type: ngx-mysql-es-noi18n-mapsid
+          #   profile: prod
+          #   e2e: 1
+          #   entity: sql
           - app-type: ngx-gradle-fr
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
           - app-type: ngx-mariadb-oauth2-sass-infinispan
-            profile: prod
+            profile: dev
             e2e: 1
             entity: sql
           - app-type: ms-ngx-gateway-eureka
-            profile: prod
+            profile: dev
             entity: sqllight
           - app-type: ms-micro-eureka
-            profile: prod
+            profile: dev
             entity: micro
           # - app-type: ngx-mongodb-kafka-cucumber
           #   profile: prod
           #   entity: mongodb
           - app-type: vue-default
             entity: sql
-            profile: prod
+            profile: dev
             e2e: 1
           - app-type: react-default
             entity: sql
-            profile: prod
+            profile: dev
             e2e: 1
     steps:
       #----------------------------------------------------------------------
@@ -116,7 +117,6 @@ jobs:
           application-sample: ${{ matrix.app-type }}
           application-environment: ${{ matrix.profile }}
           application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
           generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
           generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
       - uses: actions/setup-node@v2.1.5
@@ -150,8 +150,8 @@ jobs:
       # Launch tests
       #----------------------------------------------------------------------
       - name: 'TESTS: backend'
-        run: $JHI_SCRIPTS/21-tests-backend.sh
+        run: npm run ci:backend:test
       - name: 'TESTS: frontend'
-        run: $JHI_SCRIPTS/22-tests-frontend-npm.sh
+        run: npm run ci:frontend:test
       - name: 'TESTS: packaging'
-        run: $JHI_SCRIPTS/23-package.sh
+        run: npm run ci:e2e:package
