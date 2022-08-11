@@ -138,8 +138,9 @@ jobs:
         run: $JHI_SCRIPTS/11-generate-config.sh
         working-directory: ${{ github.workspace }}/
       - name: 'GENERATION: force npm to use bash'
-        run: 'echo "script-shell=bash" >> .npmrc'
-        working-directory: ${{ github.workspace }}/
+        run: |
+          echo "script-shell=bash" >.npmrc
+          cat .npmrc
       - name: 'GENERATION: project'
         run: $JHI_SCRIPTS/12-generate-project.sh
       - name: 'GENERATION: replace version in generated project'
