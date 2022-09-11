@@ -25,6 +25,6 @@
     "ci": true,
     "serviceDiscoveryType": false,
     "clientPackageManager": "npm",
-    "clientFramework": "angularX"
+    "clientFramework": "angular"
   }
 }

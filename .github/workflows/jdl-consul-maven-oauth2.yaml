@@ -50,15 +50,15 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         app-type:
-          - consul-maven-oauth2-angularX-caffeine
+          - consul-maven-oauth2-angular-caffeine
           - consul-maven-oauth2-react-ehcache
           - consul-maven-oauth2-vue-hazelcast
-          - consul-maven-oauth2-angularX-infinispan
+          - consul-maven-oauth2-angular-infinispan
           - consul-maven-oauth2-react-memcached
           - consul-maven-oauth2-vue-no
-          - consul-maven-oauth2-angularX-redis
+          - consul-maven-oauth2-angular-redis
         include:
-          - app-type: consul-maven-oauth2-angularX-caffeine
+          - app-type: consul-maven-oauth2-angular-caffeine
             entity: jdl
             profile: prod
             war: 0
@@ -73,7 +73,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-angularX-infinispan
+          - app-type: consul-maven-oauth2-angular-infinispan
             entity: jdl
             profile: prod
             war: 0
@@ -88,7 +88,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-oauth2-angularX-redis
+          - app-type: consul-maven-oauth2-angular-redis
             entity: jdl
             profile: prod
             war: 0

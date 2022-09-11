@@ -51,10 +51,10 @@ jobs:
         os: [ubuntu-latest]
         app-type:
           - consul-maven-jwt-vue-caffeine
-          - consul-maven-jwt-angularX-ehcache
+          - consul-maven-jwt-angular-ehcache
           - consul-maven-jwt-react-hazelcast
           - consul-maven-jwt-vue-infinispan
-          - consul-maven-jwt-angularX-memcached
+          - consul-maven-jwt-angular-memcached
           - consul-maven-jwt-react-no
           - consul-maven-jwt-vue-redis
         include:
@@ -63,7 +63,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-angularX-ehcache
+          - app-type: consul-maven-jwt-angular-ehcache
             entity: jdl
             profile: prod
             war: 0
@@ -78,7 +78,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-maven-jwt-angularX-memcached
+          - app-type: consul-maven-jwt-angular-memcached
             entity: jdl
             profile: prod
             war: 0
