@@ -52,10 +52,10 @@ jobs:
         app-type:
           - consul-gradle-oauth2-react-caffeine
           - consul-gradle-oauth2-vue-ehcache
-          - consul-gradle-oauth2-angularX-hazelcast
+          - consul-gradle-oauth2-angular-hazelcast
           - consul-gradle-oauth2-react-infinispan
           - consul-gradle-oauth2-vue-memcached
-          - consul-gradle-oauth2-angularX-no
+          - consul-gradle-oauth2-angular-no
           - consul-gradle-oauth2-react-redis
         include:
           - app-type: consul-gradle-oauth2-react-caffeine
@@ -68,7 +68,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-angularX-hazelcast
+          - app-type: consul-gradle-oauth2-angular-hazelcast
             entity: jdl
             profile: prod
             war: 0
@@ -83,7 +83,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-angularX-no
+          - app-type: consul-gradle-oauth2-angular-no
             entity: jdl
             profile: prod
             war: 0

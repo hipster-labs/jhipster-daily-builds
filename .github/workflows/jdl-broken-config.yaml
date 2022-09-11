@@ -53,11 +53,11 @@ jobs:
           - eureka-maven-jwt-react-memcached
           - eureka-maven-oauth2-vue-memcached
           - eureka-gradle-jwt-vue-memcached
-          - eureka-gradle-oauth2-angularX-memcached
+          - eureka-gradle-oauth2-angular-memcached
           - consul-maven-jwt-react-memcached
           - consul-maven-oauth2-vue-memcached
           - consul-gradle-jwt-vue-memcached
-          - consul-gradle-oauth2-angularX-memcached
+          - consul-gradle-oauth2-angular-memcached
         include:
           - app-type: eureka-maven-jwt-react-memcached
             entity: jdl
@@ -74,7 +74,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-oauth2-angularX-memcached
+          - app-type: eureka-gradle-oauth2-angular-memcached
             entity: jdl
             profile: prod
             war: 0
@@ -94,7 +94,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-oauth2-angularX-memcached
+          - app-type: consul-gradle-oauth2-angular-memcached
             entity: jdl
             profile: prod
             war: 0

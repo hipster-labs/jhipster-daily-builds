@@ -23,6 +23,6 @@
     "serviceDiscoveryType": false,
     "enableTranslation": false,
     "clientPackageManager": "npm",
-    "clientFramework": "angularX"
+    "clientFramework": "angular"
   }
 }

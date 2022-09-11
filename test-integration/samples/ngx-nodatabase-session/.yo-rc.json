@@ -22,7 +22,7 @@
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
     "jwtSecretKey": "MjUzZGQzZjQwOWY3ZmEzYjBkOTQ5ZDc2ZmNhYjYyZDVhMjMzNmI3MGJkMTQyOTA3YzQzZWRiYjk0ODlhMmM2MDg1MDU3ODdkNGEzNzAzYTZlYjMxYWM4ZjM2MTY4ZjlmNjJjNDJiNGE2ZDUyNWQ1YTRjNzk5YzY5OTMxOGRjZTI=",
-    "clientFramework": "angularX",
+    "clientFramework": "angular",
     "clientTheme": "none",
     "clientThemeVariant": "",
     "useSass": true,

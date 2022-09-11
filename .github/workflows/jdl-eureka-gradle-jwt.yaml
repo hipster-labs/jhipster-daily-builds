@@ -52,10 +52,10 @@ jobs:
         app-type:
           - eureka-gradle-jwt-react-caffeine
           - eureka-gradle-jwt-vue-ehcache
-          - eureka-gradle-jwt-angularX-hazelcast
+          - eureka-gradle-jwt-angular-hazelcast
           - eureka-gradle-jwt-react-infinispan
           - eureka-gradle-jwt-vue-memcached
-          - eureka-gradle-jwt-angularX-no
+          - eureka-gradle-jwt-angular-no
           - eureka-gradle-jwt-react-redis
         include:
           - app-type: eureka-gradle-jwt-react-caffeine
@@ -68,7 +68,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-angularX-hazelcast
+          - app-type: eureka-gradle-jwt-angular-hazelcast
             entity: jdl
             profile: prod
             war: 0
@@ -83,7 +83,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-gradle-jwt-angularX-no
+          - app-type: eureka-gradle-jwt-angular-no
             entity: jdl
             profile: prod
             war: 0

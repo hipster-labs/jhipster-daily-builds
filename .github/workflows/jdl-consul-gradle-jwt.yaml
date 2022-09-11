@@ -50,15 +50,15 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         app-type:
-          - consul-gradle-jwt-angularX-caffeine
+          - consul-gradle-jwt-angular-caffeine
           - consul-gradle-jwt-react-ehcache
           - consul-gradle-jwt-vue-hazelcast
-          - consul-gradle-jwt-angularX-infinispan
+          - consul-gradle-jwt-angular-infinispan
           - consul-gradle-jwt-react-memcached
           - consul-gradle-jwt-vue-no
-          - consul-gradle-jwt-angularX-redis
+          - consul-gradle-jwt-angular-redis
         include:
-          - app-type: consul-gradle-jwt-angularX-caffeine
+          - app-type: consul-gradle-jwt-angular-caffeine
             entity: jdl
             profile: prod
             war: 0
@@ -73,7 +73,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-angularX-infinispan
+          - app-type: consul-gradle-jwt-angular-infinispan
             entity: jdl
             profile: prod
             war: 0
@@ -88,7 +88,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: consul-gradle-jwt-angularX-redis
+          - app-type: consul-gradle-jwt-angular-redis
             entity: jdl
             profile: prod
             war: 0

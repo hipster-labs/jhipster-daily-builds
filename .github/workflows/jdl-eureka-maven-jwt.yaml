@@ -50,15 +50,15 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         app-type:
-          - eureka-maven-jwt-angularX-caffeine
+          - eureka-maven-jwt-angular-caffeine
           - eureka-maven-jwt-react-ehcache
           - eureka-maven-jwt-vue-hazelcast
-          - eureka-maven-jwt-angularX-infinispan
+          - eureka-maven-jwt-angular-infinispan
           - eureka-maven-jwt-react-memcached
           - eureka-maven-jwt-vue-no
-          - eureka-maven-jwt-angularX-redis
+          - eureka-maven-jwt-angular-redis
         include:
-          - app-type: eureka-maven-jwt-angularX-caffeine
+          - app-type: eureka-maven-jwt-angular-caffeine
             entity: jdl
             profile: prod
             war: 0
@@ -73,7 +73,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-angularX-infinispan
+          - app-type: eureka-maven-jwt-angular-infinispan
             entity: jdl
             profile: prod
             war: 0
@@ -88,7 +88,7 @@ jobs:
             profile: prod
             war: 0
             e2e: 1
-          - app-type: eureka-maven-jwt-angularX-redis
+          - app-type: eureka-maven-jwt-angular-redis
             entity: jdl
             profile: prod
             war: 0
