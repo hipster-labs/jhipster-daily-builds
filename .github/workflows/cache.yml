@@ -22,7 +22,7 @@ on:
   workflow_dispatch:
     inputs:
       key:
-        description: 'Cache key'     
+        description: 'Cache key'
         required: false
         default: '-new'
   schedule:
@@ -36,7 +36,7 @@ jobs:
         working-directory: ${{ github.workspace }}/app
     steps:
       - name: 'SETUP: Checkout generator-jhipster'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: 'jhipster/generator-jhipster'
           path: generator-jhipster
@@ -46,11 +46,11 @@ jobs:
         with:
           jdl-sample: cache
           generator-jhipster-branch: local
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.setup.outputs.node-version }}
       - name: 'SETUP: load npm cache'
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v3
         with:
           path: |
             ~/.npm

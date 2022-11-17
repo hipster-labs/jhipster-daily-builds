@@ -33,7 +33,7 @@ jobs:
       #----------------------------------------------------------------------
       # Install all tools and check configuration
       #----------------------------------------------------------------------
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: 'TOOLS: docker version'
         run: docker version
       - name: 'TOOLS: docker-compose version'
