@@ -8,7 +8,6 @@ set -e
 docker container run -d -e JHI_DISABLE_WEBPACK_LOGS=true --name jhipster jhipster/jhipster:latest
 docker container ps
 docker container exec -i jhipster npm --version
-docker container exec -i jhipster yo --version
 docker container exec -i jhipster git config --global user.name "JHipster Bot"
 docker container exec -i jhipster git config --global user.email "jhipster-bot@jhipster.tech"
 docker container exec -i jhipster jhipster --help --no-insight
