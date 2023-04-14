@@ -34,6 +34,10 @@ jobs:
       # Install all tools and check configuration
       #----------------------------------------------------------------------
       - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
       - name: 'TOOLS: docker version'
         run: docker version
       - name: 'TOOLS: docker-compose version'
