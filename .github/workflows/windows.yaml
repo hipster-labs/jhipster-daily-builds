@@ -134,6 +134,8 @@ jobs:
       #----------------------------------------------------------------------
       - name: 'GENERATION: install JHipster'
         run: $JHI_SCRIPTS/10-install-jhipster.sh
+        env:
+          JHI_INSTALL_GLOBALLY: 'true'
       - name: 'GENERATION: config'
         run: $JHI_SCRIPTS/11-generate-config.sh
         working-directory: ${{ github.workspace }}/
