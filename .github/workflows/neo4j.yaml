@@ -33,7 +33,7 @@ on:
         default: 'main'
         required: false
   schedule:
-    - cron: '30 4 1 * *'
+    - cron: '30 4 * * *'
 env:
   JHI_SAMPLES: ${{ github.workspace }}/jhipster-daily-builds/test-integration/samples
 jobs:
