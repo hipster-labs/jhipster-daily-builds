@@ -55,7 +55,7 @@ jobs:
           # - ng-mysql-es-noi18n-mapsid
           - ng-gradle-fr
           - ng-mariadb-oauth2-sass-infinispan
-          - ms-ng-gateway-eureka
+          - ms-ngx-gateway-eureka
           - ms-micro-eureka
           # - ngx-mongodb-kafka-cucumber
           - vue-default
@@ -77,7 +77,7 @@ jobs:
             profile: dev
             e2e: 1
             entity: sql
-          - app-type: ms-ng-gateway-eureka
+          - app-type: ms-ngx-gateway-eureka
             profile: dev
             entity: sqllight
           - app-type: ms-micro-eureka
