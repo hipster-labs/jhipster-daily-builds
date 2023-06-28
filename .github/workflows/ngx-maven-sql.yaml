@@ -35,7 +35,7 @@ on:
   schedule:
     - cron: '30 0 * * *'
 env:
-  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/daily-builds
+  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/daily-builds
 jobs:
   applications:
     name: ${{ matrix.app-type }}
