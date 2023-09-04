@@ -21,7 +21,7 @@ docker container exec -w /home/jhipster/jhipster-bom -i jhipster ./mvnw -ntp cle
 # generate sample
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/main/test-integration/samples/ng-default/.yo-rc.json -o .yo-rc.json
 docker container exec -i jhipster ls -al
-docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
+docker container exec -i jhipster jhipster --force --no-insight --skip-checks
 docker container exec -i jhipster ls -al /home/jhipster/app/
 docker container exec -i jhipster ./mvnw -ntp verify
 docker container exec -i jhipster npm test
