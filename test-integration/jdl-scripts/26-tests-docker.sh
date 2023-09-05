@@ -22,7 +22,7 @@ docker container exec -w /home/jhipster/jhipster -e JAVA_HOME=/home/jhipster/.sd
 # generate sample
 docker container exec -i jhipster curl https://raw.githubusercontent.com/jhipster/generator-jhipster/main/test-integration/samples/ngx-default/.yo-rc.json -o .yo-rc.json
 docker container exec -i jhipster ls -al
-docker container exec -i jhipster jhipster --force --no-insight --skip-checks --with-entities
+docker container exec -i jhipster jhipster --force --no-insight --skip-checks
 docker container exec -i jhipster ls -al /home/jhipster/app/
 docker container exec -e JAVA_HOME=/home/jhipster/.sdkman/candidates/java/current -i jhipster ./mvnw -ntp test
 docker container exec -i jhipster npm test
