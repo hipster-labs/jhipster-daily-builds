@@ -6,6 +6,7 @@ Please note shown times below are in UTC.
 
 | Pipeline Status                                                                                        | At    |
 | :----------------------------------------------------------------------------------------------------- | :---- |
+| [![Build cache][cache.yml-badge]][cache.yml-link]                                                      | 00:00 |
 | [![Angular Maven SQL][ng-maven-sql.yaml-badge]][ng-maven-sql.yaml-link]                                | 00:30 |
 | [![Angular Maven NoSQL][ng-maven-nosql.yaml-badge]][ng-maven-nosql.yaml-link]                          | 00:40 |
 | [![React Maven SQL][react-maven-sql.yaml-badge]][react-maven-sql.yaml-link]                            | 00:40 |
@@ -23,6 +24,7 @@ Please note shown times below are in UTC.
 | [![No Database][no-database.yaml-badge]][no-database.yaml-link]                                        | 02:30 |
 | [![Microservices JWT][ms-jwt.yaml-badge]][ms-jwt.yaml-link]                                            | 03:00 |
 | [![Microservices OAuth 2.0][ms-oauth2.yaml-badge]][ms-oauth2.yaml-link]                                | 03:00 |
+| [![Docker Image][docker-image.yaml-badge]][docker-image.yaml-link]                                     | 03:30 |
 | [![Couchbase][couchbase.yml-badge]][couchbase.yml-link]                                                | 04:00 |
 | [![Neo4j][neo4j.yaml-badge]][neo4j.yaml-link]                                                          | 04:30 |
 | [![JDL Eureka Maven JWT][jdl-eureka-maven-jwt.yaml-badge]][jdl-eureka-maven-jwt.yaml-link]             | 05:00 |
@@ -35,6 +37,8 @@ Please note shown times below are in UTC.
 | [![JDL Consul Gradle OAuth2][jdl-consul-gradle-oauth2.yaml-badge]][jdl-consul-gradle-oauth2.yaml-link] | 06:30 |
 | [![Official Windows][windows.yaml-badge]][windows.yaml-link]                                           | 08:30 |
 
+[cache.yml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/cache.yml/badge.svg
+[cache.yml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/cache.yml
 [ng-maven-sql.yaml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ng-maven-sql.yaml/badge.svg
 [ng-maven-sql.yaml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ng-maven-sql.yaml
 [ng-maven-nosql.yaml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ng-maven-nosql.yaml/badge.svg
@@ -69,6 +73,8 @@ Please note shown times below are in UTC.
 [ms-jwt.yaml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ms-jwt.yaml
 [ms-oauth2.yaml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ms-oauth2.yaml/badge.svg
 [ms-oauth2.yaml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/ms-oauth2.yaml
+[docker-image.yaml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/docker-image.yaml/badge.svg
+[docker-image.yaml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/docker-image.yaml
 [couchbase.yml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/couchbase.yml/badge.svg
 [couchbase.yml-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/couchbase.yml
 [neo4j.yaml-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/neo4j.yaml/badge.svg

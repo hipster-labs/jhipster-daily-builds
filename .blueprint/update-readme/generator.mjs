@@ -31,7 +31,7 @@ export default async env => {
           const workflows = await readdir(workflowsPath);
           this.context.workflows = workflows
             .map(workflow => ({ workflow, content: parse(this.readDestination(join(workflowsPath, workflow))) }))
-            .filter(workflow => workflow.content.jobs.applications && workflow.content.on.schedule?.[0]?.cron)
+            .filter(workflow => workflow.content.on.schedule?.[0]?.cron)
             .map(workflow => ({ ...workflow, workflowName: basename(workflow.workflow) }));
 
           for (const workflow of this.context.workflows) {
