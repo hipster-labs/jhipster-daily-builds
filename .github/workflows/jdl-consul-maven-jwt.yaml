@@ -33,7 +33,7 @@ on:
         default: 'main'
         required: false
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 8 * * *'
 env:
   JHI_JDL_SAMPLES: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-samples
   JHI_JDL_SCRIPTS: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-scripts

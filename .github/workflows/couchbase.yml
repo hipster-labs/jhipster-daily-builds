@@ -34,7 +34,7 @@ on:
         required: false
 
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '15 6 * * *'
 env:
   JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/daily-builds
 jobs:
