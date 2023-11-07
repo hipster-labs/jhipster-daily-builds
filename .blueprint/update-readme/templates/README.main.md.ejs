@@ -1,0 +1,10 @@
+| Pipeline Status |
+| :--- |
+<%_ for (const workflow of workflows) { _%>
+| [![<%- workflow.content.name %>][<%- workflow.workflowName %>-badge]][<%- workflow.workflowName %>-link] |
+<%_ } _%>
+
+<%_ for (const workflow of workflows) { _%>
+[<%- workflow.workflowName %>-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/<%- workflow.workflowName %>/badge.svg
+[<%- workflow.workflowName %>-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/<%- workflow.workflowName %>
+<%_ } _%>

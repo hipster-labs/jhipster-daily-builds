@@ -7,13 +7,13 @@ import { basename, join } from 'path';
 export default async env => {
   const BaseApplicationGenerator = await env.requireGenerator('jhipster:base-application');
   return class extends BaseApplicationGenerator {
+    main;
     context = {};
 
     get [BaseApplicationGenerator.INITIALIZING]() {
       return this.asInitializingTaskGroup({
         async initializingTemplateTask() {
-          this.parseJHipsterArguments(command.arguments);
-          this.parseJHipsterOptions(command.options);
+          this.parseJHipsterCommand(command);
         },
       });
     }
@@ -31,9 +31,24 @@ export default async env => {
           const workflows = await readdir(workflowsPath);
           this.context.workflows = workflows
             .map(workflow => ({ workflow, content: parse(this.readDestination(join(workflowsPath, workflow))) }))
-            .filter(workflow => workflow.content.on.schedule?.[0]?.cron)
             .map(workflow => ({ ...workflow, workflowName: basename(workflow.workflow) }));
 
+          if (this.main) {
+            this.context.workflows = this.context.workflows.filter(
+              ({ workflowName }) =>
+                workflowName.startsWith('ng-') ||
+                workflowName.startsWith('react-') ||
+                workflowName.startsWith('vue-') ||
+                workflowName.startsWith('elasticsearch') ||
+                workflowName.startsWith('monolith-') ||
+                workflowName.startsWith('no-') ||
+                workflowName.startsWith('ms-') ||
+                workflowName.startsWith('docker-') ||
+                workflowName.startsWith('windows'),
+            );
+          } else {
+            this.context.workflows = this.context.workflows.filter(workflow => workflow.content.on.schedule?.[0]?.cron);
+          }
           for (const workflow of this.context.workflows) {
             const cron = cronParser.parseExpression(workflow.content.on.schedule[0].cron);
             workflow.cron = `${cron.fields.hour[0].toString().padStart(2, '0')}:${cron.fields.minute[0].toString().padStart(2, '0')}`;
@@ -48,7 +63,7 @@ export default async env => {
         async writingTemplateTask() {
           await this.writeFiles({
             sections: {
-              files: [{ templates: ['README.md'] }],
+              files: [{ templates: [this.main ? 'README.main.md' : 'README.md'] }],
             },
             context: this.context,
           });
