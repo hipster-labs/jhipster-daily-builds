@@ -1,0 +1,16 @@
+# jhipster-daily-builds
+
+## GitHub Actions builds
+
+Please note shown times below are in UTC.
+
+| Pipeline Status | At |
+| :--- | :--- |
+<%_ for (const workflow of workflows) { _%>
+| [![<%- workflow.content.name %>][<%- workflow.workflowName %>-badge]][<%- workflow.workflowName %>-link] | <%- workflow.cron %> |
+<%_ } _%>
+
+<%_ for (const workflow of workflows) { _%>
+[<%- workflow.workflowName %>-badge]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/<%- workflow.workflowName %>/badge.svg
+[<%- workflow.workflowName %>-link]: https://github.com/hipster-labs/jhipster-daily-builds/actions/workflows/<%- workflow.workflowName %>
+<%_ } _%>

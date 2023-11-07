@@ -108,10 +108,10 @@ jobs:
       - name: 'mvn: project'
         run: $JHI_SCRIPTS/12-generate-project.sh --skip-jhipster-dependencies --skip-install --workspaces
         continue-on-error: true
-      - name: "mvn: install workspaces deps"
+      - name: 'mvn: install workspaces deps'
         run: npm install --force
         continue-on-error: true
-      - name: "mvn: build cache"
+      - name: 'mvn: build cache'
         run: npm run backend:build-cache || true
         continue-on-error: true
 
@@ -122,9 +122,9 @@ jobs:
       - name: 'gradle: project'
         run: $JHI_SCRIPTS/12-generate-project.sh --skip-jhipster-dependencies --skip-install --workspaces
         continue-on-error: true
-      - name: "gradle: install workspaces deps"
+      - name: 'gradle: install workspaces deps'
         run: npm install --force
         continue-on-error: true
-      - name: "gradle: build cache"
+      - name: 'gradle: build cache'
         run: npm run backend:build-cache || true
         continue-on-error: true
