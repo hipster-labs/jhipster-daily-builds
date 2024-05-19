@@ -17,26 +17,10 @@
 # limitations under the License.
 #
 
-name: Build cache
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
-jobs:
-  npm_cache:
-    name: Create cache
-    runs-on: ubuntu-22.04
-    steps:
-      - name: 'SETUP: Checkout generator-jhipster'
-        uses: actions/checkout@v4
-        with:
-          repository: jhipster/generator-jhipster
-          path: generator-jhipster
-      - uses: actions/checkout@v4
-        with:
-          path: jhipster-bom
-          repository: jhipster/jhipster-bom
-          ref: main
-          fetch-depth: 1
-      - uses: ./generator-jhipster/.github/actions/setup-default-node-java
-      - uses: ./generator-jhipster/.github/actions/build-cache
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    schedule:
+      interval: 'weekly'
+      time: '00:30'
+    open-pull-requests-limit: 10
