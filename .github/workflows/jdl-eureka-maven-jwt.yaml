@@ -125,7 +125,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install google-chrome-stable
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           distribution: 'adopt'
           java-version: ${{ steps.setup.outputs.java-version }}
