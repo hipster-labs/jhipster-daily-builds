@@ -136,7 +136,7 @@ jobs:
           distribution: 'adopt'
           java-version: ${{ steps.setup.outputs.java-version }}
       - name: 'SETUP: load cache'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.npm
