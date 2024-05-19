@@ -26,7 +26,7 @@ on:
     inputs:
       jhiGenRepo:
         description: 'JHipster repository url'
-        default: 'https://github.com/jhipster/generator-jhipster.git'
+        default: 'jhipster/generator-jhipster'
         required: false
       jhiGenBranch:
         description: 'JHipster repository branch'
@@ -34,9 +34,6 @@ on:
         required: false
   schedule:
     - cron: '30 7 * * *'
-env:
-  JHI_JDL_SAMPLES: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-samples
-  JHI_JDL_SCRIPTS: ${{ github.workspace }}/jhipster-daily-builds/test-integration/jdl-scripts
 jobs:
   applications:
     name: ${{ matrix.app-type }}
@@ -104,74 +101,40 @@ jobs:
       - name: 'SETUP: Checkout generator-jhipster'
         uses: actions/checkout@v4
         with:
-          repository: 'jhipster/generator-jhipster'
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
-          # shows 5 commits at log
-          fetch-depth: 5
-          ref: main
-      - name: 'SETUP: environment'
-        id: setup
-        uses: ./generator-jhipster/.github/actions/setup
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - uses: jhipster/actions/setup-runner@v0
         with:
-          jdl-sample: ${{ matrix.app-type }}
-          application-environment: ${{ matrix.profile }}
-          application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
-          generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ steps.setup.outputs.node-version }}
-      - name: Download latest chrome binary
-        run: |
-          sudo apt update
-          sudo apt install google-chrome-stable
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'adopt'
-          java-version: ${{ steps.setup.outputs.java-version }}
-      - name: 'SETUP: load cache'
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.npm
-            ~/.cache/Cypress/
-            ~/.m2/repository
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}-${{ hashFiles('pom.xml', '**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}-
-            ${{ runner.os }}-cache-${{ steps.setup.outputs.date }}
+          node-version: 20
+          java-version: 17
+          maven-cache: true
+          gradle-cache: true
+          binary-dir: ${{ github.workspace }}/generator-jhipster/bin
       - name: 'TOOLS: generating jdl-samples'
         run: |
           cd $GITHUB_WORKSPACE/jhipster-daily-builds/test-integration/jdl-samples
           npm i
           npm start
         shell: bash
-      - name: 'TOOLS: configure tools installed by the system'
-        run: $JHI_SCRIPTS/03-system.sh
-      - name: 'TOOLS: configure git'
-        run: $JHI_SCRIPTS/04-git-config.sh
+      - run: cp $GITHUB_WORKSPACE/jhipster-daily-builds/test-integration/jdl-samples/${{ matrix.app-type }}/microservice-demo.jdl .
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - name: 'GENERATION: install JHipster'
-        run: $JHI_SCRIPTS/10-install-jhipster.sh
-      - name: 'GENERATION: config'
-        run: $JHI_SCRIPTS/11-generate-config.sh
-      - name: 'GENERATION: project'
-        run: $JHI_SCRIPTS/12-generate-project.sh --workspaces --monorepository
-      - name: 'GENERATION: jhipster info'
-        run: $JHI_JDL_SCRIPTS/14-jhipster-info.sh
+      - run: npm ci --ignore-scripts
+        working-directory: ${{ github.workspace }}/generator-jhipster
+      - uses: jhipster/actions/build-jhipster-bom@v0
+        with:
+          jhipster-bom-ref: main
+      - run: jhipster.cjs jdl *.jdl --default-environment ${{ matrix.profile || 'prod' }} --skip-jhipster-dependencies --skip-checks --no-insight  --workspaces --monorepository
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
       # ----------------------------------------------------------------------
       # Launch tests (Docker-Compose)
       # ----------------------------------------------------------------------
-      - name: 'TESTS: packaging'
-        run: npm run ci:e2e:package
-      - name: 'TESTS: Deploying with docker-compose file'
-        run: npm run ci:e2e:prepare
-      - name: 'TESTS: End-to-End (Docker-compose)'
-        run: npm run ci:e2e:run --if-present
+      - run: npm run ci:e2e:package
+      - run: npm run ci:e2e:prepare
+      - run: npm run ci:e2e:run --if-present
       # ----------------------------------------------------------------------
       # Launch tests (Kubernetes)
       # ----------------------------------------------------------------------
