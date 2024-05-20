@@ -35,8 +35,6 @@ on:
 
   schedule:
     - cron: '15 6 * * *'
-env:
-  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/daily-builds
 jobs:
   applications:
     name: ${{ matrix.app-type }}
@@ -90,19 +88,6 @@ jobs:
           maven-cache: true
           gradle-cache: true
           binary-dir: ${{ github.workspace }}/generator-jhipster/bin
-      - name: 'SETUP: environment'
-        id: setup
-        uses: ./generator-jhipster/.github/actions/setup
-        with:
-          entities-sample: ${{ matrix.entity }}
-          application-sample: ${{ matrix.app-type }}
-          application-environment: ${{ matrix.profile }}
-          application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          enable-testcontainers: ${{ matrix.testcontainers == 1 }}
-          generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
-          generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
-      - name: 'Copy samples'
-        run: cp -R "$JHI_HOME/test-integration/samples/.jhipster" "$JHI_SAMPLES"
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
@@ -117,13 +102,8 @@ jobs:
       #----------------------------------------------------------------------
       # Launch tests
       #----------------------------------------------------------------------
-      - name: 'TESTS: backend'
-        run: npm run ci:backend:test
-      - name: 'TESTS: frontend'
-        run: npm run ci:frontend:test
-      - name: 'TESTS: packaging'
-        run: npm run ci:e2e:package
-      - name: 'TESTS: Start docker-compose containers'
-        run: npm run ci:e2e:prepare
-      - name: 'TESTS: End-to-End'
-        run: npm run ci:e2e:run --if-present
+      - run: npm run ci:backend:test
+      - run: npm run ci:frontend:test
+      - run: npm run ci:e2e:package
+      - run: npm run ci:e2e:prepare
+      - run: npm run ci:e2e:run --if-present

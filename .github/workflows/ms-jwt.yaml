@@ -34,8 +34,6 @@ on:
         required: false
   schedule:
     - cron: '0 5 * * *'
-env:
-  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/daily-builds
 jobs:
   applications:
     name: ${{ matrix.app-type }}
@@ -133,13 +131,8 @@ jobs:
       #----------------------------------------------------------------------
       # Launch tests
       #----------------------------------------------------------------------
-      - name: 'TESTS: backend'
-        run: npm run ci:backend:test
-      - name: 'TESTS: frontend'
-        run: npm run ci:frontend:test --if-present
-      - name: 'TESTS: packaging'
-        run: npm run ci:e2e:package
-      - name: 'TESTS: Deploying with docker-compose file'
-        run: npm run ci:e2e:prepare
-      - name: 'TESTS: End-to-End (Docker-compose)'
-        run: npm run ci:e2e:run --if-present
+      - run: npm run ci:backend:test
+      - run: npm run ci:frontend:test --if-present
+      - run: npm run ci:e2e:package
+      - run: npm run ci:e2e:prepare
+      - run: npm run ci:e2e:run --if-present
