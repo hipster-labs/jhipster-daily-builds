@@ -34,8 +34,6 @@ on:
         required: false
   schedule:
     - cron: '0 9 * * *'
-env:
-  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/samples
 jobs:
   applications:
     name: ${{ matrix.app-type }}
@@ -114,31 +112,16 @@ jobs:
           java-version: 17
           maven-cache: true
           gradle-cache: true
+          binary-dir: ${{ github.workspace }}/generator-jhipster/bin
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - run: |
-          npm ci
-          npm link
+      - run: npm ci --ignore-scripts
         working-directory: ${{ github.workspace }}/generator-jhipster
       - uses: jhipster/actions/build-jhipster-bom@v0
         with:
           jhipster-bom-ref: main
-      # generate-sample command is not working on windows, use old approach
-      - name: 'SETUP: environment'
-        id: setup
-        uses: ./generator-jhipster/.github/actions/setup
-        with:
-          entities-sample: ${{ matrix.entity }}
-          application-sample: ${{ matrix.app-type }}
-          application-environment: ${{ matrix.profile }}
-          generator-jhipster-branch: 'local'
-          jhipster-bom-branch: 'local'
-      - name: 'GENERATION: config'
-        run: $JHI_SCRIPTS/11-generate-config.sh
-        working-directory: ${{ github.workspace }}/
-      - run: cp -f "$JHI_SAMPLES"/"$JHI_APP"/.yo-rc.json "$JHI_FOLDER_APP"/
-      - run: jhipster --force --no-insight --skip-checks --skip-jhipster-dependencies
+      - run: jhipster.cjs generate-sample daily-builds/${{ matrix.app-type }} --entities-sample ${{ matrix.entity }} --default-environment ${{ matrix.profile || 'prod' }} --sample-yorc-folder --skip-jhipster-dependencies --skip-checks --no-insight
         env:
           JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
       - run: npm config -L project set script-shell=bash
