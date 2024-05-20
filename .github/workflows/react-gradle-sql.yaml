@@ -104,9 +104,9 @@ jobs:
       - name: 'SETUP: Checkout generator-jhipster'
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.inputs.jhiGenRepo }}
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
-          ref: ${{ github.event.inputs.jhiGenBranch }}
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
       - uses: jhipster/actions/setup-runner@v0
         with:
           node-version: 20
