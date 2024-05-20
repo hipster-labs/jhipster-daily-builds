@@ -26,7 +26,7 @@ on:
     inputs:
       jhiGenRepo:
         description: 'JHipster repository url'
-        default: 'https://github.com/jhipster/generator-jhipster.git'
+        default: 'jhipster/generator-jhipster'
         required: false
       jhiGenBranch:
         description: 'JHipster repository branch'
@@ -35,7 +35,7 @@ on:
   schedule:
     - cron: '0 9 * * *'
 env:
-  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/daily-builds
+  JHI_SAMPLES: ${{ github.workspace }}/generator-jhipster/test-integration/samples
 jobs:
   applications:
     name: ${{ matrix.app-type }}
@@ -105,11 +105,26 @@ jobs:
       - name: 'SETUP: Checkout generator-jhipster'
         uses: actions/checkout@v4
         with:
-          repository: 'jhipster/generator-jhipster'
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
-          # shows 5 commits at log
-          fetch-depth: 5
-          ref: main
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - uses: jhipster/actions/setup-runner@v0
+        with:
+          node-version: 20
+          java-version: 17
+          maven-cache: true
+          gradle-cache: true
+      #----------------------------------------------------------------------
+      # Install JHipster and generate project+entities
+      #----------------------------------------------------------------------
+      - run: |
+          npm ci
+          npm link
+        working-directory: ${{ github.workspace }}/generator-jhipster
+      - uses: jhipster/actions/build-jhipster-bom@v0
+        with:
+          jhipster-bom-ref: main
+      # generate-sample command is not working on windows, use old approach
       - name: 'SETUP: environment'
         id: setup
         uses: ./generator-jhipster/.github/actions/setup
@@ -117,47 +132,19 @@ jobs:
           entities-sample: ${{ matrix.entity }}
           application-sample: ${{ matrix.app-type }}
           application-environment: ${{ matrix.profile }}
-          application-packaging: ${{ (matrix.war == 1 && 'war') || 'jar' }}
-          generator-jhipster-repository: ${{ github.event.inputs.jhiGenRepo || 'https://github.com/jhipster/generator-jhipster.git' }}
-          generator-jhipster-branch: ${{ github.event.inputs.jhiGenBranch || 'local' }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ steps.setup.outputs.node-version }}
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'adopt'
-          java-version: ${{ steps.setup.outputs.java-version }}
-      - name: 'TOOLS: configure git'
-        run: $JHI_SCRIPTS/04-git-config.sh
-      #----------------------------------------------------------------------
-      # Install JHipster and generate project+entities
-      #----------------------------------------------------------------------
-      - name: 'GENERATION: install JHipster'
-        run: $JHI_SCRIPTS/10-install-jhipster.sh
-        env:
-          JHI_INSTALL_GLOBALLY: 'true'
+          generator-jhipster-branch: 'local'
+          jhipster-bom-branch: 'local'
       - name: 'GENERATION: config'
         run: $JHI_SCRIPTS/11-generate-config.sh
         working-directory: ${{ github.workspace }}/
-      - name: 'GENERATION: force npm to use bash'
-        run: |
-          echo "script-shell=bash" >.npmrc
-          cat .npmrc
-      - name: 'GENERATION: project'
-        run: $JHI_SCRIPTS/12-generate-project.sh
-      - name: 'GENERATION: jhipster info'
-        run: $JHI_SCRIPTS/14-jhipster-info.sh
-      #----------------------------------------------------------------------
-      # Bugs fix
-      #----------------------------------------------------------------------
-      - name: 'BUGS-FIX: no memory limit for Elastichsearch'
-        run: $JHI_SCRIPTS/20-no-memory-limit-elasticsearch.sh
+      - run: cp -f "$JHI_SAMPLES"/"$JHI_APP"/.yo-rc.json "$JHI_FOLDER_APP"/
+      - run: jhipster --force --no-insight --skip-checks --skip-jhipster-dependencies
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
+      - run: npm config -L project set script-shell=bash
       #----------------------------------------------------------------------
       # Launch tests
       #----------------------------------------------------------------------
-      - name: 'TESTS: backend'
-        run: npm run ci:backend:test
-      - name: 'TESTS: frontend'
-        run: npm run ci:frontend:test --if-present
-      - name: 'TESTS: packaging'
-        run: npm run ci:e2e:package
+      - run: npm run ci:backend:test
+      - run: npm run ci:frontend:test --if-present
+      - run: npm run ci:e2e:package
