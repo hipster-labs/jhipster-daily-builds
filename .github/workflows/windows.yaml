@@ -121,7 +121,7 @@ jobs:
       - uses: jhipster/actions/build-jhipster-bom@v0
         with:
           jhipster-bom-ref: main
-      - run: jhipster.cjs generate-sample daily-builds/${{ matrix.app-type }} --entities-sample ${{ matrix.entity }} --default-environment ${{ matrix.profile || 'prod' }} --sample-yorc-folder --skip-jhipster-dependencies --skip-checks --no-insight
+      - run: jhipster.cjs generate-sample samples/${{ matrix.app-type }} --entities-sample ${{ matrix.entity }} --default-environment ${{ matrix.profile || 'prod' }} --sample-yorc-folder --skip-jhipster-dependencies --skip-checks --no-insight
         env:
           JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
       - run: npm config -L project set script-shell=bash
