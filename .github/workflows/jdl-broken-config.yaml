@@ -135,6 +135,7 @@ jobs:
       - run: jhipster.cjs jdl *.jdl --default-environment ${{ matrix.profile || 'prod' }} --skip-jhipster-dependencies --skip-checks --no-insight  --workspaces --monorepository
         env:
           JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
+      - run: jhipster.cjs info
       # ----------------------------------------------------------------------
       # Launch tests (Docker-Compose)
       # ----------------------------------------------------------------------
