@@ -5,9 +5,10 @@
   "description": "JHipster Daily Builds",
   "license": "Apache-2.0",
   "scripts": {
-    "prettier:format": "prettier --write \"{,.github/**/,test-integration/**/}*.{md,json,yml,yaml,}\""
+    "prettier:format": "prettier --write \"{,.github/**/,.blueprint/**/,test-integration/**/}*.{mjs,md,json,yml,yaml,}\""
   },
   "devDependencies": {
+    "generator-jhipster": "jhipster/generator-jhipster",
     "cron-parser": "^4.9.0",
     "husky": "4.3.7",
     "lint-staged": "10.5.3",

@@ -5,6 +5,3 @@
 *.iml
 .git
 node_modules/
-test-integration/jdl-samples/package-lock.json
-test-integration/jdl-samples/eureka-*
-test-integration/jdl-samples/consul-*

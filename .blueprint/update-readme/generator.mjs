@@ -1,31 +1,20 @@
 import { readdir } from 'fs/promises';
 import { parse } from 'yaml';
 import cronParser from 'cron-parser';
-import command from './command.mjs';
 import { basename, join } from 'path';
 
 export default async env => {
-  const BaseApplicationGenerator = await env.requireGenerator('jhipster:base-application');
+  const BaseApplicationGenerator = await env.requireGenerator('jhipster:base-core');
   return class extends BaseApplicationGenerator {
     main;
     context = {};
 
-    get [BaseApplicationGenerator.INITIALIZING]() {
-      return this.asInitializingTaskGroup({
-        async initializingTemplateTask() {
-          this.parseJHipsterCommand(command);
-        },
-      });
-    }
-
-    get [BaseApplicationGenerator.PROMPTING]() {
-      return this.asPromptingTaskGroup({
-        async promptingTemplateTask() {},
-      });
+    async beforeQueue() {
+      await this.composeWithJHipster('bootstrap');
     }
 
     get [BaseApplicationGenerator.LOADING]() {
-      return this.asLoadingTaskGroup({
+      return this.asAnyTaskGroup({
         async loadingTemplateTask() {
           const workflowsPath = this.templatePath('../../../.github/workflows');
           const workflows = await readdir(workflowsPath);
@@ -59,7 +48,7 @@ export default async env => {
     }
 
     get [BaseApplicationGenerator.WRITING]() {
-      return this.asWritingTaskGroup({
+      return this.asAnyTaskGroup({
         async writingTemplateTask() {
           await this.writeFiles({
             sections: {
