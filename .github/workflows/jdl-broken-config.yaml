@@ -119,7 +119,7 @@ jobs:
           binary-dir: ${{ github.workspace }}/generator-jhipster/bin
       - run: npm ci --ignore-scripts
         working-directory: ${{ github.workspace }}/generator-jhipster
-      - run: jhipster.cjs generate-daily-sample ${{ matrix.app-type }} ..
+      - run: jhipster.cjs generate-daily-sample ${{ matrix.app-type }} ../app
         working-directory: ${{ github.workspace }}/jhipster-daily-builds
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities

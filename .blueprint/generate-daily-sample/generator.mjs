@@ -25,18 +25,31 @@ export async function createGenerator(env) {
       });
     }
 
+    get [BaseApplicationGenerator.INITIALIZING]() {
+      return this.asAnyTaskGroup({
+        initializing() {
+          this.destinationRoot(this.destination);
+        },
+      });
+    }
+
     get [BaseApplicationGenerator.WRITING]() {
       return this.asAnyTaskGroup({
         async writingTemplateTask() {
-          console.log(this.sampleName);
           const [sdType, buildTool, clientFramework, authType, cacheType] = this.sampleName.split('-');
-          await this.writeFile('microservice-demo.jdl.ejs', path.join(this.destination ?? '', 'microservice-demo.jdl'), {
-            sdType,
-            buildTool,
-            clientFramework,
-            authType,
-            cacheType,
+          await this.writeFiles({
+            templates: ['microservice-demo.jdl'],
+            context: {
+              sdType,
+              buildTool,
+              clientFramework,
+              authType,
+              cacheType,
+            },
           });
+
+          this.log.info('Generated microservice-demo.jdl:');
+          this.log(this.readDestination('microservice-demo.jdl'));
         },
       });
     }
