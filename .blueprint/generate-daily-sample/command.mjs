@@ -1,6 +1,7 @@
-import { asCommand } from 'generator-jhipster';
-
-export default asCommand({
+/**
+ * @type {import('generator-jhipster').JHipsterCommandDefinition}
+ */
+const command = {
   configs: {
     sampleName: {
       argument: {
@@ -17,4 +18,6 @@ export default asCommand({
       scope: 'generator',
     },
   },
-});
+};
+
+export default command;
