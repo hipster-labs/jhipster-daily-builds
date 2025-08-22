@@ -36,7 +36,7 @@ export async function createGenerator(env) {
     get [BaseApplicationGenerator.WRITING]() {
       return this.asAnyTaskGroup({
         async writingTemplateTask() {
-          const [sdType, buildTool, clientFramework, authType, cacheType] = this.sampleName.split('-');
+          const [sdType, buildTool, authType, clientFramework, cacheType] = this.sampleName.split('-');
           await this.writeFiles({
             templates: ['microservice-demo.jdl'],
             context: {
