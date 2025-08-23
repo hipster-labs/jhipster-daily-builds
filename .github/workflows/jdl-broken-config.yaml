@@ -117,18 +117,13 @@ jobs:
           maven-cache: true
           gradle-cache: true
           binary-dir: ${{ github.workspace }}/generator-jhipster/bin
-      - name: 'TOOLS: generating jdl-samples'
-        run: |
-          cd $GITHUB_WORKSPACE/jhipster-daily-builds/test-integration/jdl-samples
-          npm i
-          npm start
-        shell: bash
-      - run: cp $GITHUB_WORKSPACE/jhipster-daily-builds/test-integration/jdl-samples/${{ matrix.app-type }}/microservice-demo.jdl .
+      - run: npm ci --ignore-scripts
+        working-directory: ${{ github.workspace }}/generator-jhipster
+      - run: jhipster.cjs generate-daily-sample ${{ matrix.app-type }} ../app
+        working-directory: ${{ github.workspace }}/jhipster-daily-builds
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - run: npm ci --ignore-scripts
-        working-directory: ${{ github.workspace }}/generator-jhipster
       - uses: jhipster/actions/build-jhipster-bom@v0
         with:
           jhipster-bom-ref: main

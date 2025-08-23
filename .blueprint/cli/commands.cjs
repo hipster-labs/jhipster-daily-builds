@@ -1,5 +1,8 @@
 module.exports = {
+  'generate-daily-sample': {
+    desc: 'Run generate-daily-sample sub-generator (builds blueprint)',
+  },
   'update-readme': {
-    description: 'Run update-readme sub-generator (builds blueprint)',
+    desc: 'Run update-readme sub-generator (builds blueprint)',
   },
 };

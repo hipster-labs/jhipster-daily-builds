@@ -1,7 +1,0 @@
-{
-  "serviceDiscoveryType": ["eureka", "consul"],
-  "authenticationType": ["jwt", "oauth2"],
-  "buildTool": ["maven", "gradle"],
-  "clientFramework": ["angular", "react", "vue"],
-  "cacheProvider": ["hazelcast", "ehcache", "infinispan", "memcached", "redis", "caffeine", "no"]
-}

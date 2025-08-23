@@ -3,16 +3,24 @@
     "additionalSubGenerators": "update-readme",
     "baseName": "builds",
     "cli": true,
+    "dynamic": false,
     "entities": [],
     "generators": {
+      "generate-daily-sample": {
+        "command": true,
+        "priorities": ["writing"],
+        "sbs": null,
+        "written": true
+      },
       "update-readme": {
-        "command": null,
-        "priorities": ["initializing", "prompting", "writing"],
+        "command": true,
+        "priorities": ["writing"],
         "sbs": null,
         "written": true
       }
     },
-    "jhipsterVersion": "8.3.0",
+    "jhipsterVersion": "8.11.0",
+    "js": false,
     "localBlueprint": true,
     "sampleWritten": true,
     "subGenerators": []
