@@ -18,7 +18,7 @@ docker container exec -i jhipster git clone https://github.com/jhipster/jhipster
 docker container exec -w /home/jhipster/jhipster-bom -i jhipster ./mvnw -ntp clean install -Dgpg.skip=true
 
 # generate sample
-docker container exec -i jhipster jhipster --defaults --no-insight --skip-checks
+docker container exec -i jhipster jhipster --defaults --dev-database-type h2Disk --no-insight --skip-checks
 docker container exec -i jhipster ls -al /home/jhipster/app/
 docker container exec -i jhipster ./mvnw -ntp verify
 docker container exec -i jhipster npm test
