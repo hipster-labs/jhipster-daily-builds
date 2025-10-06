@@ -110,7 +110,7 @@ jobs:
           repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
           ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
-      - uses: jhipster/actions/setup-runner@v0
+      - uses: jhipster/actions/setup-runner@v1
         with:
           node-version: 20
           java-version: 17
@@ -124,7 +124,7 @@ jobs:
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - uses: jhipster/actions/build-jhipster-bom@v0
+      - uses: jhipster/actions/build-jhipster-bom@v1
         with:
           jhipster-bom-ref: main
       - run: jhipster.cjs jdl *.jdl --default-environment ${{ matrix.profile || 'prod' }} --skip-jhipster-dependencies --skip-checks --no-insight  --workspaces --monorepository
