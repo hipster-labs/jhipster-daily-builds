@@ -65,11 +65,11 @@ jobs:
       # Install all tools and check configuration
       #----------------------------------------------------------------------
       - name: 'SETUP: Checkout jhipster-daily-builds'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           path: jhipster-daily-builds
       - name: 'SETUP: Checkout generator-jhipster'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
