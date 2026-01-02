@@ -112,6 +112,7 @@ jobs:
           ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
       - run: echo "node-version=$(cat ${{ github.workspace }}/generator-jhipster/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
         id: node-version
+        working-directory: ${{ github.workspace }}
       - uses: jhipster/actions/setup-runner@v1
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
