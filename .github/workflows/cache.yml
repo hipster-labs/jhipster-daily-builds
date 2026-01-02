@@ -25,7 +25,7 @@ on:
 jobs:
   npm_cache:
     name: Create cache
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: 'SETUP: Checkout generator-jhipster'
         uses: actions/checkout@v6

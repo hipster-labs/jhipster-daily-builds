@@ -104,10 +104,12 @@ jobs:
           repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
           ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - run: echo "node-version=$(cat ${{ github.workspace }}/generator-jhipster/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
+        id: node-version
       - uses: jhipster/actions/setup-runner@v1
         with:
-          node-version: 20
-          java-version: 17
+          node-version: ${{ steps.node-version.outputs.node-version }}
+          java-version: 25
           maven-cache: true
           gradle-cache: true
           binary-dir: ${{ github.workspace }}/generator-jhipster/bin
@@ -118,9 +120,11 @@ jobs:
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
+      - run: jhipster.cjs --export-github-output
+        id: jhipster-output
       - uses: jhipster/actions/build-jhipster-bom@v1
         with:
-          jhipster-bom-ref: main
+          jhipster-bom-ref: ${{ steps.jhipster-output.outputs.jhipster-bom-branch }}
       - run: jhipster.cjs jdl *.jdl --default-environment ${{ matrix.profile || 'prod' }} --skip-jhipster-dependencies --skip-checks --no-insight  --workspaces --monorepository
         env:
           JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
