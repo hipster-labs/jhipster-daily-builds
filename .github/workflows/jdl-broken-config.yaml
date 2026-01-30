@@ -127,7 +127,7 @@ jobs:
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
       #----------------------------------------------------------------------
-      - run: jhipster.cjs --export-github-output
+      - run: jhipster.cjs ci-utils --export-github-output
         id: jhipster-output
       - uses: jhipster/actions/build-jhipster-bom@v1
         with:
