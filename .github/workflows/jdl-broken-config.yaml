@@ -113,7 +113,7 @@ jobs:
       - run: echo "node-version=$(cat ${{ github.workspace }}/generator-jhipster/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
         id: node-version
         working-directory: ${{ github.workspace }}
-      - uses: jhipster/actions/setup-runner@v1
+      - uses: jhipster/actions/setup-runner@v2
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
           java-version: 25
@@ -129,7 +129,7 @@ jobs:
       #----------------------------------------------------------------------
       - run: jhipster.cjs ci-utils --export-github-output
         id: jhipster-output
-      - uses: jhipster/actions/build-jhipster-bom@v1
+      - uses: jhipster/actions/build-jhipster-bom@v2
         with:
           jhipster-bom-ref: ${{ steps.jhipster-output.outputs.jhipster-bom-branch }}
       - run: jhipster.cjs jdl *.jdl --default-environment ${{ matrix.profile || 'prod' }} --skip-jhipster-dependencies --skip-checks --no-insight  --workspaces --monorepository
