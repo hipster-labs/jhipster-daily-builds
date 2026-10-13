@@ -36,61 +36,35 @@ on:
   schedule:
     - cron: '30 2 * * *'
 jobs:
+  build-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+    steps:
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - run: echo "node-version=$(cat ${{ github.workspace }}/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
+        id: node-version
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ steps.node-version.outputs.node-version }}
+      - run: npm ci --production --engine-strict --ignore-scripts
+      - id: build
+        run: bin/jhipster.cjs github-build-matrix daily-react-gradle-sql --event-name daily
   applications:
-    name: ${{ matrix.app-type }}
+    name: ${{ matrix.job-name }}
     runs-on: ${{ matrix.os }}
+    needs: build-matrix
     defaults:
       run:
         working-directory: ${{ github.workspace }}/app
     timeout-minutes: 40
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        app-type:
-          - gradle-react-mysql
-          - gradle-react-sass-noi18n
-          - gradle-react-websocket
-          - gradle-react-hazelcast-cucumber
-          - gradle-react-mariadb-kafka-nol2
-          - gradle-react-session
-          - gradle-react-infinispan
-        include:
-          - app-type: gradle-react-mysql
-            entity: sqlfull
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-sass-noi18n
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-websocket
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-hazelcast-cucumber
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-mariadb-kafka-nol2
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-session
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
-          - app-type: gradle-react-infinispan
-            entity: sql
-            profile: prod
-            war: 0
-            e2e: 1
+      matrix: ${{ fromJson(needs.build-matrix.outputs.matrix) }}
     steps:
       #----------------------------------------------------------------------
       # Install all tools and check configuration
@@ -105,15 +79,13 @@ jobs:
           repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
           path: generator-jhipster
           ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
-      - run: echo "node-version=$(cat ${{ github.workspace }}/generator-jhipster/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
-        id: node-version
-        working-directory: ${{ github.workspace }}
       - uses: jhipster/actions/setup-runner@v2
         with:
-          node-version: ${{ steps.node-version.outputs.node-version }}
-          java-version: 25
+          node-version: ${{ matrix.node-version }}
+          java-version: ${{ matrix.java-version }}
+          npm-version: ${{ matrix.npm-version }}
           maven-cache: true
-          gradle-cache: true
+          gradle-cache: ${{ matrix.gradle-cache }}
           binary-dir: ${{ github.workspace }}/generator-jhipster/bin
       #----------------------------------------------------------------------
       # Install JHipster and generate project+entities
@@ -125,9 +97,10 @@ jobs:
       - uses: jhipster/actions/build-jhipster-bom@v2
         with:
           jhipster-bom-ref: ${{ steps.jhipster-output.outputs.jhipster-bom-branch }}
-      - run: jhipster.cjs generate-sample daily-builds/${{ matrix.app-type }} --entities-sample ${{ matrix.entity }} --default-environment ${{ matrix.profile || 'prod' }} --sample-yorc-folder --skip-jhipster-dependencies --skip-checks --no-insight
+      - run: jhipster.cjs generate-sample ${{ matrix.sample }} --skip-jhipster-dependencies --skip-checks --no-insight
         env:
-          JHIPSTER_DEPENDENCIES_VERSION: 0.0.0-CICD
+          JHIPSTER_DEPENDENCIES_VERSION: ${{ matrix.jhipster-bom-cicd-version }}
+          JHI_JWT_SECRET_KEY: ${{ matrix.jwt-secret-key }}
       #----------------------------------------------------------------------
       # Launch tests
       #----------------------------------------------------------------------
