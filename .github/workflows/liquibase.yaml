@@ -1,0 +1,189 @@
+#
+# Copyright 2018-2022 the original author or authors from the JHipster project.
+#
+# This file is part of the JHipster project, see https://www.jhipster.tech/
+# for more information.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+name: Liquibase
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.jhiGenRepo }}-${{ github.event.inputs.jhiGenBranch }}
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+    inputs:
+      jhiGenRepo:
+        description: 'JHipster repository url'
+        default: 'jhipster/generator-jhipster'
+        required: false
+      jhiGenBranch:
+        description: 'JHipster repository branch'
+        default: 'main'
+        required: false
+  schedule:
+    - cron: '30 4 * * *'
+jobs:
+  maven-incremental-changelog:
+    name: maven incremental changelog
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/app
+    timeout-minutes: 40
+    steps:
+      #----------------------------------------------------------------------
+      # Install all tools and check configuration
+      #----------------------------------------------------------------------
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
+          path: generator-jhipster
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - run: echo "node-version=$(cat ${{ github.workspace }}/generator-jhipster/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
+        id: node-version
+        working-directory: ${{ github.workspace }}
+      - uses: jhipster/actions/setup-runner@v2
+        with:
+          node-version: ${{ steps.node-version.outputs.node-version }}
+          java-version: 25
+          maven-cache: true
+          binary-dir: ${{ github.workspace }}/generator-jhipster/bin
+      - run: npm ci --production --engine-strict --ignore-scripts
+        working-directory: ${{ github.workspace }}/generator-jhipster
+      #----------------------------------------------------------------------
+      # Install JHipster and generate project+entities
+      #----------------------------------------------------------------------
+      - run: jhipster.cjs ci-utils --export-github-output
+        id: jhipster-output
+      - uses: jhipster/actions/build-jhipster-bom@v2
+        with:
+          jhipster-bom-ref: ${{ steps.jhipster-output.outputs.jhipster-bom-branch }}
+      - run: jhipster.cjs generate-sample liquibase-jdl-rename-field --skip-jhipster-dependencies --skip-checks --no-insight
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: ${{ steps.jhipster-output.outputs.jhipster-dependencies-version }}
+      # The changed jdl over the application, as incremental changelogs: it overwrites the jdl of the first sample.
+      - run: jhipster.cjs generate-sample liquibase-jdl-rename-field-post --force --skip-checks --no-insight
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: ${{ steps.jhipster-output.outputs.jhipster-dependencies-version }}
+      - name: 'GENERATION: incremental changes'
+        run: |
+          git add .
+          git -c color.ui=always diff --cached
+      - run: jhipster.cjs info
+      #----------------------------------------------------------------------
+      # Launch tests: the incremental changelogs against the entities
+      #----------------------------------------------------------------------
+      - name: 'TEST: liquibase:diff'
+        run: ./mvnw liquibase:diff
+      - run: npm run ci:backend:test
+      - run: npm run ci:e2e:package
+      - run: npm run ci:e2e:prepare
+      - run: npm run ci:e2e:run --if-present
+  build-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+    steps:
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - run: echo "node-version=$(cat ${{ github.workspace }}/generators/init/resources/.node-version)" >> $GITHUB_OUTPUT
+        id: node-version
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ steps.node-version.outputs.node-version }}
+      - run: npm ci --production --engine-strict --ignore-scripts
+      - id: build
+        run: bin/jhipster.cjs github-build-matrix daily-liquibase --event-name daily
+  gradle-tasks:
+    name: gradle tasks ${{ matrix.job-name }}
+    runs-on: ${{ matrix.os }}
+    needs: build-matrix
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/app
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.build-matrix.outputs.matrix) }}
+    steps:
+      #----------------------------------------------------------------------
+      # Install all tools and check configuration
+      #----------------------------------------------------------------------
+      - name: 'SETUP: Checkout jhipster-daily-builds'
+        uses: actions/checkout@v7
+        with:
+          path: jhipster-daily-builds
+      - name: 'SETUP: Checkout generator-jhipster'
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.event.inputs.jhiGenRepo || 'jhipster/generator-jhipster' }}
+          path: generator-jhipster
+          ref: ${{ github.event.inputs.jhiGenBranch || 'main' }}
+      - uses: jhipster/actions/setup-runner@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          java-version: ${{ matrix.java-version }}
+          npm-version: ${{ matrix.npm-version }}
+          maven-cache: true
+          gradle-cache: ${{ matrix.gradle-cache }}
+          binary-dir: ${{ github.workspace }}/generator-jhipster/bin
+      #----------------------------------------------------------------------
+      # Install JHipster and generate project+entities
+      #----------------------------------------------------------------------
+      - run: npm ci --ignore-scripts
+        working-directory: ${{ github.workspace }}/generator-jhipster
+      - run: jhipster.cjs ci-utils --export-github-output
+        id: jhipster-output
+      - uses: jhipster/actions/build-jhipster-bom@v2
+        with:
+          jhipster-bom-ref: ${{ steps.jhipster-output.outputs.jhipster-bom-branch }}
+      - run: jhipster.cjs generate-sample ${{ matrix.sample }} --skip-jhipster-dependencies --skip-checks --no-insight
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: ${{ matrix.jhipster-bom-cicd-version }}
+          JHI_JWT_SECRET_KEY: ${{ matrix.jwt-secret-key }}
+      #----------------------------------------------------------------------
+      # Launch tests: the Liquibase tasks of gradle/liquibase.gradle
+      #----------------------------------------------------------------------
+      - name: 'TEST: liquibaseUpdate applies the changelogs to the development database'
+        run: ./gradlew liquibaseUpdate
+      - name: 'TEST: add a field to an entity, without its changelog'
+        run: |
+          ENTITY_FILE=$(ls .jhipster/*.json | head -1)
+          echo "ENTITY_FILE=$ENTITY_FILE" >> $GITHUB_ENV
+          node -e "
+            const { readFileSync, writeFileSync } = require('node:fs');
+            const entity = JSON.parse(readFileSync(process.argv[1], 'utf8'));
+            entity.fields.push({ fieldName: 'dailyBuildsDiff', fieldType: 'String' });
+            writeFileSync(process.argv[1], JSON.stringify(entity, null, 2));
+          " "$ENTITY_FILE"
+          jhipster.cjs entities --skip-db-changelog --skip-install --skip-git --force --skip-checks --no-insight
+        env:
+          JHIPSTER_DEPENDENCIES_VERSION: ${{ matrix.jhipster-bom-cicd-version }}
+      - name: 'TEST: liquibaseDiffChangelog generates the changelog of the new field, and drops nothing'
+        run: |
+          ./gradlew liquibaseDiffChangelog -PrunList=diffLog
+          CHANGELOG=$(ls -t src/main/resources/config/liquibase/changelog/*_changelog.xml | head -1)
+          echo "Generated $CHANGELOG"
+          cat "$CHANGELOG"
+          grep -q '<addColumn' "$CHANGELOG"
+          grep -q 'daily_builds_diff' "$CHANGELOG"
+          if grep -q '<dropTable' "$CHANGELOG"; then
+            echo "::error::$CHANGELOG drops a table"
+            exit 1
+          fi
